@@ -1,0 +1,58 @@
+{
+  "id": "power-rangers",
+  "title": "Power Rangers",
+  "tagline": "Every series & film in airing order — Saban to Hasbro",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#ff3b3b",
+  "accentInk": "#210000",
+  "emoji": "⚡",
+  "background": "drift",
+  "datesLabel": "Airing order — most series are self-contained; ⚡ epAvg ≈ 21 min",
+  "tiers": [
+    { "id": "reboot", "label": "Reboot film", "default": true, "note": "the 2017 movie — a standalone continuity separate from the TV timeline" }
+  ],
+  "eras": [
+    { "title": "Saban Era", "span": "1993 – 2002", "items": [
+      { "id": "mmpr", "name": "Mighty Morphin Power Rangers", "date": "1993–95", "kind": "Series", "seasons": [60,52,33], "epAvg": 21 },
+      { "id": "mmpr-movie", "name": "Mighty Morphin Power Rangers: The Movie", "date": "1995", "kind": "Film", "film": true, "runtime": 95 },
+      { "id": "alien", "name": "Mighty Morphin Alien Rangers", "date": "1996", "kind": "Series", "seasons": [10], "epAvg": 21 },
+      { "id": "zeo", "name": "Power Rangers Zeo", "date": "1996", "kind": "Series", "seasons": [50], "epAvg": 21 },
+      { "id": "turbo-movie", "name": "Turbo: A Power Rangers Movie", "date": "1997", "kind": "Film", "film": true, "runtime": 99 },
+      { "id": "turbo", "name": "Power Rangers Turbo", "date": "1997", "kind": "Series", "seasons": [45], "epAvg": 21 },
+      { "id": "inspace", "name": "Power Rangers in Space", "date": "1998", "kind": "Series", "seasons": [43], "epAvg": 21 },
+      { "id": "lostgalaxy", "name": "Power Rangers Lost Galaxy", "date": "1999", "kind": "Series", "seasons": [45], "epAvg": 21 },
+      { "id": "lightspeed", "name": "Power Rangers Lightspeed Rescue", "date": "2000", "kind": "Series", "seasons": [40], "epAvg": 21 },
+      { "id": "timeforce", "name": "Power Rangers Time Force", "date": "2001", "kind": "Series", "seasons": [40], "epAvg": 21 },
+      { "id": "wildforce", "name": "Power Rangers Wild Force", "date": "2002", "kind": "Series", "seasons": [40], "epAvg": 21 }
+    ]},
+    { "title": "Disney Era", "span": "2003 – 2009", "items": [
+      { "id": "ninjastorm", "name": "Power Rangers Ninja Storm", "date": "2003", "kind": "Series", "seasons": [38], "epAvg": 21 },
+      { "id": "dinothunder", "name": "Power Rangers Dino Thunder", "date": "2004", "kind": "Series", "seasons": [38], "epAvg": 21 },
+      { "id": "spd", "name": "Power Rangers S.P.D.", "date": "2005", "kind": "Series", "seasons": [38], "epAvg": 21 },
+      { "id": "mysticforce", "name": "Power Rangers Mystic Force", "date": "2006", "kind": "Series", "seasons": [32], "epAvg": 21 },
+      { "id": "overdrive", "name": "Power Rangers Operation Overdrive", "date": "2007", "kind": "Series", "seasons": [32], "epAvg": 21 },
+      { "id": "junglefury", "name": "Power Rangers Jungle Fury", "date": "2008", "kind": "Series", "seasons": [32], "epAvg": 21 },
+      { "id": "rpm", "name": "Power Rangers RPM", "date": "2009", "kind": "Series", "seasons": [32], "epAvg": 21 }
+    ]},
+    { "title": "Neo-Saban Era", "span": "2011 – 2018", "items": [
+      { "id": "samurai", "name": "Power Rangers Samurai", "date": "2011", "kind": "Series", "seasons": [23], "epAvg": 21 },
+      { "id": "supersamurai", "name": "Power Rangers Super Samurai", "date": "2012", "kind": "Series", "seasons": [22], "epAvg": 21 },
+      { "id": "megaforce", "name": "Power Rangers Megaforce", "date": "2013", "kind": "Series", "seasons": [22], "epAvg": 21 },
+      { "id": "supermega", "name": "Power Rangers Super Megaforce", "date": "2014", "kind": "Series", "seasons": [20], "epAvg": 21 },
+      { "id": "dinocharge", "name": "Power Rangers Dino Charge", "date": "2015", "kind": "Series", "seasons": [22], "epAvg": 21 },
+      { "id": "dinosuper", "name": "Power Rangers Dino Super Charge", "date": "2016", "kind": "Series", "seasons": [22], "epAvg": 21 },
+      { "id": "ninjasteel", "name": "Power Rangers Ninja Steel", "date": "2017", "kind": "Series", "seasons": [22], "epAvg": 21 },
+      { "id": "superninja", "name": "Power Rangers Super Ninja Steel", "date": "2018", "kind": "Series", "seasons": [22], "epAvg": 21 }
+    ]},
+    { "title": "Hasbro Era", "span": "2019 – 2023", "items": [
+      { "id": "beast", "name": "Power Rangers Beast Morphers", "date": "2019–20", "kind": "Series", "seasons": [22,22], "epAvg": 21 },
+      { "id": "dinofury", "name": "Power Rangers Dino Fury", "date": "2021–22", "kind": "Series", "seasons": [22,22], "epAvg": 21 },
+      { "id": "cosmicfury", "name": "Power Rangers Cosmic Fury", "date": "2023", "kind": "Series", "seasons": [10], "epAvg": 21 }
+    ]},
+    { "title": "Reboot", "span": "alternate continuity", "tier": "reboot",
+      "note": "A standalone film continuity, unconnected to the TV timeline.", "items": [
+      { "id": "reboot2017", "name": "Power Rangers", "date": "2017", "kind": "Film", "film": true, "runtime": 124 }
+    ]}
+  ]
+}
