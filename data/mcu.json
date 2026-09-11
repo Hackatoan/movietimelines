@@ -1,0 +1,102 @@
+{
+  "id": "mcu",
+  "title": "Marvel (MCU)",
+  "tagline": "Every live-action film & series in in-universe order",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#e62429",
+  "accentInk": "#150000",
+  "emoji": "🛡️",
+  "background": "drift",
+  "tiers": [
+    { "id": "tv", "label": "Marvel TV", "default": false, "note": "ABC / Netflix / Hulu / Freeform — loosely connected, ambiguous canon" },
+    { "id": "animated", "label": "Animated", "default": false, "note": "Marvel Animation — alternate universes / multiverse" }
+  ],
+  "eras": [
+    { "title": "Before the Avengers", "span": "1943 – 2011", "items": [
+      { "id": "cap1", "name": "Captain America: The First Avenger", "date": "1943–45", "kind": "Film", "film": true, "runtime": 124 },
+      { "id": "cm",   "name": "Captain Marvel", "date": "1995", "kind": "Film", "film": true, "runtime": 123 },
+      { "id": "im1",  "name": "Iron Man", "date": "2010", "kind": "Film", "film": true, "runtime": 126 },
+      { "id": "im2",  "name": "Iron Man 2", "date": "2011", "kind": "Film", "film": true, "runtime": 124 },
+      { "id": "hulk", "name": "The Incredible Hulk", "date": "2011", "kind": "Film", "film": true, "runtime": 112 },
+      { "id": "thor1","name": "Thor", "date": "2011", "kind": "Film", "film": true, "runtime": 115 }
+    ]},
+    { "title": "Age of the Avengers", "span": "2012 – 2015", "items": [
+      { "id": "av1",  "name": "The Avengers", "date": "2012", "kind": "Film", "film": true, "runtime": 143 },
+      { "id": "im3",  "name": "Iron Man 3", "date": "2012", "kind": "Film", "film": true, "runtime": 130 },
+      { "id": "thor2","name": "Thor: The Dark World", "date": "2013", "kind": "Film", "film": true, "runtime": 112 },
+      { "id": "ca2",  "name": "Captain America: The Winter Soldier", "date": "2014", "kind": "Film", "film": true, "runtime": 136 },
+      { "id": "gotg1","name": "Guardians of the Galaxy", "date": "2014", "kind": "Film", "film": true, "runtime": 121 },
+      { "id": "gotg2","name": "Guardians of the Galaxy Vol. 2", "date": "2014", "kind": "Film", "film": true, "runtime": 136 },
+      { "id": "av2",  "name": "Avengers: Age of Ultron", "date": "2015", "kind": "Film", "film": true, "runtime": 141 },
+      { "id": "antman1","name": "Ant-Man", "date": "2015", "kind": "Film", "film": true, "runtime": 117 }
+    ]},
+    { "title": "Civil War to the Snap", "span": "2016 – 2018", "items": [
+      { "id": "ca3", "name": "Captain America: Civil War", "date": "2016", "kind": "Film", "film": true, "runtime": 147 },
+      { "id": "bw",  "name": "Black Widow", "date": "2016", "kind": "Film", "film": true, "runtime": 134 },
+      { "id": "smh", "name": "Spider-Man: Homecoming", "date": "2016", "kind": "Film", "film": true, "runtime": 133 },
+      { "id": "ds1", "name": "Doctor Strange", "date": "2016–17", "kind": "Film", "film": true, "runtime": 115 },
+      { "id": "bp1", "name": "Black Panther", "date": "2017", "kind": "Film", "film": true, "runtime": 134 },
+      { "id": "thor3","name": "Thor: Ragnarok", "date": "2017", "kind": "Film", "film": true, "runtime": 130 },
+      { "id": "amw", "name": "Ant-Man and the Wasp", "date": "2018", "kind": "Film", "film": true, "runtime": 118 },
+      { "id": "iw",  "name": "Avengers: Infinity War", "date": "2018", "kind": "Film", "film": true, "runtime": 149 }
+    ]},
+    { "title": "The Blip & Endgame", "span": "2018 – 2024", "items": [
+      { "id": "eg",   "name": "Avengers: Endgame", "date": "2018 / 2023", "kind": "Film", "film": true, "runtime": 181,
+        "note": "Returns to theaters Sept 25, 2026 as <b>Avengers: Endgame Encore</b> — new intro, bonus scenes, and a new ending that leads into <b>Avengers: Doomsday</b> (Dec 18, 2026)." },
+      { "id": "loki1","name": "Loki (Season 1)", "date": "post-Endgame", "kind": "Series", "seasons": [6], "epAvg": 48 },
+      { "id": "wv",   "name": "WandaVision", "date": "2023", "kind": "Series", "seasons": [9], "epAvg": 36 },
+      { "id": "fws",  "name": "The Falcon and the Winter Soldier", "date": "2024", "kind": "Series", "seasons": [6], "epAvg": 48 },
+      { "id": "ffh",  "name": "Spider-Man: Far From Home", "date": "2024", "kind": "Film", "film": true, "runtime": 129 }
+    ]},
+    { "title": "The Multiverse Saga", "span": "2024 – ", "items": [
+      { "id": "shang", "name": "Shang-Chi and the Legend of the Ten Rings", "date": "2024", "kind": "Film", "film": true, "runtime": 132 },
+      { "id": "eternals","name": "Eternals", "date": "2024", "kind": "Film", "film": true, "runtime": 156 },
+      { "id": "nwh",   "name": "Spider-Man: No Way Home", "date": "2024", "kind": "Film", "film": true, "runtime": 148 },
+      { "id": "hawkeye","name": "Hawkeye", "date": "2024", "kind": "Series", "seasons": [6], "epAvg": 46 },
+      { "id": "moon",  "name": "Moon Knight", "date": "2025", "kind": "Series", "seasons": [6], "epAvg": 47 },
+      { "id": "msm",   "name": "Ms. Marvel", "date": "2025", "kind": "Series", "seasons": [6], "epAvg": 46 },
+      { "id": "dsmm",  "name": "Doctor Strange in the Multiverse of Madness", "date": "2025", "kind": "Film", "film": true, "runtime": 126 },
+      { "id": "lat",   "name": "Thor: Love and Thunder", "date": "2025", "kind": "Film", "film": true, "runtime": 118 },
+      { "id": "shehulk","name": "She-Hulk: Attorney at Law", "date": "2025", "kind": "Series", "seasons": [9], "epAvg": 35 },
+      { "id": "wbn",   "name": "Werewolf by Night", "date": "2025", "kind": "Special", "special": true, "runtime": 52 },
+      { "id": "wf",    "name": "Black Panther: Wakanda Forever", "date": "2025", "kind": "Film", "film": true, "runtime": 161 },
+      { "id": "gotgh", "name": "The Guardians of the Galaxy Holiday Special", "date": "2025", "kind": "Special", "special": true, "runtime": 44 },
+      { "id": "quant", "name": "Ant-Man and the Wasp: Quantumania", "date": "2026", "kind": "Film", "film": true, "runtime": 124 },
+      { "id": "si",    "name": "Secret Invasion", "date": "2026", "kind": "Series", "seasons": [6], "epAvg": 50 },
+      { "id": "gotg3", "name": "Guardians of the Galaxy Vol. 3", "date": "2026", "kind": "Film", "film": true, "runtime": 150 },
+      { "id": "loki2", "name": "Loki (Season 2)", "date": "2026", "kind": "Series", "seasons": [6], "epAvg": 50 },
+      { "id": "marvels","name": "The Marvels", "date": "2026", "kind": "Film", "film": true, "runtime": 105 },
+      { "id": "echo",  "name": "Echo", "date": "2026", "kind": "Series", "seasons": [5], "epAvg": 42 },
+      { "id": "agatha","name": "Agatha All Along", "date": "2026", "kind": "Series", "seasons": [9], "epAvg": 43 },
+      { "id": "dpw",   "name": "Deadpool & Wolverine", "date": "2026", "kind": "Film", "film": true, "runtime": 128, "approx": true },
+      { "id": "bnw",   "name": "Captain America: Brave New World", "date": "2027", "kind": "Film", "film": true, "runtime": 118, "approx": true },
+      { "id": "thunder","name": "Thunderbolts*", "date": "2027", "kind": "Film", "film": true, "runtime": 126, "approx": true },
+      { "id": "ironheart","name": "Ironheart", "date": "2027", "kind": "Series", "seasons": [6], "epAvg": 45, "approx": true },
+      { "id": "ddba",  "name": "Daredevil: Born Again", "date": "2027", "kind": "Series", "seasons": [9], "epAvg": 48, "approx": true },
+      { "id": "ff4",   "name": "The Fantastic Four: First Steps", "date": "alt. universe", "kind": "Film", "film": true, "runtime": 115, "approx": true }
+    ]},
+    { "title": "Marvel Television", "span": "1946 – 2020", "tier": "tv",
+      "note": "The older “Marvel Television” slate (ABC / Netflix / Hulu / Freeform). Loosely connected; canon status is ambiguous and largely off the Sacred Timeline.", "items": [
+      { "id": "carter", "name": "Agent Carter", "date": "1946–47", "kind": "Series", "seasons": [8,10], "epAvg": 43 },
+      { "id": "shield", "name": "Agents of S.H.I.E.L.D.", "date": "2012+", "kind": "Series", "seasons": [22,22,22,22,22,13,13], "epAvg": 43 },
+      { "id": "dd",     "name": "Daredevil", "date": "2015", "kind": "Series", "seasons": [13,13,13], "epAvg": 52 },
+      { "id": "jj",     "name": "Jessica Jones", "date": "2015", "kind": "Series", "seasons": [13,13,13], "epAvg": 52 },
+      { "id": "lc",     "name": "Luke Cage", "date": "2016", "kind": "Series", "seasons": [13,13], "epAvg": 52 },
+      { "id": "if",     "name": "Iron Fist", "date": "2016", "kind": "Series", "seasons": [13,10], "epAvg": 52 },
+      { "id": "def",    "name": "The Defenders", "date": "2016", "kind": "Series", "seasons": [8], "epAvg": 50 },
+      { "id": "pun",    "name": "The Punisher", "date": "2017", "kind": "Series", "seasons": [13,13], "epAvg": 55 },
+      { "id": "inh",    "name": "Inhumans", "date": "2017", "kind": "Series", "seasons": [8], "epAvg": 43 },
+      { "id": "run",    "name": "Runaways", "date": "2017", "kind": "Series", "seasons": [10,13,10], "epAvg": 50 },
+      { "id": "cd",     "name": "Cloak & Dagger", "date": "2018", "kind": "Series", "seasons": [10,10], "epAvg": 43 },
+      { "id": "hel",    "name": "Helstrom", "date": "2020", "kind": "Series", "seasons": [10], "epAvg": 45 }
+    ]},
+    { "title": "Animated Multiverse", "span": "ancient past – ∞", "tier": "animated",
+      "note": "Marvel Animation on Disney+. Alternate universes and multiversal branches — not points on the Sacred Timeline.", "items": [
+      { "id": "eow",    "name": "Eyes of Wakanda", "date": "ancient past", "kind": "Series", "seasons": [4], "epAvg": 30 },
+      { "id": "whatif", "name": "What If…?", "date": "multiverse", "kind": "Series", "seasons": [9,9,8], "epAvg": 32 },
+      { "id": "mz",     "name": "Marvel Zombies", "date": "alt. universe", "kind": "Series", "seasons": [4], "epAvg": 30 },
+      { "id": "yfnsm",  "name": "Your Friendly Neighborhood Spider-Man", "date": "alt. timeline", "kind": "Series", "seasons": [10], "epAvg": 30 }
+    ]}
+  ]
+}

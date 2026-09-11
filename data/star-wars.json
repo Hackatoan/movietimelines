@@ -1,0 +1,54 @@
+{
+  "id": "star-wars",
+  "title": "Star Wars",
+  "tagline": "Skywalker saga + all canon series, in-universe order",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#ffe81f",
+  "accentInk": "#161200",
+  "emoji": "🌌",
+  "background": "starfield",
+  "datesLabel": "BBY / ABY = before / after the Battle of Yavin",
+  "tiers": [
+    { "id": "legends", "label": "Legends", "default": true, "note": "pre-2014 non-canon, filmed entries only" }
+  ],
+  "eras": [
+    { "title": "Fall of the Jedi", "span": "32 – 19 BBY", "items": [
+      { "id": "tpm",  "name": "Episode I: The Phantom Menace", "date": "32 BBY", "kind": "Film", "film": true, "runtime": 136 },
+      { "id": "aotc", "name": "Episode II: Attack of the Clones", "date": "22 BBY", "kind": "Film", "film": true, "runtime": 142 },
+      { "id": "cwf",  "name": "The Clone Wars", "date": "22 BBY", "kind": "Film", "film": true, "runtime": 98 },
+      { "id": "cws",  "name": "The Clone Wars", "date": "22–19 BBY", "kind": "Series", "seasons": [22,22,22,22,20,13,12], "epAvg": 22 },
+      { "id": "totj", "name": "Tales of the Jedi", "date": "spans", "kind": "Series", "seasons": [6,6], "epAvg": 15 },
+      { "id": "rots", "name": "Episode III: Revenge of the Sith", "date": "19 BBY", "kind": "Film", "film": true, "runtime": 140 },
+      { "id": "tbb",  "name": "The Bad Batch", "date": "19 BBY+", "kind": "Series", "seasons": [16,16,15], "epAvg": 26 }
+    ]},
+    { "title": "Reign of the Empire", "span": "~15 BBY – 4 ABY", "items": [
+      { "id": "solo", "name": "Solo: A Star Wars Story", "date": "~10 BBY", "kind": "Film", "film": true, "runtime": 135 },
+      { "id": "obi",  "name": "Obi-Wan Kenobi", "date": "9 BBY", "kind": "Series", "seasons": [6], "epAvg": 45 },
+      { "id": "droids", "name": "Droids", "date": "~15 BBY", "kind": "Series", "tier": "legends", "seasons": [13], "epAvg": 22 },
+      { "id": "greatheep", "name": "The Great Heep", "date": "~15 BBY", "kind": "TV Movie", "tier": "legends", "runtime": 48 },
+      { "id": "andor", "name": "Andor", "date": "5–1 BBY", "kind": "Series", "seasons": [12,12], "epAvg": 45 },
+      { "id": "reb",  "name": "Star Wars Rebels", "date": "5–0 BBY", "kind": "Series", "seasons": [15,22,22,16], "epAvg": 22 },
+      { "id": "ewoks", "name": "Ewoks", "date": "~3 BBY", "kind": "Series", "tier": "legends", "seasons": [13,13], "epAvg": 22 },
+      { "id": "cara", "name": "Caravan of Courage: An Ewok Adventure", "date": "~3 ABY", "kind": "TV Movie", "tier": "legends", "runtime": 96 },
+      { "id": "bfe",  "name": "Ewoks: The Battle for Endor", "date": "~3 ABY", "kind": "TV Movie", "tier": "legends", "runtime": 94 },
+      { "id": "rogue", "name": "Rogue One: A Star Wars Story", "date": "0 BBY", "kind": "Film", "film": true, "runtime": 133 },
+      { "id": "anh",  "name": "Episode IV: A New Hope", "date": "0 BBY", "kind": "Film", "film": true, "runtime": 121 },
+      { "id": "hs",   "name": "The Star Wars Holiday Special", "date": "~0 ABY", "kind": "TV Special", "tier": "legends", "runtime": 97 },
+      { "id": "esb",  "name": "Episode V: The Empire Strikes Back", "date": "3 ABY", "kind": "Film", "film": true, "runtime": 124 },
+      { "id": "rotj", "name": "Episode VI: Return of the Jedi", "date": "4 ABY", "kind": "Film", "film": true, "runtime": 131 }
+    ]},
+    { "title": "New Republic", "span": "9 – 35 ABY", "items": [
+      { "id": "mando", "name": "The Mandalorian", "date": "9 ABY", "kind": "Series", "seasons": [8,8,8], "epAvg": 40 },
+      { "id": "boba",  "name": "The Book of Boba Fett", "date": "9 ABY", "kind": "Series", "seasons": [7], "epAvg": 50 },
+      { "id": "ahsoka", "name": "Ahsoka", "date": "9 ABY", "kind": "Series", "seasons": [8], "epAvg": 48 },
+      { "id": "skel",  "name": "Skeleton Crew", "date": "9 ABY", "kind": "Series", "seasons": [8], "epAvg": 35 },
+      { "id": "resist", "name": "Resistance", "date": "34–35 ABY", "kind": "Series", "seasons": [21,19], "epAvg": 22 }
+    ]},
+    { "title": "Rise of the First Order", "span": "34 – 35 ABY", "items": [
+      { "id": "tfa", "name": "Episode VII: The Force Awakens", "date": "34 ABY", "kind": "Film", "film": true, "runtime": 138 },
+      { "id": "tlj", "name": "Episode VIII: The Last Jedi", "date": "34 ABY", "kind": "Film", "film": true, "runtime": 152 },
+      { "id": "tros", "name": "Episode IX: The Rise of Skywalker", "date": "35 ABY", "kind": "Film", "film": true, "runtime": 142 }
+    ]}
+  ]
+}

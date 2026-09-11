@@ -1,0 +1,30 @@
+{
+  "id": "_demo",
+  "title": "Demo Saga",
+  "tagline": "A worked example — copy this to build your own",
+  "author": "Demo",
+  "community": true,
+  "accent": "#8b7bff",
+  "accentInk": "#0a0620",
+  "emoji": "🧪",
+  "background": "starfield",
+  "datesLabel": "Dates are illustrative only",
+  "tiers": [
+    { "id": "extras", "label": "Extras", "default": false, "note": "optional side stories — hidden until switched on" }
+  ],
+  "eras": [
+    { "title": "Chapter One", "span": "Year 1 – 3", "note": "An <b>era</b> groups entries. <code>note</code>, <code>span</code> and <code>tier</code> are all optional.", "items": [
+      { "id": "film-1", "name": "The First Film", "date": "Year 1", "kind": "Film", "film": true, "runtime": 118 },
+      { "id": "series-1", "name": "The Origin Series", "date": "Year 2", "kind": "Series", "seasons": [8, 10], "epAvg": 45 },
+      { "id": "film-2", "name": "The Sequel", "date": "Year 3", "kind": "Film", "film": true, "runtime": 132,
+        "note": "Use <code>note</code> for a callout — e.g. a re-release or a placement quirk." }
+    ]},
+    { "title": "Chapter Two", "span": "Year 4 – 5", "items": [
+      { "id": "special-1", "name": "Holiday Special", "date": "Year 4", "kind": "Special", "special": true, "runtime": 46 },
+      { "id": "film-3", "name": "The Finale", "date": "Year 5", "kind": "Film", "film": true, "runtime": 149, "approx": true }
+    ]},
+    { "title": "Side Stories", "tier": "extras", "note": "This whole era is on the <b>extras</b> tier, so the filter chip hides it and drops it from the count.", "items": [
+      { "id": "extra-1", "name": "A Spin-off", "date": "—", "kind": "Series", "seasons": [6], "epAvg": 30 }
+    ]}
+  ]
+}

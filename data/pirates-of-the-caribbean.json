@@ -1,0 +1,22 @@
+{
+  "id": "pirates-of-the-caribbean",
+  "title": "Pirates of the Caribbean",
+  "tagline": "All five voyages, in order",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#37a6ac",
+  "accentInk": "#00181a",
+  "emoji": "🏴‍☠️",
+  "background": "drift",
+  "eras": [
+    { "title": "The Original Trilogy", "span": "2003 – 2007", "items": [
+      { "id": "pearl", "name": "The Curse of the Black Pearl", "date": "2003", "kind": "Film", "film": true, "runtime": 143 },
+      { "id": "dmc",   "name": "Dead Man's Chest", "date": "2006", "kind": "Film", "film": true, "runtime": 151 },
+      { "id": "awe",   "name": "At World's End", "date": "2007", "kind": "Film", "film": true, "runtime": 169 }
+    ]},
+    { "title": "Later Voyages", "span": "2011 – 2017", "items": [
+      { "id": "ost", "name": "On Stranger Tides", "date": "2011", "kind": "Film", "film": true, "runtime": 137 },
+      { "id": "dmtnt", "name": "Dead Men Tell No Tales", "date": "2017", "kind": "Film", "film": true, "runtime": 129 }
+    ]}
+  ]
+}

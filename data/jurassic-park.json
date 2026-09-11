@@ -1,0 +1,28 @@
+{
+  "id": "jurassic-park",
+  "title": "Jurassic Park",
+  "tagline": "The Park, the World, and the animated series",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#e0a72e",
+  "accentInk": "#1c1400",
+  "emoji": "🦖",
+  "background": "drift",
+  "eras": [
+    { "title": "The Original Park", "span": "1993 – 2001", "items": [
+      { "id": "jp1", "name": "Jurassic Park", "date": "1993", "kind": "Film", "film": true, "runtime": 127 },
+      { "id": "lw",  "name": "The Lost World: Jurassic Park", "date": "1997", "kind": "Film", "film": true, "runtime": 129 },
+      { "id": "jp3", "name": "Jurassic Park III", "date": "2001", "kind": "Film", "film": true, "runtime": 92 }
+    ]},
+    { "title": "Jurassic World", "span": "2015 – 2022", "items": [
+      { "id": "jw",   "name": "Jurassic World", "date": "2015", "kind": "Film", "film": true, "runtime": 124 },
+      { "id": "camp", "name": "Jurassic World: Camp Cretaceous", "date": "concurrent 2015+", "kind": "Series", "seasons": [8,8,10,11,12], "epAvg": 24 },
+      { "id": "fk",   "name": "Jurassic World: Fallen Kingdom", "date": "2018", "kind": "Film", "film": true, "runtime": 128 },
+      { "id": "dom",  "name": "Jurassic World Dominion", "date": "2022", "kind": "Film", "film": true, "runtime": 147 }
+    ]},
+    { "title": "A New Era", "span": "2024 – ", "items": [
+      { "id": "chaos", "name": "Jurassic World: Chaos Theory", "date": "post-Dominion", "kind": "Series", "seasons": [10,10], "epAvg": 24, "approx": true },
+      { "id": "rebirth", "name": "Jurassic World Rebirth", "date": "2025", "kind": "Film", "film": true, "runtime": 134 }
+    ]}
+  ]
+}

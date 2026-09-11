@@ -1,0 +1,24 @@
+{
+  "id": "john-wick",
+  "title": "John Wick",
+  "tagline": "The Wickverse in timeline order",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#c9a55c",
+  "accentInk": "#1a1200",
+  "emoji": "🔫",
+  "background": "rain",
+  "eras": [
+    { "title": "The Continental (Prequel)", "span": "1970s", "items": [
+      { "id": "continental", "name": "The Continental: From the World of John Wick", "date": "1970s", "kind": "Series", "seasons": [3], "epAvg": 90 }
+    ]},
+    { "title": "The John Wick Saga", "span": "2014 – 2023", "items": [
+      { "id": "jw1", "name": "John Wick", "date": "2014", "kind": "Film", "film": true, "runtime": 101 },
+      { "id": "jw2", "name": "John Wick: Chapter 2", "date": "2017", "kind": "Film", "film": true, "runtime": 122 },
+      { "id": "jw3", "name": "John Wick: Chapter 3 – Parabellum", "date": "2019", "kind": "Film", "film": true, "runtime": 131 },
+      { "id": "ballerina", "name": "Ballerina", "date": "during Ch. 3", "kind": "Film", "film": true, "runtime": 125,
+        "note": "Set <b>between Chapter 3 and Chapter 4</b>, so it slots in here despite releasing after Chapter 4." },
+      { "id": "jw4", "name": "John Wick: Chapter 4", "date": "2023", "kind": "Film", "film": true, "runtime": 169 }
+    ]}
+  ]
+}
