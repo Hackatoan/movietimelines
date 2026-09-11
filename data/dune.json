@@ -1,0 +1,32 @@
+{
+  "id": "dune",
+  "title": "Dune",
+  "tagline": "The Villeneuve saga + the classic adaptations",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#e0913c",
+  "accentInk": "#1c1200",
+  "emoji": "🏜️",
+  "background": "embers",
+  "datesLabel": "AG = After Guild (in-universe reckoning)",
+  "tiers": [
+    { "id": "classic", "label": "Classic adaptations", "default": false, "note": "the 1984 film + Sci-Fi Channel miniseries — a separate, older continuity" }
+  ],
+  "eras": [
+    { "title": "The Villeneuve Saga", "span": "modern continuity", "items": [
+      { "id": "prophecy", "name": "Dune: Prophecy", "date": "~10k yrs before", "kind": "Series", "seasons": [6], "epAvg": 60,
+        "note": "Bene Gesserit prequel, set roughly 10,000 years before Paul Atreides." },
+      { "id": "part-one", "name": "Dune: Part One", "date": "10,191 AG", "kind": "Film", "film": true, "runtime": 155 },
+      { "id": "part-two", "name": "Dune: Part Two", "date": "10,191 AG", "kind": "Film", "film": true, "runtime": 166 },
+      { "id": "part-three", "name": "Dune: Part Three (Messiah)", "date": "~12 yrs later", "kind": "Film", "film": true, "runtime": 165, "approx": true,
+        "note": "Denis Villeneuve's adaptation of <b>Dune Messiah</b> — releases <b>Dec 18, 2026</b> (not out yet)." }
+    ]},
+    { "title": "Classic Adaptations", "span": "1984 – 2003", "tier": "classic",
+      "note": "A separate, older continuity retelling the same story — turn this tier off to hide it.", "items": [
+      { "id": "lynch-1984", "name": "Dune", "date": "1984 · Lynch", "kind": "Film", "film": true, "runtime": 137 },
+      { "id": "mini-2000", "name": "Frank Herbert's Dune", "date": "2000 · miniseries", "kind": "Series", "seasons": [3], "epAvg": 90 },
+      { "id": "children-2003", "name": "Children of Dune", "date": "2003 · miniseries", "kind": "Series", "seasons": [3], "epAvg": 90,
+        "note": "Adapts <i>Dune Messiah</i> + <i>Children of Dune</i>." }
+    ]}
+  ]
+}
