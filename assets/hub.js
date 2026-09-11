@@ -93,6 +93,9 @@
     list.forEach((e) => wrap.appendChild(card(e)));
   }
 
+  // sync layer refreshes cards after cloud data is adopted
+  window.MTSyncReload = render;
+
   search.addEventListener('input', render);
   // "/" focuses search
   document.addEventListener('keydown', (e) => {

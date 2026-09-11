@@ -42,7 +42,7 @@
     // ---- shell ----
     app.innerHTML = `
       <header class="f-hero">
-        <a class="back" href="index.html">&larr; All franchises</a>
+        <div class="f-toprow"><a class="back" href="index.html">&larr; All franchises</a><span id="authbox" class="authbox"></span></div>
         <div class="f-title">
           <span class="emoji">${data.emoji || '\u{1F3AC}'}</span>
           <div>
@@ -101,7 +101,7 @@
       b.type = 'button'; b.className = 'fchip'; b.dataset.tier = t.id;
       b.title = t.note || '';
       b.innerHTML = `<span class="fdot"></span>${esc(t.label)} <span class="fn">${count}</span>`;
-      b.addEventListener('click', () => { filters[t.id] = !filters[t.id]; MT.saveObj(K.filters, filters); render(); });
+      b.addEventListener('click', () => { filters[t.id] = !filters[t.id]; MT.saveObj(K.filters, filters); pushSync(); render(); });
       fbar.appendChild(b);
     });
 
@@ -180,7 +180,14 @@
       }
       persist(); render();
     }
-    function persist() { MT.saveSet(K.done, done); MT.saveSet(K.skip, skip); }
+    function pushSync() { if (window.MTSyncPush) window.MTSyncPush(fid); }
+    function persist() { MT.saveSet(K.done, done); MT.saveSet(K.skip, skip); pushSync(); }
+    // let the sync layer refresh the view after adopting cloud data
+    window.MTSyncReload = function () {
+      done = MT.loadSet(K.done); skip = MT.loadSet(K.skip);
+      filters = MT.loadObj(K.filters, MT.defaultFilters(data));
+      render();
+    };
 
     document.getElementById('reset').addEventListener('click', () => {
       if (!confirm('Reset watched + skipped for ' + data.title + '? (Filters are kept.)')) return;
