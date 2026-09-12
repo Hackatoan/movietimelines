@@ -29,7 +29,6 @@
       root.setProperty('--accent-line', `color-mix(in srgb, ${data.accent} 45%, transparent)`);
     }
     if (data.background && window.MTBackgrounds) window.MTBackgrounds.apply(data.background, data.accent);
-    document.title = `${data.title} — Watch Order`;
 
     const K = MT.keys(fid);
     let done = MT.loadSet(K.done);
@@ -38,6 +37,8 @@
 
     const items = MT.flatten(data);
     const BY_ID = {}; items.forEach((it) => (BY_ID[it.id] = it));
+
+    applySEO(data, items);
 
     // ---- shell ----
     app.innerHTML = `
@@ -237,4 +238,49 @@
   }
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+  // ---- per-franchise SEO (dynamic meta + JSON-LD; Googlebot renders JS) ----
+  function setMeta(attr, key, val) {
+    let el = document.head.querySelector(`meta[${attr}="${key}"]`);
+    if (!el) { el = document.createElement('meta'); el.setAttribute(attr, key); document.head.appendChild(el); }
+    el.setAttribute('content', val);
+  }
+  function setLink(rel, href) {
+    let el = document.head.querySelector(`link[rel="${rel}"]`);
+    if (!el) { el = document.createElement('link'); el.setAttribute('rel', rel); document.head.appendChild(el); }
+    el.setAttribute('href', href);
+  }
+  function applySEO(data, items) {
+    const base = 'https://timelines.hackatoa.com';
+    const id = data.id || fid;
+    const url = `${base}/franchise.html?f=${id}`;
+    const films = items.filter((i) => !MT.isSeries(i)).length;
+    const series = items.filter((i) => MT.isSeries(i)).length;
+    const hrs = Math.round(items.reduce((a, i) => a + MT.itemTotalMin(i), 0) / 60);
+    const title = `${data.title} — Watch Order & Timeline | MovieTimelines`;
+    const tag = data.tagline ? data.tagline.replace(/\s*\.?\s*$/, '. ') : '';
+    const desc = `Watch ${data.title} in order: ${films} films and ${series} series (~${hrs}h). ${tag}Track it episode by episode with your watch time tallied — free, no account.`.replace(/\s+/g, ' ').trim();
+    document.title = title;
+    setMeta('name', 'description', desc);
+    setLink('canonical', url);
+    setMeta('property', 'og:title', `${data.title} — Watch Order & Timeline`);
+    setMeta('property', 'og:description', desc);
+    setMeta('property', 'og:url', url);
+    setMeta('name', 'twitter:title', `${data.title} — Watch Order`);
+    setMeta('name', 'twitter:description', desc);
+    const ld = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        { '@type': 'BreadcrumbList', itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'MovieTimelines', item: base + '/' },
+          { '@type': 'ListItem', position: 2, name: data.title, item: url },
+        ] },
+        { '@type': 'ItemList', name: `${data.title} watch order`, description: desc, numberOfItems: items.length,
+          itemListElement: items.map((it, i) => ({ '@type': 'ListItem', position: i + 1, name: it.name })) },
+      ],
+    };
+    let s = document.getElementById('ld-franchise');
+    if (!s) { s = document.createElement('script'); s.type = 'application/ld+json'; s.id = 'ld-franchise'; document.head.appendChild(s); }
+    s.textContent = JSON.stringify(ld);
+  }
 })();

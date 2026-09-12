@@ -8,19 +8,50 @@
   fetch('data/franchises.json', { cache: 'no-cache' })
     .then((r) => r.json())
     .then((reg) => Promise.all((reg.order || []).map(loadOne)))
-    .then(() => { render(); })
+    .then((entries) => {
+      entries.filter(Boolean).forEach((e) => registry.push(e));   // preserve registry order
+      applyQueryParam();
+      injectItemListLD();
+      render();
+    })
     .catch(() => { mineWrap.innerHTML = '<p class="empty">Couldn’t load the franchise list.</p>'; });
 
   function loadOne(id) {
     return fetch(`data/${id}.json`, { cache: 'no-cache' })
       .then((r) => (r.ok ? r.json() : null))
       .then((data) => {
-        if (!data) return;
+        if (!data) return null;
         data.id = data.id || id;
         const names = MT.flatten(data).map((it) => it.name.toLowerCase());
-        registry.push({ data, names });
+        return { data, names };
       })
-      .catch(() => {});
+      .catch(() => null);
+  }
+
+  function applyQueryParam() {
+    try {
+      const q = new URLSearchParams(location.search).get('q');
+      if (q) search.value = q;
+    } catch (e) {}
+  }
+
+  function injectItemListLD() {
+    const base = 'https://timelines.hackatoa.com';
+    const list = registry.filter((e) => !String(e.data.id).startsWith('_'));
+    const ld = {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Franchises on MovieTimelines',
+      numberOfItems: list.length,
+      itemListElement: list.map((e, i) => ({
+        '@type': 'ListItem', position: i + 1, name: e.data.title,
+        url: `${base}/franchise.html?f=${e.data.id}`,
+      })),
+    };
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.textContent = JSON.stringify(ld);
+    document.head.appendChild(s);
   }
 
   function statsFor(data) {

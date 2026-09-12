@@ -1,0 +1,33 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101015"/>
+      <stop offset="1" stop-color="#0ب0b0e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.1" r="0.8">
+      <stop offset="0" stop-color="#f5b942" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#f5b942" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0b0b0e"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <!-- wordmark -->
+  <g transform="translate(96,150)">
+    <path d="M0 -34 l30 20 l-30 20 z" fill="#f5b942"/>
+    <text x="52" y="6" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="70" letter-spacing="1" fill="#f3f3f7">MovieTimelines</text>
+  </g>
+  <text x="98" y="266" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="52" fill="#ffffff">Track franchises in timeline order.</text>
+  <text x="100" y="330" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#9195a4">Every film &amp; series, episode by episode — with your watch time tallied.</text>
+  <!-- timeline -->
+  <rect x="100" y="452" width="1000" height="8" rx="4" fill="#26262f"/>
+  <g font-family="DejaVu Sans, sans-serif" font-size="24" fill="#c7c9d2" text-anchor="middle">
+    <circle cx="150" cy="456" r="16" fill="#ffe81f"/><text x="150" y="512">Star Wars</text>
+    <circle cx="330" cy="456" r="16" fill="#e62429"/><text x="330" y="512">MCU</text>
+    <circle cx="490" cy="456" r="16" fill="#e0a72e"/><text x="490" y="512">Jurassic</text>
+    <circle cx="650" cy="456" r="16" fill="#37a6ac"/><text x="650" y="512">Pirates</text>
+    <circle cx="800" cy="456" r="16" fill="#c9a55c"/><text x="800" y="512">John Wick</text>
+    <circle cx="950" cy="456" r="16" fill="#e0913c"/><text x="950" y="512">Dune</text>
+    <circle cx="1070" cy="456" r="16" fill="#ff3b3b"/><text x="1070" y="512">Rangers</text>
+  </g>
+  <text x="100" y="592" font-family="DejaVu Sans, sans-serif" font-size="26" fill="#5b5f6d">timelines.hackatoa.com</text>
+</svg>

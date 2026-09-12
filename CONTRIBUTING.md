@@ -68,6 +68,12 @@ Add your `id` to the `order` array in [`data/franchises.json`](data/franchises.j
 { "order": ["star-wars", "mcu", "…", "back-to-the-future"] }
 ```
 
+Then regenerate the sitemap so search engines pick it up:
+
+```bash
+node scripts/gen-sitemap.mjs
+```
+
 ## 3. Test locally
 
 `fetch` needs a real web server (not `file://`):
