@@ -137,20 +137,41 @@
 
       if (series) {
         const panel = document.createElement('div'); panel.className = 'eppanel';
+        const titled = Array.isArray(it.epTitles);   // rich rows (title + optional watch link) vs numbered chips
         it.seasons.forEach((n, si) => {
           const s = document.createElement('div'); s.className = 'season';
           const lab = it.seasons.length > 1 ? `Season ${si + 1}` : 'Episodes';
           s.innerHTML = `<div class="season-label">${lab} <span class="season-n">${n} ep${n > 1 ? 's' : ''}</span></div>`;
-          const grid = document.createElement('div'); grid.className = 'epgrid';
-          for (let e = 1; e <= n; e++) {
-            const id = `${it.id}-s${si + 1}e${e}`;
-            const chip = document.createElement('button');
-            chip.type = 'button'; chip.className = 'ep'; chip.dataset.id = id; chip.textContent = e;
-            chip.setAttribute('aria-label', `${it.name} ${lab} episode ${e}`);
-            chip.addEventListener('click', () => toggleEp(id));
-            grid.appendChild(chip);
+          if (titled) {
+            const titles = (it.epTitles && it.epTitles[si]) || [];
+            const links = (it.epLinks && it.epLinks[si]) || [];
+            const list = document.createElement('div'); list.className = 'eplist';
+            for (let e = 1; e <= n; e++) {
+              const id = `${it.id}-s${si + 1}e${e}`;
+              const url = links[e - 1];
+              const wrap = document.createElement('div'); wrap.className = 'eprow'; wrap.dataset.id = id;
+              wrap.innerHTML =
+                `<button class="epbox" type="button" role="checkbox" aria-label="Mark episode ${e} watched">${CHECK}</button>`
+                + `<span class="epnum">${e}</span>`
+                + `<span class="eptitle">${esc(titles[e - 1] || ('Episode ' + e))}</span>`
+                + (url ? `<a class="epwatch" href="${esc(url)}" target="_blank" rel="noopener" aria-label="Watch episode ${e}">▶</a>` : '');
+              wrap.querySelector('.epbox').addEventListener('click', () => toggleEp(id));
+              list.appendChild(wrap);
+            }
+            s.appendChild(list);
+          } else {
+            const grid = document.createElement('div'); grid.className = 'epgrid';
+            for (let e = 1; e <= n; e++) {
+              const id = `${it.id}-s${si + 1}e${e}`;
+              const chip = document.createElement('button');
+              chip.type = 'button'; chip.className = 'ep'; chip.dataset.id = id; chip.textContent = e;
+              chip.setAttribute('aria-label', `${it.name} ${lab} episode ${e}`);
+              chip.addEventListener('click', () => toggleEp(id));
+              grid.appendChild(chip);
+            }
+            s.appendChild(grid);
           }
-          s.appendChild(grid); panel.appendChild(s);
+          panel.appendChild(s);
         });
         li.appendChild(panel);
         const chev = row.querySelector('.chevron');
@@ -219,6 +240,7 @@
         li.querySelector('.box').setAttribute('aria-checked', partial ? 'mixed' : full);
       });
       document.querySelectorAll('.ep').forEach((c) => c.classList.toggle('done', done.has(c.dataset.id)));
+      document.querySelectorAll('.eprow').forEach((r) => r.classList.toggle('done', done.has(r.dataset.id)));
       document.querySelectorAll('[data-eps]').forEach((eLbl) => {
         const it = BY_ID[eLbl.dataset.eps];
         eLbl.textContent = `${MT.epDone(it, done)} / ${MT.epTotal(it)} eps`;

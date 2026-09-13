@@ -259,6 +259,21 @@ li.item{list-style:none}
 .ep:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .ep.done{background:var(--done);border-color:var(--done);color:#eafff2}
 
+/* rich episode rows (titles + watch links) */
+.eplist{display:flex;flex-direction:column;gap:4px}
+.eprow{display:flex;align-items:center;gap:10px;padding:6px 9px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.eprow:hover{border-color:#3a3e4c}
+.eprow .epbox{flex:none;width:19px;height:19px;border-radius:5px;border:2px solid var(--muted-dim);background:none;display:grid;place-items:center;cursor:pointer;padding:0;transition:.16s}
+.eprow .epbox svg{width:11px;height:11px;stroke:#eafff2;stroke-width:3.4;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:0;transform:scale(.4);transition:.18s}
+.eprow .epbox:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eprow .epnum{flex:none;font-family:var(--font-cond);font-variant-numeric:tabular-nums;font-size:12.5px;color:var(--muted-dim);min-width:26px}
+.eprow .eptitle{flex:1;min-width:0;font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.eprow .epwatch{flex:none;width:26px;height:26px;border-radius:6px;display:grid;place-items:center;text-decoration:none;color:var(--accent);border:1px solid var(--accent-line);font-size:11px;transition:.16s}
+.eprow .epwatch:hover{background:var(--accent-soft)}
+.eprow.done .epbox{background:var(--done);border-color:var(--done)}
+.eprow.done .epbox svg{opacity:1;transform:scale(1)}
+.eprow.done .eptitle{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--muted-dim)}
+
 .loading,.errbox{padding:60px 0;text-align:center;color:var(--muted)}
 .errbox b{color:var(--ink)}
 
