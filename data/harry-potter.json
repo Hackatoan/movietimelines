@@ -1,0 +1,29 @@
+{
+  "id": "harry-potter",
+  "title": "Harry Potter",
+  "tagline": "The Wizarding World in-universe — Fantastic Beasts to the Deathly Hallows",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#8b6db0",
+  "accentInk": "#12081c",
+  "emoji": "🪄",
+  "background": "drift",
+  "datesLabel": "Dates are the in-story year",
+  "eras": [
+    { "title": "Fantastic Beasts", "span": "1926 – 1932", "items": [
+      { "id": "fb1", "name": "Fantastic Beasts and Where to Find Them", "date": "1926", "kind": "Film", "film": true, "runtime": 133 },
+      { "id": "fb2", "name": "Fantastic Beasts: The Crimes of Grindelwald", "date": "1927", "kind": "Film", "film": true, "runtime": 134 },
+      { "id": "fb3", "name": "Fantastic Beasts: The Secrets of Dumbledore", "date": "1932", "kind": "Film", "film": true, "runtime": 142 }
+    ]},
+    { "title": "Harry Potter", "span": "1991 – 1998", "items": [
+      { "id": "hp1", "name": "Harry Potter and the Sorcerer's Stone", "date": "1991", "kind": "Film", "film": true, "runtime": 152 },
+      { "id": "hp2", "name": "Harry Potter and the Chamber of Secrets", "date": "1992", "kind": "Film", "film": true, "runtime": 161 },
+      { "id": "hp3", "name": "Harry Potter and the Prisoner of Azkaban", "date": "1993", "kind": "Film", "film": true, "runtime": 142 },
+      { "id": "hp4", "name": "Harry Potter and the Goblet of Fire", "date": "1994", "kind": "Film", "film": true, "runtime": 157 },
+      { "id": "hp5", "name": "Harry Potter and the Order of the Phoenix", "date": "1995", "kind": "Film", "film": true, "runtime": 138 },
+      { "id": "hp6", "name": "Harry Potter and the Half-Blood Prince", "date": "1996", "kind": "Film", "film": true, "runtime": 153 },
+      { "id": "hp7", "name": "Harry Potter and the Deathly Hallows: Part 1", "date": "1997", "kind": "Film", "film": true, "runtime": 146 },
+      { "id": "hp8", "name": "Harry Potter and the Deathly Hallows: Part 2", "date": "1998", "kind": "Film", "film": true, "runtime": 130 }
+    ]}
+  ]
+}

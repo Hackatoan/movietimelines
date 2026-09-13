@@ -1,0 +1,33 @@
+{
+  "id": "ninjago",
+  "title": "Ninjago",
+  "tagline": "The full ninja saga — Masters of Spinjitzu through Dragons Rising",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#33bd63",
+  "accentInk": "#031a0c",
+  "emoji": "🥷",
+  "background": "drift",
+  "datesLabel": "Release order",
+  "tiers": [
+    { "id": "movie", "label": "Movie", "default": false, "note": "the 2017 LEGO Ninjago Movie — a standalone continuity" }
+  ],
+  "eras": [
+    { "title": "Masters of Spinjitzu", "span": "2011 – 2022", "items": [
+      { "id": "pilots", "name": "Ninjago: Pilot Episodes", "date": "2011", "kind": "Series", "seasons": [4], "epAvg": 22 },
+      { "id": "main", "name": "Ninjago", "date": "2012–2022", "kind": "Series", "seasons": [13, 13, 8, 10, 10, 10, 10, 10, 10, 4, 30, 16, 16, 16, 30], "epAvg": 22,
+        "note": "The 15 numbered seasons. Two interludes below slot in between them." },
+      { "id": "departed", "name": "Day of the Departed", "date": "2016", "kind": "Special", "special": true, "runtime": 45,
+        "note": "Special between Season 6 and Season 7." },
+      { "id": "island", "name": "Ninjago: The Island", "date": "2021", "kind": "Series", "seasons": [4], "epAvg": 22,
+        "note": "Miniseries between Season 13 and Season 14." }
+    ]},
+    { "title": "Dragons Rising", "span": "2023 – ", "items": [
+      { "id": "dragons", "name": "Ninjago: Dragons Rising", "date": "2023+", "kind": "Series", "seasons": [20, 20, 20], "epAvg": 22, "approx": true }
+    ]},
+    { "title": "Movie", "span": "alternate continuity", "tier": "movie",
+      "note": "A standalone reboot film, unconnected to the show's continuity.", "items": [
+      { "id": "lego-movie", "name": "The LEGO Ninjago Movie", "date": "2017", "kind": "Film", "film": true, "runtime": 101 }
+    ]}
+  ]
+}

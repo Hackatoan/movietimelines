@@ -1,0 +1,35 @@
+{
+  "id": "transformers",
+  "title": "Transformers",
+  "tagline": "The film continuity by in-story setting, plus the G1 classics",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#3f78d0",
+  "accentInk": "#00112b",
+  "emoji": "🤖",
+  "background": "drift",
+  "datesLabel": "Order by in-story setting — live-action continuity is loose",
+  "tiers": [
+    { "id": "g1", "label": "G1 classics", "default": false, "note": "the original 1984–86 Generation 1 cartoon & movie" }
+  ],
+  "eras": [
+    { "title": "Cybertron Origins", "span": "prequel", "items": [
+      { "id": "one", "name": "Transformers One", "date": "Cybertron", "kind": "Film", "film": true, "runtime": 104,
+        "note": "Animated origin of Optimus Prime & Megatron." }
+    ]},
+    { "title": "The Live-Action Era", "span": "1987 – 2017", "items": [
+      { "id": "bumblebee", "name": "Bumblebee", "date": "1987", "kind": "Film", "film": true, "runtime": 114 },
+      { "id": "rotb", "name": "Transformers: Rise of the Beasts", "date": "1994", "kind": "Film", "film": true, "runtime": 127 },
+      { "id": "tf1", "name": "Transformers", "date": "2007", "kind": "Film", "film": true, "runtime": 144 },
+      { "id": "rotf", "name": "Transformers: Revenge of the Fallen", "date": "2009", "kind": "Film", "film": true, "runtime": 150 },
+      { "id": "dotm", "name": "Transformers: Dark of the Moon", "date": "2011", "kind": "Film", "film": true, "runtime": 154 },
+      { "id": "aoe", "name": "Transformers: Age of Extinction", "date": "2014", "kind": "Film", "film": true, "runtime": 165 },
+      { "id": "tlk", "name": "Transformers: The Last Knight", "date": "2017", "kind": "Film", "film": true, "runtime": 154 }
+    ]},
+    { "title": "Generation 1", "span": "1984 – 1986", "tier": "g1",
+      "note": "The original cartoon that started it all — a separate continuity from the films.", "items": [
+      { "id": "g1-series", "name": "The Transformers", "date": "1984–87", "kind": "Series", "seasons": [16, 49, 30, 3], "epAvg": 22 },
+      { "id": "g1-movie", "name": "The Transformers: The Movie", "date": "1986", "kind": "Film", "film": true, "runtime": 84 }
+    ]}
+  ]
+}

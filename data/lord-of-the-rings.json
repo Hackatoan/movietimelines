@@ -1,0 +1,36 @@
+{
+  "id": "lord-of-the-rings",
+  "title": "The Lord of the Rings",
+  "tagline": "Middle-earth in chronological order — Rings of Power to Return of the King",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#c9a227",
+  "accentInk": "#1a1400",
+  "emoji": "💍",
+  "background": "embers",
+  "datesLabel": "S.A. / T.A. = Second / Third Age of Middle-earth",
+  "tiers": [
+    { "id": "classic", "label": "Classic animated", "default": false, "note": "the 1970s–80s Rankin-Bass & Bakshi adaptations" }
+  ],
+  "eras": [
+    { "title": "The Second Age", "span": "thousands of years before", "items": [
+      { "id": "rop", "name": "The Rings of Power", "date": "Second Age", "kind": "Series", "seasons": [8, 8], "epAvg": 65 }
+    ]},
+    { "title": "The Third Age", "span": "T.A. 2758 – 3019", "items": [
+      { "id": "rohirrim", "name": "The War of the Rohirrim", "date": "T.A. 2758", "kind": "Film", "film": true, "runtime": 134,
+        "note": "Anime film, set ~183 years before The Hobbit." },
+      { "id": "hobbit1", "name": "The Hobbit: An Unexpected Journey", "date": "T.A. 2941", "kind": "Film", "film": true, "runtime": 169 },
+      { "id": "hobbit2", "name": "The Hobbit: The Desolation of Smaug", "date": "T.A. 2941", "kind": "Film", "film": true, "runtime": 161 },
+      { "id": "hobbit3", "name": "The Hobbit: The Battle of the Five Armies", "date": "T.A. 2941", "kind": "Film", "film": true, "runtime": 144 },
+      { "id": "fotr", "name": "The Fellowship of the Ring", "date": "T.A. 3018", "kind": "Film", "film": true, "runtime": 178 },
+      { "id": "ttt", "name": "The Two Towers", "date": "T.A. 3019", "kind": "Film", "film": true, "runtime": 179 },
+      { "id": "rotk", "name": "The Return of the King", "date": "T.A. 3019", "kind": "Film", "film": true, "runtime": 201 }
+    ]},
+    { "title": "Classic Animated", "span": "1977 – 1980", "tier": "classic",
+      "note": "Earlier animated adaptations, a separate lineage from the Jackson films.", "items": [
+      { "id": "hobbit-1977", "name": "The Hobbit", "date": "1977 · Rankin-Bass", "kind": "TV Movie", "film": true, "runtime": 78 },
+      { "id": "lotr-1978", "name": "The Lord of the Rings", "date": "1978 · Bakshi", "kind": "Film", "film": true, "runtime": 132 },
+      { "id": "rotk-1980", "name": "The Return of the King", "date": "1980 · Rankin-Bass", "kind": "TV Movie", "film": true, "runtime": 98 }
+    ]}
+  ]
+}
