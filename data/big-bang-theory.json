@@ -1,0 +1,19 @@
+{
+  "id": "big-bang-theory",
+  "title": "The Big Bang Theory",
+  "tagline": "The Sheldon-verse in in-universe order",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#2f8fc0",
+  "accentInk": "#00131c",
+  "emoji": "⚛️",
+  "background": "drift",
+  "datesLabel": "In-universe order — Young Sheldon is the prequel · ~21 min/episode",
+  "eras": [
+    { "title": "The Sheldon-verse", "span": "1989 – 2019 (in-story)", "items": [
+      { "id": "young-sheldon", "name": "Young Sheldon", "date": "1989–94", "kind": "Series", "seasons": [22, 22, 21, 18, 22, 22, 14], "epAvg": 21 },
+      { "id": "georgie-mandy", "name": "Georgie & Mandy's First Marriage", "date": "1990s", "kind": "Series", "seasons": [22, 22], "epAvg": 21, "approx": true, "note": "Young Sheldon spin-off following Georgie & Mandy (ongoing)." },
+      { "id": "tbbt", "name": "The Big Bang Theory", "date": "2007–19", "kind": "Series", "seasons": [17, 23, 23, 24, 24, 24, 24, 24, 24, 24, 24, 24], "epAvg": 21 }
+    ]}
+  ]
+}
