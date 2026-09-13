@@ -1,0 +1,18 @@
+{
+  "id": "one-piece-live-action",
+  "title": "One Piece (Live-Action)",
+  "tagline": "Netflix's live-action adaptation",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#2b7fb8",
+  "accentInk": "#02121c",
+  "emoji": "⚓",
+  "background": "drift",
+  "datesLabel": "Netflix, in order",
+  "eras": [
+    { "title": "The Series", "span": "2023 – present", "items": [
+      { "id": "s1", "name": "Season 1", "date": "2023", "kind": "Series", "seasons": [8], "epAvg": 55 },
+      { "id": "s2", "name": "Season 2: Into the Grand Line", "date": "2026", "kind": "Series", "seasons": [8], "epAvg": 55 }
+    ]}
+  ]
+}

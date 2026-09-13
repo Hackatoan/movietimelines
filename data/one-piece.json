@@ -1,0 +1,47 @@
+{
+  "id": "one-piece",
+  "title": "One Piece",
+  "tagline": "The anime by saga — East Blue to the Final Saga",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#d6332b",
+  "accentInk": "#1c0300",
+  "emoji": "👒",
+  "background": "drift",
+  "datesLabel": "Grouped by saga · ~24 min/episode",
+  "tiers": [
+    { "id": "movies", "label": "Movies", "default": false, "note": "the 15 theatrical films (mostly standalone side-stories)" }
+  ],
+  "eras": [
+    { "title": "The Anime", "span": "1999 – present", "note": "Grouped by saga (episode ranges). Turn on Movies for the theatrical films.", "items": [
+      { "id": "east-blue", "name": "East Blue Saga", "date": "eps 1–61", "kind": "Series", "seasons": [61], "epAvg": 24 },
+      { "id": "alabasta", "name": "Alabasta Saga", "date": "eps 62–135", "kind": "Series", "seasons": [74], "epAvg": 24 },
+      { "id": "sky-island", "name": "Sky Island Saga", "date": "eps 136–206", "kind": "Series", "seasons": [71], "epAvg": 24 },
+      { "id": "water-7", "name": "Water 7 Saga", "date": "eps 207–325", "kind": "Series", "seasons": [119], "epAvg": 24 },
+      { "id": "thriller-bark", "name": "Thriller Bark Saga", "date": "eps 326–384", "kind": "Series", "seasons": [59], "epAvg": 24 },
+      { "id": "summit-war", "name": "Summit War Saga", "date": "eps 385–516", "kind": "Series", "seasons": [132], "epAvg": 24 },
+      { "id": "fishman-island", "name": "Fish-Man Island Saga", "date": "eps 517–574", "kind": "Series", "seasons": [58], "epAvg": 24 },
+      { "id": "dressrosa", "name": "Dressrosa Saga", "date": "eps 575–746", "kind": "Series", "seasons": [172], "epAvg": 24 },
+      { "id": "whole-cake", "name": "Whole Cake Island Saga", "date": "eps 747–889", "kind": "Series", "seasons": [143], "epAvg": 24 },
+      { "id": "wano", "name": "Wano Country Saga", "date": "eps 890–1085", "kind": "Series", "seasons": [194], "epAvg": 24 },
+      { "id": "final-saga", "name": "Final Saga (Egghead / Elbaph)", "date": "eps 1086+", "kind": "Series", "seasons": [94], "epAvg": 24, "approx": true }
+    ]},
+    { "title": "The Movies", "span": "2000 – 2022", "tier": "movies", "note": "Theatrical films, release order.", "items": [
+      { "id": "m1", "name": "One Piece: The Movie", "date": "2000", "kind": "Film", "film": true, "runtime": 51 },
+      { "id": "m2", "name": "Clockwork Island Adventure", "date": "2001", "kind": "Film", "film": true, "runtime": 56 },
+      { "id": "m3", "name": "Chopper's Kingdom on the Island of Strange Animals", "date": "2002", "kind": "Film", "film": true, "runtime": 56 },
+      { "id": "m4", "name": "Dead End Adventure", "date": "2003", "kind": "Film", "film": true, "runtime": 95 },
+      { "id": "m5", "name": "The Cursed Holy Sword", "date": "2004", "kind": "Film", "film": true, "runtime": 95 },
+      { "id": "m6", "name": "Baron Omatsuri and the Secret Island", "date": "2005", "kind": "Film", "film": true, "runtime": 91 },
+      { "id": "m7", "name": "The Giant Mechanical Soldier of Karakuri Castle", "date": "2006", "kind": "Film", "film": true, "runtime": 95 },
+      { "id": "m8", "name": "Episode of Alabasta", "date": "2007", "kind": "Film", "film": true, "runtime": 90 },
+      { "id": "m9", "name": "Episode of Chopper Plus", "date": "2008", "kind": "Film", "film": true, "runtime": 113 },
+      { "id": "m10", "name": "One Piece Film: Strong World", "date": "2009", "kind": "Film", "film": true, "runtime": 113 },
+      { "id": "m11", "name": "Straw Hat Chase", "date": "2011", "kind": "Film", "film": true, "runtime": 30 },
+      { "id": "m12", "name": "One Piece Film: Z", "date": "2012", "kind": "Film", "film": true, "runtime": 108 },
+      { "id": "m13", "name": "One Piece Film: Gold", "date": "2016", "kind": "Film", "film": true, "runtime": 120 },
+      { "id": "m14", "name": "One Piece: Stampede", "date": "2019", "kind": "Film", "film": true, "runtime": 101 },
+      { "id": "m15", "name": "One Piece Film: Red", "date": "2022", "kind": "Film", "film": true, "runtime": 115 }
+    ]}
+  ]
+}
