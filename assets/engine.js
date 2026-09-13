@@ -1,7 +1,7 @@
 /* MovieTimelines — tracker engine (franchise.html). Requires core.js (MT). */
 (function () {
   const qs = new URLSearchParams(location.search);
-  const fid = (qs.get('f') || '').replace(/[^a-z0-9-]/gi, '');
+  const fid = (qs.get('f') || '').replace(/[^a-z0-9_-]/gi, '');
   const app = document.getElementById('app');
 
   const CHECK = '<svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg>';
@@ -43,7 +43,8 @@
     // ---- shell ----
     app.innerHTML = `
       <header class="f-hero">
-        <div class="f-toprow"><a class="back" href="index.html">&larr; All franchises</a><span id="authbox" class="authbox"></span></div>
+        <div class="f-toprow"><a class="back" href="index.html">&larr; All franchises</a>
+          <span class="f-topright"><button id="savefranchise" class="savepage" type="button" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg><span class="lbl">Save</span></button><span id="authbox" class="authbox"></span></span></div>
         <div class="f-title">
           <span class="emoji">${data.emoji || '\u{1F3AC}'}</span>
           <div>
@@ -105,6 +106,14 @@
       b.addEventListener('click', () => { filters[t.id] = !filters[t.id]; MT.saveObj(K.filters, filters); pushSync(); render(); });
       fbar.appendChild(b);
     });
+
+    // save-to-profile toggle
+    const sfb = document.getElementById('savefranchise');
+    if (sfb) {
+      const upd = () => { const on = MT.isSaved(fid); sfb.classList.toggle('on', on); sfb.setAttribute('aria-pressed', on); sfb.querySelector('.lbl').textContent = on ? 'Saved' : 'Save'; };
+      upd();
+      sfb.addEventListener('click', () => { MT.toggleSaved(fid); upd(); });
+    }
 
     function buildRow(it) {
       const li = document.createElement('li');

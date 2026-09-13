@@ -71,8 +71,11 @@
     a.style.setProperty('--card-accent', d.accent || 'var(--accent)');
     const tagCls = d.community ? 'community' : 'mine';
     const tagTxt = d.community ? 'Community' : (d.author || 'Mine');
+    const saved = MT.isSaved(d.id);
     a.innerHTML =
-      `<div class="poster">${d.emoji || '\u{1F3AC}'}</div>`
+      `<div class="poster">${d.emoji || '\u{1F3AC}'}`
+      + `<button class="savebtn${saved ? ' on' : ''}" type="button" aria-label="Save to profile" aria-pressed="${saved}" title="Save to your profile">`
+      + `<svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg></button></div>`
       + `<div class="body">`
       + `<div class="title-row"><h3>${esc(d.title)}</h3><span class="tag ${tagCls}">${esc(tagTxt)}</span></div>`
       + `<p class="tagline">${esc(d.tagline || '')}</p>`
@@ -83,6 +86,12 @@
       + `<div class="stats"><span>${st.doneItems}/${st.totItems} titles</span><span>&middot;</span><span>≈${MT.fmtH(st.leftMin)} left</span></div>`
       + (entry._matchHint ? `<div class="stats author">matches: ${esc(entry._matchHint)}</div>` : '')
       + `</div>`;
+    const sb = a.querySelector('.savebtn');
+    sb.addEventListener('click', (e) => {
+      e.preventDefault(); e.stopPropagation();
+      const on = MT.toggleSaved(d.id);
+      sb.classList.toggle('on', on); sb.setAttribute('aria-pressed', on);
+    });
     return a;
   }
 

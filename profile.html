@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Profile — MovieTimelines</title>
+<meta name="description" content="Your MovieTimelines profile — franchises you're tracking, what you've completed, and your saved watchlist.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b0b0e">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a class="brand" href="index.html"><span class="logo"><span class="reel">▸</span> MovieTimelines</span></a>
+    <nav class="topnav">
+      <span id="authbox" class="authbox"></span>
+      <a class="tlink" href="index.html">Franchises</a>
+      <a class="bmc" href="https://buymeacoffee.com/hackatoa" target="_blank" rel="noopener">☕ Coffee</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <p class="eyebrow">Your Profile</p>
+    <h1>Your Watchlist<br>&amp; Progress</h1>
+    <p class="lede">Everything you're tracking, in one place. Sign in to sync it across devices — otherwise it lives in this browser.</p>
+  </header>
+
+  <div class="statstrip" id="statstrip"></div>
+
+  <section id="watchingSection" hidden>
+    <div class="sec-head"><h2>Continue watching</h2><span class="rule"></span><span class="n" id="watchingCount">0</span></div>
+    <div class="grid" id="watching"></div>
+  </section>
+
+  <section id="savedSection" hidden>
+    <div class="sec-head"><h2>Saved</h2><span class="rule"></span><span class="n" id="savedCount">0</span></div>
+    <div class="grid" id="saved"></div>
+  </section>
+
+  <section id="completedSection" hidden>
+    <div class="sec-head"><h2>Completed</h2><span class="rule"></span><span class="n" id="completedCount">0</span></div>
+    <div class="grid" id="completed"></div>
+  </section>
+
+  <div id="emptyState" class="panel" hidden>
+    <h3>Nothing here yet</h3>
+    <p>Start ticking off episodes on any franchise, or hit the <b>bookmark</b> on a card to save it for later.</p>
+    <div class="btnrow"><a class="btn primary" href="index.html">Browse franchises</a></div>
+  </div>
+
+  <footer class="site">
+    <a href="index.html">All franchises</a> &middot;
+    <a href="https://buymeacoffee.com/hackatoa" target="_blank" rel="noopener">Buy me a coffee</a><br>
+    Progress &amp; saves are stored in your browser (synced to your account when signed in).
+  </footer>
+</div>
+
+<script src="assets/core.js"></script>
+<script src="assets/profile.js"></script>
+<script type="module" src="assets/auth.js"></script>
+</body>
+</html>

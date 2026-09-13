@@ -86,5 +86,32 @@
     return `${m}m`;
   };
 
+  // ---- saved / watchlist (a set of franchise ids the viewer bookmarked) ----
+  MT.SAVED_KEY = 'mt:saved';
+  MT.SAVED_AT = 'mt:saved:updatedAt';
+  MT.loadSaved = () => {
+    try { const r = localStorage.getItem(MT.SAVED_KEY); if (r) return new Set(JSON.parse(r)); } catch (e) {}
+    return new Set();
+  };
+  MT.saveSaved = (set) => {
+    try {
+      localStorage.setItem(MT.SAVED_KEY, JSON.stringify([...set]));
+      localStorage.setItem(MT.SAVED_AT, String(Date.now()));
+    } catch (e) {}
+  };
+  MT.isSaved = (id) => MT.loadSaved().has(id);
+  MT.toggleSaved = (id) => {
+    const s = MT.loadSaved();
+    if (s.has(id)) s.delete(id); else s.add(id);
+    MT.saveSaved(s);
+    if (typeof window.MTSyncSaved === 'function') window.MTSyncSaved();
+    return s.has(id);
+  };
+  // does a franchise have any recorded progress?
+  MT.hasProgress = (data) => {
+    const K = MT.keys(data.id);
+    return MT.loadSet(K.done).size > 0 || MT.loadSet(K.skip).size > 0;
+  };
+
   global.MT = MT;
 })(window);

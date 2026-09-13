@@ -76,10 +76,32 @@ async function syncOne(id) {
   return false;
 }
 
+// saved / watchlist (last-write-wins on a single meta doc)
+const SAVED_KEY = 'mt:saved', SAVED_AT = 'mt:saved:updatedAt';
+async function syncSaved() {
+  const local = readArr(SAVED_KEY);
+  const localAt = readNum(SAVED_AT);
+  let cloud = null;
+  try { const s = await getDoc(doc(db, 'users', user.uid, 'meta', 'saved')); cloud = s.exists() ? s.data() : null; } catch (e) {}
+  if (!cloud) { if (local.length) { try { await setDoc(doc(db, 'users', user.uid, 'meta', 'saved'), { ids: local, updatedAt: localAt || Date.now() }); } catch (e) {} } return false; }
+  const cloudAt = Number(cloud.updatedAt) || 0;
+  if (cloudAt > localAt) { writeRaw(SAVED_KEY, cloud.ids || []); writeRaw(SAVED_AT, String(cloudAt)); return true; }
+  if (localAt > cloudAt && local.length) { try { await setDoc(doc(db, 'users', user.uid, 'meta', 'saved'), { ids: local, updatedAt: localAt }); } catch (e) {} }
+  return false;
+}
+window.MTSyncSaved = function () {
+  if (!user) return;
+  clearTimeout(pushTimers.__saved);
+  pushTimers.__saved = setTimeout(() => {
+    try { setDoc(doc(db, 'users', user.uid, 'meta', 'saved'), { ids: readArr(SAVED_KEY), updatedAt: readNum(SAVED_AT) || Date.now() }); } catch (e) {}
+  }, 700);
+};
+
 async function syncAll() {
   const ids = await franchiseIds();
   let changed = false;
   for (const id of ids) { if (await syncOne(id)) changed = true; }
+  if (await syncSaved()) changed = true;
   if (changed && typeof window.MTSyncReload === 'function') window.MTSyncReload();
   renderBox();
 }
