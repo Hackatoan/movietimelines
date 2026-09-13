@@ -1,0 +1,18 @@
+{
+  "id": "attack-on-titan",
+  "title": "Attack on Titan",
+  "tagline": "The complete anime — Shiganshina to the end",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#6b7a45",
+  "accentInk": "#12160a",
+  "emoji": "⚔️",
+  "background": "embers",
+  "datesLabel": "In order · ~24 min/episode",
+  "eras": [
+    { "title": "The Anime", "span": "2013 – 2023", "items": [
+      { "id": "aot", "name": "Attack on Titan (Seasons 1–4)", "date": "2013–23", "kind": "Series", "seasons": [25, 12, 22, 28], "epAvg": 24 },
+      { "id": "final-chapters", "name": "The Final Chapters", "date": "2023", "kind": "Series", "seasons": [2], "epAvg": 72, "note": "Two feature-length special episodes that conclude the story." }
+    ]}
+  ]
+}

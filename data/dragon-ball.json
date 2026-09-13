@@ -1,0 +1,27 @@
+{
+  "id": "dragon-ball",
+  "title": "Dragon Ball",
+  "tagline": "Goku's whole saga — Dragon Ball to Daima",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#ee7622",
+  "accentInk": "#1c0c00",
+  "emoji": "🐉",
+  "background": "drift",
+  "datesLabel": "Release order · ~23 min/episode",
+  "tiers": [
+    { "id": "kai", "label": "Kai (remaster)", "default": false, "note": "Dragon Ball Z Kai — a re-edited, faster-paced version of Z (watch instead of Z, not as well)" }
+  ],
+  "eras": [
+    { "title": "The Series", "span": "1986 – 2025", "items": [
+      { "id": "db", "name": "Dragon Ball", "date": "1986", "kind": "Series", "seasons": [153], "epAvg": 24 },
+      { "id": "dbz", "name": "Dragon Ball Z", "date": "1989", "kind": "Series", "seasons": [291], "epAvg": 24 },
+      { "id": "dbgt", "name": "Dragon Ball GT", "date": "1996", "kind": "Series", "seasons": [64], "epAvg": 24 },
+      { "id": "dbsuper", "name": "Dragon Ball Super", "date": "2015", "kind": "Series", "seasons": [131], "epAvg": 24 },
+      { "id": "dbdaima", "name": "Dragon Ball Daima", "date": "2024", "kind": "Series", "seasons": [20], "epAvg": 24, "approx": true }
+    ]},
+    { "title": "Dragon Ball Z Kai", "span": "2009 – 2015", "tier": "kai", "items": [
+      { "id": "dbzkai", "name": "Dragon Ball Z Kai", "date": "2009", "kind": "Series", "seasons": [159], "epAvg": 24 }
+    ]}
+  ]
+}
