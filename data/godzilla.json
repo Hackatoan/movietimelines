@@ -1,0 +1,69 @@
+{
+  "id": "godzilla",
+  "title": "Godzilla",
+  "tagline": "The MonsterVerse, plus 70 years of Toho classics",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#39b6e0",
+  "accentInk": "#00161f",
+  "emoji": "☢️",
+  "background": "embers",
+  "datesLabel": "MonsterVerse ordered by in-story setting; Toho by release",
+  "tiers": [
+    { "id": "toho", "label": "Toho & classic", "default": false, "note": "the Japanese Toho films (1954–2023) + the 1998 US film — separate continuities" }
+  ],
+  "eras": [
+    { "title": "MonsterVerse", "span": "1973 – 2024", "items": [
+      { "id": "skull-island", "name": "Kong: Skull Island", "date": "1973", "kind": "Film", "film": true, "runtime": 118 },
+      { "id": "godzilla-2014", "name": "Godzilla", "date": "2014", "kind": "Film", "film": true, "runtime": 123 },
+      { "id": "monarch", "name": "Monarch: Legacy of Monsters", "date": "2015 / 1950s", "kind": "Series", "seasons": [10], "epAvg": 55 },
+      { "id": "kotm", "name": "Godzilla: King of the Monsters", "date": "2019", "kind": "Film", "film": true, "runtime": 132 },
+      { "id": "gvk", "name": "Godzilla vs. Kong", "date": "2021", "kind": "Film", "film": true, "runtime": 113 },
+      { "id": "gxk", "name": "Godzilla x Kong: The New Empire", "date": "2024", "kind": "Film", "film": true, "runtime": 115 }
+    ]},
+    { "title": "Shōwa Era", "span": "1954 – 1975", "tier": "toho", "items": [
+      { "id": "g1954", "name": "Godzilla", "date": "1954", "kind": "Film", "film": true, "runtime": 96 },
+      { "id": "raids-again", "name": "Godzilla Raids Again", "date": "1955", "kind": "Film", "film": true, "runtime": 82 },
+      { "id": "kk-vs-g", "name": "King Kong vs. Godzilla", "date": "1962", "kind": "Film", "film": true, "runtime": 97 },
+      { "id": "mothra-vs-g", "name": "Mothra vs. Godzilla", "date": "1964", "kind": "Film", "film": true, "runtime": 89 },
+      { "id": "ghidorah", "name": "Ghidorah, the Three-Headed Monster", "date": "1964", "kind": "Film", "film": true, "runtime": 93 },
+      { "id": "astro-monster", "name": "Invasion of Astro-Monster", "date": "1965", "kind": "Film", "film": true, "runtime": 94 },
+      { "id": "ebirah", "name": "Ebirah, Horror of the Deep", "date": "1966", "kind": "Film", "film": true, "runtime": 87 },
+      { "id": "son-of-g", "name": "Son of Godzilla", "date": "1967", "kind": "Film", "film": true, "runtime": 86 },
+      { "id": "destroy-all", "name": "Destroy All Monsters", "date": "1968", "kind": "Film", "film": true, "runtime": 89 },
+      { "id": "all-monsters-attack", "name": "All Monsters Attack", "date": "1969", "kind": "Film", "film": true, "runtime": 70 },
+      { "id": "hedorah", "name": "Godzilla vs. Hedorah", "date": "1971", "kind": "Film", "film": true, "runtime": 85 },
+      { "id": "gigan", "name": "Godzilla vs. Gigan", "date": "1972", "kind": "Film", "film": true, "runtime": 89 },
+      { "id": "megalon", "name": "Godzilla vs. Megalon", "date": "1973", "kind": "Film", "film": true, "runtime": 81 },
+      { "id": "mechag-1974", "name": "Godzilla vs. Mechagodzilla", "date": "1974", "kind": "Film", "film": true, "runtime": 84 },
+      { "id": "terror-mechag", "name": "Terror of Mechagodzilla", "date": "1975", "kind": "Film", "film": true, "runtime": 83 }
+    ]},
+    { "title": "Heisei Era", "span": "1984 – 1995", "tier": "toho", "items": [
+      { "id": "return-1984", "name": "The Return of Godzilla", "date": "1984", "kind": "Film", "film": true, "runtime": 103 },
+      { "id": "biollante", "name": "Godzilla vs. Biollante", "date": "1989", "kind": "Film", "film": true, "runtime": 104 },
+      { "id": "king-ghidorah", "name": "Godzilla vs. King Ghidorah", "date": "1991", "kind": "Film", "film": true, "runtime": 103 },
+      { "id": "mothra-1992", "name": "Godzilla vs. Mothra", "date": "1992", "kind": "Film", "film": true, "runtime": 102 },
+      { "id": "mechag-ii", "name": "Godzilla vs. Mechagodzilla II", "date": "1993", "kind": "Film", "film": true, "runtime": 108 },
+      { "id": "spacegodzilla", "name": "Godzilla vs. SpaceGodzilla", "date": "1994", "kind": "Film", "film": true, "runtime": 106 },
+      { "id": "destoroyah", "name": "Godzilla vs. Destoroyah", "date": "1995", "kind": "Film", "film": true, "runtime": 103 }
+    ]},
+    { "title": "Millennium Era", "span": "1999 – 2004", "tier": "toho", "items": [
+      { "id": "g2000", "name": "Godzilla 2000: Millennium", "date": "1999", "kind": "Film", "film": true, "runtime": 99 },
+      { "id": "megaguirus", "name": "Godzilla vs. Megaguirus", "date": "2000", "kind": "Film", "film": true, "runtime": 105 },
+      { "id": "gmk", "name": "Giant Monsters All-Out Attack (GMK)", "date": "2001", "kind": "Film", "film": true, "runtime": 105 },
+      { "id": "against-mechag", "name": "Godzilla Against Mechagodzilla", "date": "2002", "kind": "Film", "film": true, "runtime": 88 },
+      { "id": "tokyo-sos", "name": "Godzilla: Tokyo S.O.S.", "date": "2003", "kind": "Film", "film": true, "runtime": 91 },
+      { "id": "final-wars", "name": "Godzilla: Final Wars", "date": "2004", "kind": "Film", "film": true, "runtime": 125 }
+    ]},
+    { "title": "Reiwa Era", "span": "2016 – 2023", "tier": "toho", "items": [
+      { "id": "shin", "name": "Shin Godzilla", "date": "2016", "kind": "Film", "film": true, "runtime": 120 },
+      { "id": "anime1", "name": "Godzilla: Planet of the Monsters", "date": "2017", "kind": "Film", "film": true, "runtime": 89 },
+      { "id": "anime2", "name": "Godzilla: City on the Edge of Battle", "date": "2018", "kind": "Film", "film": true, "runtime": 101 },
+      { "id": "anime3", "name": "Godzilla: The Planet Eater", "date": "2018", "kind": "Film", "film": true, "runtime": 91 },
+      { "id": "minus-one", "name": "Godzilla Minus One", "date": "2023", "kind": "Film", "film": true, "runtime": 124 }
+    ]},
+    { "title": "Other American", "span": "1998", "tier": "toho", "items": [
+      { "id": "g1998", "name": "Godzilla", "date": "1998 · TriStar", "kind": "Film", "film": true, "runtime": 139 }
+    ]}
+  ]
+}

@@ -10,7 +10,8 @@
   "background": "drift",
   "datesLabel": "English-dub seasons, in order",
   "tiers": [
-    { "id": "movies", "label": "Movies", "default": false, "note": "the theatrical anime films (mostly standalone; later ones are a separate reboot timeline)" }
+    { "id": "movies", "label": "Movies", "default": false, "note": "the theatrical anime films (mostly standalone; later ones are a separate reboot timeline)" },
+    { "id": "spinoffs", "label": "Spin-offs", "default": false, "note": "Detective Pikachu, plus the web/side series (Origins, Generations, Concierge…)" }
   ],
   "eras": [
     { "title": "The Animated Series", "span": "1997 – present", "note": "Grouped by generation (English-dub seasons). Turn on the Movies filter for the theatrical films.", "items": [
@@ -48,6 +49,15 @@
       { "id": "m21", "name": "The Power of Us", "date": "2018", "kind": "Film", "film": true, "runtime": 100 },
       { "id": "m22", "name": "Mewtwo Strikes Back—Evolution", "date": "2019", "kind": "Film", "film": true, "runtime": 98 },
       { "id": "m23", "name": "Secrets of the Jungle", "date": "2020", "kind": "Film", "film": true, "runtime": 99 }
+    ]},
+    { "title": "Spin-offs", "span": "2013 – present", "tier": "spinoffs",
+      "note": "The live-action film and the web/side series — separate from the main anime.", "items": [
+      { "id": "detective-pikachu", "name": "Pokémon: Detective Pikachu", "date": "2019 · live-action", "kind": "Film", "film": true, "runtime": 104 },
+      { "id": "origins", "name": "Pokémon Origins", "date": "2013", "kind": "Series", "seasons": [4], "epAvg": 23 },
+      { "id": "generations", "name": "Pokémon Generations", "date": "2016", "kind": "Series", "seasons": [18], "epAvg": 5 },
+      { "id": "twilight-wings", "name": "Pokémon: Twilight Wings", "date": "2020", "kind": "Series", "seasons": [8], "epAvg": 5, "approx": true },
+      { "id": "evolutions", "name": "Pokémon Evolutions", "date": "2021", "kind": "Series", "seasons": [8], "epAvg": 8, "approx": true },
+      { "id": "concierge", "name": "Pokémon Concierge", "date": "2023", "kind": "Series", "seasons": [4], "epAvg": 15, "approx": true }
     ]}
   ]
 }
