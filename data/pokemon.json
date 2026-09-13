@@ -1,0 +1,24 @@
+{
+  "id": "pokemon",
+  "title": "Pokémon",
+  "tagline": "The animated series by generation — Indigo League to Horizons",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#f5c518",
+  "accentInk": "#241d00",
+  "emoji": "⚡",
+  "background": "drift",
+  "datesLabel": "English-dub seasons, in order",
+  "eras": [
+    { "title": "The Animated Series", "span": "1997 – present", "note": "Grouped by generation (English-dub seasons). Theatrical films not included yet.", "items": [
+      { "id": "original", "name": "Pokémon: The Original Series", "date": "S1–5 · Kanto/Johto", "kind": "Series", "seasons": [80, 36, 41, 52, 64], "epAvg": 22 },
+      { "id": "advanced", "name": "Pokémon: Advanced Generation", "date": "S6–9 · Hoenn", "kind": "Series", "seasons": [40, 52, 52, 47], "epAvg": 22 },
+      { "id": "dp", "name": "Pokémon: Diamond and Pearl", "date": "S10–13 · Sinnoh", "kind": "Series", "seasons": [51, 52, 52, 34], "epAvg": 22 },
+      { "id": "bw", "name": "Pokémon: Black & White", "date": "S14–16 · Unova", "kind": "Series", "seasons": [48, 49, 45], "epAvg": 22 },
+      { "id": "xy", "name": "Pokémon the Series: XY", "date": "S17–19 · Kalos", "kind": "Series", "seasons": [48, 45, 48], "epAvg": 22 },
+      { "id": "sm", "name": "Pokémon the Series: Sun & Moon", "date": "S20–22 · Alola", "kind": "Series", "seasons": [43, 48, 54], "epAvg": 22 },
+      { "id": "journeys", "name": "Pokémon Journeys", "date": "S23–25 · Galar+", "kind": "Series", "seasons": [48, 42, 54], "epAvg": 22 },
+      { "id": "horizons", "name": "Pokémon Horizons", "date": "S26–28 · Paldea", "kind": "Series", "seasons": [45, 44, 47], "epAvg": 22, "approx": true }
+    ]}
+  ]
+}
