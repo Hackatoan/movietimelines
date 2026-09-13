@@ -9,8 +9,11 @@
   "emoji": "⚡",
   "background": "drift",
   "datesLabel": "English-dub seasons, in order",
+  "tiers": [
+    { "id": "movies", "label": "Movies", "default": false, "note": "the theatrical anime films (mostly standalone; later ones are a separate reboot timeline)" }
+  ],
   "eras": [
-    { "title": "The Animated Series", "span": "1997 – present", "note": "Grouped by generation (English-dub seasons). Theatrical films not included yet.", "items": [
+    { "title": "The Animated Series", "span": "1997 – present", "note": "Grouped by generation (English-dub seasons). Turn on the Movies filter for the theatrical films.", "items": [
       { "id": "original", "name": "Pokémon: The Original Series", "date": "S1–5 · Kanto/Johto", "kind": "Series", "seasons": [80, 36, 41, 52, 64], "epAvg": 22 },
       { "id": "advanced", "name": "Pokémon: Advanced Generation", "date": "S6–9 · Hoenn", "kind": "Series", "seasons": [40, 52, 52, 47], "epAvg": 22 },
       { "id": "dp", "name": "Pokémon: Diamond and Pearl", "date": "S10–13 · Sinnoh", "kind": "Series", "seasons": [51, 52, 52, 34], "epAvg": 22 },
@@ -19,6 +22,32 @@
       { "id": "sm", "name": "Pokémon the Series: Sun & Moon", "date": "S20–22 · Alola", "kind": "Series", "seasons": [43, 48, 54], "epAvg": 22 },
       { "id": "journeys", "name": "Pokémon Journeys", "date": "S23–25 · Galar+", "kind": "Series", "seasons": [48, 42, 54], "epAvg": 22 },
       { "id": "horizons", "name": "Pokémon Horizons", "date": "S26–28 · Paldea", "kind": "Series", "seasons": [45, 44, 47], "epAvg": 22, "approx": true }
+    ]},
+    { "title": "The Movies", "span": "1998 – 2020", "tier": "movies",
+      "note": "Theatrical films in release order. The first 20 loosely follow the anime; I Choose You! onward are a separate reboot timeline.", "items": [
+      { "id": "m01", "name": "The First Movie: Mewtwo Strikes Back", "date": "1998", "kind": "Film", "film": true, "runtime": 96 },
+      { "id": "m02", "name": "The Movie 2000: The Power of One", "date": "1999", "kind": "Film", "film": true, "runtime": 101 },
+      { "id": "m03", "name": "Pokémon 3: Spell of the Unown", "date": "2000", "kind": "Film", "film": true, "runtime": 93 },
+      { "id": "m04", "name": "Pokémon 4Ever: Celebi", "date": "2001", "kind": "Film", "film": true, "runtime": 75 },
+      { "id": "m05", "name": "Pokémon Heroes: Latios & Latias", "date": "2002", "kind": "Film", "film": true, "runtime": 71 },
+      { "id": "m06", "name": "Jirachi: Wish Maker", "date": "2003", "kind": "Film", "film": true, "runtime": 81 },
+      { "id": "m07", "name": "Destiny Deoxys", "date": "2004", "kind": "Film", "film": true, "runtime": 90 },
+      { "id": "m08", "name": "Lucario and the Mystery of Mew", "date": "2005", "kind": "Film", "film": true, "runtime": 101 },
+      { "id": "m09", "name": "Ranger and the Temple of the Sea", "date": "2006", "kind": "Film", "film": true, "runtime": 100 },
+      { "id": "m10", "name": "The Rise of Darkrai", "date": "2007", "kind": "Film", "film": true, "runtime": 90 },
+      { "id": "m11", "name": "Giratina and the Sky Warrior", "date": "2008", "kind": "Film", "film": true, "runtime": 96 },
+      { "id": "m12", "name": "Arceus and the Jewel of Life", "date": "2009", "kind": "Film", "film": true, "runtime": 96 },
+      { "id": "m13", "name": "Zoroark: Master of Illusions", "date": "2010", "kind": "Film", "film": true, "runtime": 96 },
+      { "id": "m14", "name": "Black—Victini and Reshiram / White—Victini and Zekrom", "date": "2011", "kind": "Film", "film": true, "runtime": 96 },
+      { "id": "m15", "name": "Kyurem vs. the Sword of Justice", "date": "2012", "kind": "Film", "film": true, "runtime": 71 },
+      { "id": "m16", "name": "Genesect and the Legend Awakened", "date": "2013", "kind": "Film", "film": true, "runtime": 71 },
+      { "id": "m17", "name": "Diancie and the Cocoon of Destruction", "date": "2014", "kind": "Film", "film": true, "runtime": 78 },
+      { "id": "m18", "name": "Hoopa and the Clash of Ages", "date": "2015", "kind": "Film", "film": true, "runtime": 79 },
+      { "id": "m19", "name": "Volcanion and the Mechanical Marvel", "date": "2016", "kind": "Film", "film": true, "runtime": 96 },
+      { "id": "m20", "name": "I Choose You!", "date": "2017", "kind": "Film", "film": true, "runtime": 97 },
+      { "id": "m21", "name": "The Power of Us", "date": "2018", "kind": "Film", "film": true, "runtime": 100 },
+      { "id": "m22", "name": "Mewtwo Strikes Back—Evolution", "date": "2019", "kind": "Film", "film": true, "runtime": 98 },
+      { "id": "m23", "name": "Secrets of the Jungle", "date": "2020", "kind": "Film", "film": true, "runtime": 99 }
     ]}
   ]
 }
