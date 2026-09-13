@@ -299,6 +299,9 @@ li.item{list-style:none}
 .eprow.done .epbox svg{opacity:1;transform:scale(1)}
 .eprow.done .eptitle{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--muted-dim)}
 
+.suggest-link{color:var(--accent);text-decoration:none;font-weight:500;border-bottom:1px dotted var(--accent-line)}
+.suggest-link:hover{border-bottom-style:solid}
+
 .loading,.errbox{padding:60px 0;text-align:center;color:var(--muted)}
 .errbox b{color:var(--ink)}
 

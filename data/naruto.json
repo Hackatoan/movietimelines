@@ -9,11 +9,27 @@
   "emoji": "🍥",
   "background": "drift",
   "datesLabel": "In order · ~23 min/episode",
+  "tiers": [
+    { "id": "movies", "label": "Movies", "default": false, "note": "the theatrical films (mostly standalone; The Last & Boruto are canon)" }
+  ],
   "eras": [
     { "title": "The Anime", "span": "2002 – 2023", "items": [
       { "id": "naruto", "name": "Naruto", "date": "2002", "kind": "Series", "seasons": [220], "epAvg": 23 },
       { "id": "shippuden", "name": "Naruto: Shippuden", "date": "2007", "kind": "Series", "seasons": [500], "epAvg": 23 },
       { "id": "boruto", "name": "Boruto: Naruto Next Generations", "date": "2017", "kind": "Series", "seasons": [293], "epAvg": 23 }
+    ]},
+    { "title": "The Movies", "span": "2004 – 2015", "tier": "movies", "note": "Theatrical films, release order.", "items": [
+      { "id": "f1", "name": "Ninja Clash in the Land of Snow", "date": "2004", "kind": "Film", "film": true, "runtime": 82 },
+      { "id": "f2", "name": "Legend of the Stone of Gelel", "date": "2005", "kind": "Film", "film": true, "runtime": 97 },
+      { "id": "f3", "name": "Guardians of the Crescent Moon Kingdom", "date": "2006", "kind": "Film", "film": true, "runtime": 95 },
+      { "id": "f4", "name": "Naruto Shippuden the Movie", "date": "2007", "kind": "Film", "film": true, "runtime": 94 },
+      { "id": "f5", "name": "Bonds", "date": "2008", "kind": "Film", "film": true, "runtime": 90 },
+      { "id": "f6", "name": "The Will of Fire", "date": "2009", "kind": "Film", "film": true, "runtime": 95 },
+      { "id": "f7", "name": "The Lost Tower", "date": "2010", "kind": "Film", "film": true, "runtime": 85 },
+      { "id": "f8", "name": "Blood Prison", "date": "2011", "kind": "Film", "film": true, "runtime": 96 },
+      { "id": "f9", "name": "Road to Ninja", "date": "2012", "kind": "Film", "film": true, "runtime": 109 },
+      { "id": "f10", "name": "The Last: Naruto the Movie", "date": "2014", "kind": "Film", "film": true, "runtime": 112 },
+      { "id": "f11", "name": "Boruto: Naruto the Movie", "date": "2015", "kind": "Film", "film": true, "runtime": 95 }
     ]}
   ]
 }

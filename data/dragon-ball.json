@@ -10,7 +10,8 @@
   "background": "drift",
   "datesLabel": "Release order · ~23 min/episode",
   "tiers": [
-    { "id": "kai", "label": "Kai (remaster)", "default": false, "note": "Dragon Ball Z Kai — a re-edited, faster-paced version of Z (watch instead of Z, not as well)" }
+    { "id": "kai", "label": "Kai (remaster)", "default": false, "note": "Dragon Ball Z Kai — a re-edited, faster-paced version of Z (watch instead of Z, not as well)" },
+    { "id": "movies", "label": "Movies", "default": false, "note": "the theatrical films (mostly standalone; modern ones are canon-ish)" }
   ],
   "eras": [
     { "title": "The Series", "span": "1986 – 2025", "items": [
@@ -22,6 +23,28 @@
     ]},
     { "title": "Dragon Ball Z Kai", "span": "2009 – 2015", "tier": "kai", "items": [
       { "id": "dbzkai", "name": "Dragon Ball Z Kai", "date": "2009", "kind": "Series", "seasons": [159], "epAvg": 24 }
+    ]},
+    { "title": "The Movies", "span": "1986 – 2022", "tier": "movies", "note": "Theatrical films, release order.", "items": [
+      { "id": "f1", "name": "Curse of the Blood Rubies", "date": "1986", "kind": "Film", "film": true, "runtime": 50 },
+      { "id": "f2", "name": "Sleeping Princess in Devil's Castle", "date": "1987", "kind": "Film", "film": true, "runtime": 46 },
+      { "id": "f3", "name": "Mystical Adventure", "date": "1988", "kind": "Film", "film": true, "runtime": 46 },
+      { "id": "f4", "name": "Dead Zone", "date": "1989", "kind": "Film", "film": true, "runtime": 42 },
+      { "id": "f5", "name": "The World's Strongest", "date": "1990", "kind": "Film", "film": true, "runtime": 60 },
+      { "id": "f6", "name": "The Tree of Might", "date": "1990", "kind": "Film", "film": true, "runtime": 61 },
+      { "id": "f7", "name": "Lord Slug", "date": "1991", "kind": "Film", "film": true, "runtime": 52 },
+      { "id": "f8", "name": "Cooler's Revenge", "date": "1991", "kind": "Film", "film": true, "runtime": 46 },
+      { "id": "f9", "name": "The Return of Cooler", "date": "1992", "kind": "Film", "film": true, "runtime": 46 },
+      { "id": "f10", "name": "Super Android 13!", "date": "1992", "kind": "Film", "film": true, "runtime": 47 },
+      { "id": "f11", "name": "Broly – The Legendary Super Saiyan", "date": "1993", "kind": "Film", "film": true, "runtime": 71 },
+      { "id": "f12", "name": "Bojack Unbound", "date": "1993", "kind": "Film", "film": true, "runtime": 51 },
+      { "id": "f13", "name": "Broly – Second Coming", "date": "1994", "kind": "Film", "film": true, "runtime": 47 },
+      { "id": "f14", "name": "Bio-Broly", "date": "1994", "kind": "Film", "film": true, "runtime": 48 },
+      { "id": "f15", "name": "Fusion Reborn", "date": "1995", "kind": "Film", "film": true, "runtime": 51 },
+      { "id": "f16", "name": "Wrath of the Dragon", "date": "1995", "kind": "Film", "film": true, "runtime": 51 },
+      { "id": "f17", "name": "Battle of Gods", "date": "2013", "kind": "Film", "film": true, "runtime": 85 },
+      { "id": "f18", "name": "Resurrection 'F'", "date": "2015", "kind": "Film", "film": true, "runtime": 93 },
+      { "id": "f19", "name": "Dragon Ball Super: Broly", "date": "2018", "kind": "Film", "film": true, "runtime": 100 },
+      { "id": "f20", "name": "Dragon Ball Super: Super Hero", "date": "2022", "kind": "Film", "film": true, "runtime": 100 }
     ]}
   ]
 }

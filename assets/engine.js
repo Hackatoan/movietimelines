@@ -90,8 +90,17 @@
     });
 
     // footer
+    const fidEsc = data.id || fid;
+    const issueTitle = encodeURIComponent(`Update: ${data.title}`);
+    const issueBody = encodeURIComponent(
+      `Franchise: ${data.title} (\`${fidEsc}\`)\n`
+      + `Page: https://timelines.hackatoa.com/franchise.html?f=${fidEsc}\n\n`
+      + `**What needs updating?** (new episodes/films, wrong count or runtime, wrong order, missing entry, etc.)\n\n`
+      + `_Please include a source if you can._\n`);
+    const issueUrl = `https://github.com/Hackatoan/movietimelines/issues/new?labels=franchise-update&title=${issueTitle}&body=${issueBody}`;
     document.getElementById('ffoot').innerHTML =
       `${data.datesLabel ? esc(data.datesLabel) + ' &middot; ' : ''}<b>Bold</b> = film &middot; the &#8856; button marks something you’re <b>not going to watch</b> (dropped from the count &amp; time-left).`
+      + `<div style="margin-top:10px"><a class="suggest-link" href="${issueUrl}" target="_blank" rel="noopener">✎ Suggest an update for ${esc(data.title)}</a></div>`
       + `<div style="margin-top:8px">Times are approximate. <a href="index.html">All franchises</a> &middot; <a href="https://buymeacoffee.com/hackatoa" target="_blank" rel="noopener">Buy me a coffee</a></div>`;
 
     // ---- filter chips ----
