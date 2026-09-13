@@ -1,54 +1,38 @@
-# 🎬 MovieTimelines
+# MovieTimelines
 
-Track your way through film & TV franchises in **in-universe timeline order** — every film and series, episode by episode, with watch-time tallies and progress saved right in your browser. No account, no server.
+Track film & TV franchises in in-universe watch order — episode checklists and watch-time tallies.
 
-**Live:** https://timelines.hackatoa.com
+🔗 **Live:** [timelines.hackatoa.com](https://timelines.hackatoa.com)   ·   ☕ **Support:** [Buy Me a Coffee](https://buymeacoffee.com/hackatoa)
+
+## Overview
+
+Pick a franchise (Star Wars, MCU, Dune, John Wick, and more) and follow it in in-universe order, episode by episode. Check off what you've watched and see your total watch time add up. Data-driven and community-contributable.
 
 ## Features
 
-- **Multiple franchises**, each on its own page — pick one from the home grid
-- **Search** across franchises *and* their titles (e.g. typing “Mandalorian” surfaces Star Wars)
-- **Episode dropdowns** for every series, with a master + per-episode + partial state
-- **Watch-time tracking** — hours watched / left / total, per franchise (approximate)
-- **“Not going to watch”** — drop an entry from your count and time-left with the ⊘ button
-- **Filters** for optional tiers (e.g. *Legends*, *Marvel TV*, *Animated*) — hidden from list *and* count when off
-- **Per-franchise theming** — accent colour + an animated background effect (starfield, rain, embers, drift)
-- Progress + filters saved per-visitor via `localStorage`
+- In-universe watch-order for many franchises
+- Per-episode progress + watch-time tally
+- Data-driven JSON franchises (easy to contribute)
+- Optional Google sign-in sync
 
-## Included franchises
+## Tech Stack
 
-Star Wars · Marvel (MCU) · Jurassic Park · Pirates of the Caribbean · John Wick — plus a **Demo Saga** showing the data format.
+Static HTML · JavaScript · JSON data · Firebase (sync)
 
-## Add your own
+## Contributing
 
-Every franchise is a single JSON file in [`data/`](data/). See **[CONTRIBUTING.md](CONTRIBUTING.md)** for the full schema and a step-by-step guide, and open [`data/_demo.json`](data/_demo.json) as a worked example. Community submissions welcome via pull request — they’re shown under a **Community** heading and tagged accordingly.
+Franchises are plain JSON files — add or correct a franchise and open a pull request.
 
-Request a franchise you’d like added: [open an issue](https://github.com/Hackatoan/movietimelines/issues/new?labels=franchise-request&title=Franchise%20request%3A%20).
+## Deployment
 
-## How it’s built
-
-Plain static HTML/CSS/JS — no build step, no framework.
-
-```
-index.html          # home hub (search + franchise grid)
-franchise.html      # tracker engine (?f=<id>)
-assets/
-  core.js           # shared pure logic (stats, storage) — no DOM
-  engine.js         # tracker UI
-  hub.js            # home UI
-  backgrounds.js    # named background effects
-  styles.css        # design system (cinematic dark theme)
-data/
-  franchises.json   # ordered registry of franchise ids
-  <id>.json         # one file per franchise
-```
-
-Runs anywhere that serves static files (it needs `fetch` for the JSON, so open it via a web server, not `file://`).
+GitHub Pages at [timelines.hackatoa.com](https://timelines.hackatoa.com).
 
 ## Support
 
-If this saved you a rewatch-planning headache: [☕ Buy me a coffee](https://buymeacoffee.com/hackatoa).
+If this project is useful to you, consider supporting development:
 
-## License
+☕ **[Buy Me a Coffee](https://buymeacoffee.com/hackatoa)**
 
-MIT
+---
+
+Part of the **[Hackatoa](https://hackatoa.com)** ecosystem — self-hosted apps, browser games, and bots. · [All repositories »](https://github.com/Hackatoan)
