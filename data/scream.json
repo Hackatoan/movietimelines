@@ -1,0 +1,28 @@
+{
+  "id": "scream",
+  "title": "Scream",
+  "tagline": "Ghostface — films and the TV series",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#8a94a8",
+  "accentInk": "#0c0e14",
+  "emoji": "👻",
+  "background": "drift",
+  "datesLabel": "Release order",
+  "tiers": [
+    { "id": "tv", "label": "TV series", "default": false, "note": "the MTV/VH1 series (2015–2019) — separate continuity" }
+  ],
+  "eras": [
+    { "title": "The Films", "span": "1996 – 2023", "items": [
+      { "id": "s1", "name": "Scream", "date": "1996", "kind": "Film", "film": true, "runtime": 111 },
+      { "id": "s2", "name": "Scream 2", "date": "1997", "kind": "Film", "film": true, "runtime": 120 },
+      { "id": "s3", "name": "Scream 3", "date": "2000", "kind": "Film", "film": true, "runtime": 116 },
+      { "id": "s4", "name": "Scream 4", "date": "2011", "kind": "Film", "film": true, "runtime": 111 },
+      { "id": "s5", "name": "Scream", "date": "2022", "kind": "Film", "film": true, "runtime": 114 },
+      { "id": "s6", "name": "Scream VI", "date": "2023", "kind": "Film", "film": true, "runtime": 122 }
+    ]},
+    { "title": "Scream: The TV Series", "span": "2015 – 2019", "tier": "tv", "items": [
+      { "id": "tv-scream", "name": "Scream (TV Series)", "date": "2015–19", "kind": "Series", "seasons": [10, 12, 6], "epAvg": 42 }
+    ]}
+  ]
+}

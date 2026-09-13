@@ -1,0 +1,26 @@
+{
+  "id": "conjuring",
+  "title": "The Conjuring Universe",
+  "tagline": "The Warrens, Annabelle, the Nun and more",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#6b5ca5",
+  "accentInk": "#0c0820",
+  "emoji": "🕯️",
+  "background": "drift",
+  "datesLabel": "Release order — in-universe order differs (The Nun is set earliest, 1952)",
+  "eras": [
+    { "title": "The Films", "span": "2013 – 2025", "items": [
+      { "id": "conj1", "name": "The Conjuring", "date": "2013", "kind": "Film", "film": true, "runtime": 112 },
+      { "id": "ann1", "name": "Annabelle", "date": "2014", "kind": "Film", "film": true, "runtime": 99 },
+      { "id": "conj2", "name": "The Conjuring 2", "date": "2016", "kind": "Film", "film": true, "runtime": 134 },
+      { "id": "ann-creation", "name": "Annabelle: Creation", "date": "2017", "kind": "Film", "film": true, "runtime": 109 },
+      { "id": "nun1", "name": "The Nun", "date": "2018", "kind": "Film", "film": true, "runtime": 96 },
+      { "id": "llorona", "name": "The Curse of La Llorona", "date": "2019", "kind": "Film", "film": true, "runtime": 93 },
+      { "id": "ann-home", "name": "Annabelle Comes Home", "date": "2019", "kind": "Film", "film": true, "runtime": 106 },
+      { "id": "conj3", "name": "The Conjuring: The Devil Made Me Do It", "date": "2021", "kind": "Film", "film": true, "runtime": 112 },
+      { "id": "nun2", "name": "The Nun II", "date": "2023", "kind": "Film", "film": true, "runtime": 110 },
+      { "id": "last-rites", "name": "The Conjuring: Last Rites", "date": "2025", "kind": "Film", "film": true, "runtime": 135 }
+    ]}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "final-destination",
+  "title": "Final Destination",
+  "tagline": "You can't cheat death — all six films",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#4a7c7f",
+  "accentInk": "#03181a",
+  "emoji": "💀",
+  "background": "drift",
+  "datesLabel": "Release order",
+  "eras": [
+    { "title": "The Films", "span": "2000 – 2025", "items": [
+      { "id": "fd1", "name": "Final Destination", "date": "2000", "kind": "Film", "film": true, "runtime": 98 },
+      { "id": "fd2", "name": "Final Destination 2", "date": "2003", "kind": "Film", "film": true, "runtime": 90 },
+      { "id": "fd3", "name": "Final Destination 3", "date": "2006", "kind": "Film", "film": true, "runtime": 92 },
+      { "id": "fd4", "name": "The Final Destination", "date": "2009", "kind": "Film", "film": true, "runtime": 82 },
+      { "id": "fd5", "name": "Final Destination 5", "date": "2011", "kind": "Film", "film": true, "runtime": 92 },
+      { "id": "fd6", "name": "Final Destination Bloodlines", "date": "2025", "kind": "Film", "film": true, "runtime": 110 }
+    ]}
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "hellraiser",
+  "title": "Hellraiser",
+  "tagline": "Pinhead and the Cenobites, in release order",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#7a2530",
+  "accentInk": "#1a0004",
+  "emoji": "📦",
+  "background": "embers",
+  "datesLabel": "Release order",
+  "eras": [
+    { "title": "The Films", "span": "1987 – 2022", "items": [
+      { "id": "hr1", "name": "Hellraiser", "date": "1987", "kind": "Film", "film": true, "runtime": 94 },
+      { "id": "hr2", "name": "Hellbound: Hellraiser II", "date": "1988", "kind": "Film", "film": true, "runtime": 97 },
+      { "id": "hr3", "name": "Hell on Earth III", "date": "1992", "kind": "Film", "film": true, "runtime": 93 },
+      { "id": "hr4", "name": "Bloodline", "date": "1996", "kind": "Film", "film": true, "runtime": 85 },
+      { "id": "hr5", "name": "Inferno", "date": "2000", "kind": "Film", "film": true, "runtime": 99 },
+      { "id": "hr6", "name": "Hellseeker", "date": "2002", "kind": "Film", "film": true, "runtime": 89 },
+      { "id": "hr7", "name": "Deader", "date": "2005", "kind": "Film", "film": true, "runtime": 90 },
+      { "id": "hr8", "name": "Hellworld", "date": "2005", "kind": "Film", "film": true, "runtime": 93 },
+      { "id": "hr9", "name": "Revelations", "date": "2011", "kind": "Film", "film": true, "runtime": 75 },
+      { "id": "hr10", "name": "Judgment", "date": "2018", "kind": "Film", "film": true, "runtime": 81 },
+      { "id": "hr2022", "name": "Hellraiser", "date": "2022 · reboot", "kind": "Film", "film": true, "runtime": 121 }
+    ]}
+  ]
+}

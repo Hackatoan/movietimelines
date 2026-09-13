@@ -1,0 +1,35 @@
+{
+  "id": "halloween",
+  "title": "Halloween",
+  "tagline": "Every Michael Myers film, in release order",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#f0821e",
+  "accentInk": "#1c0d00",
+  "emoji": "🎃",
+  "background": "drift",
+  "datesLabel": "Release order — the series spans 3 separate continuities",
+  "eras": [
+    { "title": "Original / Thorn Timeline", "span": "1978 – 1995", "items": [
+      { "id": "h1978", "name": "Halloween", "date": "1978", "kind": "Film", "film": true, "runtime": 91 },
+      { "id": "h2", "name": "Halloween II", "date": "1981", "kind": "Film", "film": true, "runtime": 92 },
+      { "id": "h3", "name": "Halloween III: Season of the Witch", "date": "1982", "kind": "Film", "film": true, "runtime": 98, "note": "Standalone — no Michael Myers." },
+      { "id": "h4", "name": "Halloween 4: The Return of Michael Myers", "date": "1988", "kind": "Film", "film": true, "runtime": 88 },
+      { "id": "h5", "name": "Halloween 5: The Revenge of Michael Myers", "date": "1989", "kind": "Film", "film": true, "runtime": 96 },
+      { "id": "h6", "name": "Halloween: The Curse of Michael Myers", "date": "1995", "kind": "Film", "film": true, "runtime": 88 }
+    ]},
+    { "title": "H20 Timeline", "span": "1998 – 2002", "items": [
+      { "id": "h20", "name": "Halloween H20: 20 Years Later", "date": "1998", "kind": "Film", "film": true, "runtime": 86 },
+      { "id": "hres", "name": "Halloween: Resurrection", "date": "2002", "kind": "Film", "film": true, "runtime": 89 }
+    ]},
+    { "title": "Rob Zombie Reboot", "span": "2007 – 2009", "items": [
+      { "id": "hz1", "name": "Halloween", "date": "2007", "kind": "Film", "film": true, "runtime": 109 },
+      { "id": "hz2", "name": "Halloween II", "date": "2009", "kind": "Film", "film": true, "runtime": 105 }
+    ]},
+    { "title": "Blumhouse Trilogy", "span": "2018 – 2022", "items": [
+      { "id": "h2018", "name": "Halloween", "date": "2018", "kind": "Film", "film": true, "runtime": 106 },
+      { "id": "hkills", "name": "Halloween Kills", "date": "2021", "kind": "Film", "film": true, "runtime": 105 },
+      { "id": "hends", "name": "Halloween Ends", "date": "2022", "kind": "Film", "film": true, "runtime": 111 }
+    ]}
+  ]
+}

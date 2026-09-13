@@ -1,0 +1,25 @@
+{
+  "id": "texas-chainsaw-massacre",
+  "title": "The Texas Chainsaw Massacre",
+  "tagline": "All nine Leatherface films, in release order",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#b0532e",
+  "accentInk": "#1c0800",
+  "emoji": "🪚",
+  "background": "drift",
+  "datesLabel": "Release order — multiple reboots/timelines",
+  "eras": [
+    { "title": "The Films", "span": "1974 – 2022", "items": [
+      { "id": "tcm1974", "name": "The Texas Chain Saw Massacre", "date": "1974", "kind": "Film", "film": true, "runtime": 83 },
+      { "id": "tcm2", "name": "The Texas Chainsaw Massacre 2", "date": "1986", "kind": "Film", "film": true, "runtime": 101 },
+      { "id": "tcm3", "name": "Leatherface: The Texas Chainsaw Massacre III", "date": "1990", "kind": "Film", "film": true, "runtime": 81 },
+      { "id": "tcm-ng", "name": "The Next Generation", "date": "1997", "kind": "Film", "film": true, "runtime": 84 },
+      { "id": "tcm2003", "name": "The Texas Chainsaw Massacre", "date": "2003 · remake", "kind": "Film", "film": true, "runtime": 98 },
+      { "id": "tcm-beginning", "name": "The Beginning", "date": "2006", "kind": "Film", "film": true, "runtime": 91 },
+      { "id": "tcm3d", "name": "Texas Chainsaw 3D", "date": "2013", "kind": "Film", "film": true, "runtime": 92 },
+      { "id": "leatherface", "name": "Leatherface", "date": "2017", "kind": "Film", "film": true, "runtime": 90 },
+      { "id": "tcm2022", "name": "Texas Chainsaw Massacre", "date": "2022", "kind": "Film", "film": true, "runtime": 81 }
+    ]}
+  ]
+}

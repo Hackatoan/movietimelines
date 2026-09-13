@@ -1,0 +1,21 @@
+{
+  "id": "insidious",
+  "title": "Insidious",
+  "tagline": "Into the Further — all five films",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#b0303f",
+  "accentInk": "#1c0206",
+  "emoji": "👹",
+  "background": "drift",
+  "datesLabel": "Release order",
+  "eras": [
+    { "title": "The Films", "span": "2010 – 2023", "items": [
+      { "id": "ins1", "name": "Insidious", "date": "2010", "kind": "Film", "film": true, "runtime": 103 },
+      { "id": "ins2", "name": "Insidious: Chapter 2", "date": "2013", "kind": "Film", "film": true, "runtime": 106 },
+      { "id": "ins3", "name": "Insidious: Chapter 3", "date": "2015", "kind": "Film", "film": true, "runtime": 97 },
+      { "id": "ins4", "name": "Insidious: The Last Key", "date": "2018", "kind": "Film", "film": true, "runtime": 103 },
+      { "id": "ins5", "name": "Insidious: The Red Door", "date": "2023", "kind": "Film", "film": true, "runtime": 107 }
+    ]}
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "friday-the-13th",
+  "title": "Friday the 13th",
+  "tagline": "Jason Voorhees — the whole camp",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#3a7d44",
+  "accentInk": "#02150a",
+  "emoji": "🏒",
+  "background": "drift",
+  "datesLabel": "Release order",
+  "eras": [
+    { "title": "The Films", "span": "1980 – 2009", "items": [
+      { "id": "f1", "name": "Friday the 13th", "date": "1980", "kind": "Film", "film": true, "runtime": 95 },
+      { "id": "f2", "name": "Part 2", "date": "1981", "kind": "Film", "film": true, "runtime": 87 },
+      { "id": "f3", "name": "Part III", "date": "1982", "kind": "Film", "film": true, "runtime": 95 },
+      { "id": "f4", "name": "The Final Chapter", "date": "1984", "kind": "Film", "film": true, "runtime": 91 },
+      { "id": "f5", "name": "A New Beginning", "date": "1985", "kind": "Film", "film": true, "runtime": 92 },
+      { "id": "f6", "name": "Jason Lives: Part VI", "date": "1986", "kind": "Film", "film": true, "runtime": 87 },
+      { "id": "f7", "name": "The New Blood", "date": "1988", "kind": "Film", "film": true, "runtime": 88 },
+      { "id": "f8", "name": "Jason Takes Manhattan", "date": "1989", "kind": "Film", "film": true, "runtime": 100 },
+      { "id": "f9", "name": "Jason Goes to Hell", "date": "1993", "kind": "Film", "film": true, "runtime": 87 },
+      { "id": "fx", "name": "Jason X", "date": "2001", "kind": "Film", "film": true, "runtime": 91 },
+      { "id": "fvj", "name": "Freddy vs. Jason", "date": "2003", "kind": "Film", "film": true, "runtime": 97, "note": "Crossover with A Nightmare on Elm Street." },
+      { "id": "f2009", "name": "Friday the 13th", "date": "2009 · remake", "kind": "Film", "film": true, "runtime": 97 }
+    ]}
+  ]
+}

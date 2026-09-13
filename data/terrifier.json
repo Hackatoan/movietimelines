@@ -1,0 +1,20 @@
+{
+  "id": "terrifier",
+  "title": "Terrifier",
+  "tagline": "Art the Clown, start to finish",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#c81e3c",
+  "accentInk": "#1c0006",
+  "emoji": "🤡",
+  "background": "embers",
+  "datesLabel": "Release order",
+  "eras": [
+    { "title": "The Art the Clown Saga", "span": "2013 – 2024", "items": [
+      { "id": "ahe", "name": "All Hallows' Eve", "date": "2013", "kind": "Film", "film": true, "runtime": 83, "note": "Anthology that introduced Art the Clown." },
+      { "id": "t1", "name": "Terrifier", "date": "2016", "kind": "Film", "film": true, "runtime": 82 },
+      { "id": "t2", "name": "Terrifier 2", "date": "2022", "kind": "Film", "film": true, "runtime": 138 },
+      { "id": "t3", "name": "Terrifier 3", "date": "2024", "kind": "Film", "film": true, "runtime": 125 }
+    ]}
+  ]
+}

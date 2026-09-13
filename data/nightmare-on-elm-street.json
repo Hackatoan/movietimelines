@@ -1,0 +1,25 @@
+{
+  "id": "nightmare-on-elm-street",
+  "title": "A Nightmare on Elm Street",
+  "tagline": "Freddy Krueger's complete filmography",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#c0392b",
+  "accentInk": "#1c0400",
+  "emoji": "🔪",
+  "background": "drift",
+  "datesLabel": "Release order",
+  "eras": [
+    { "title": "The Films", "span": "1984 – 2010", "items": [
+      { "id": "noes1", "name": "A Nightmare on Elm Street", "date": "1984", "kind": "Film", "film": true, "runtime": 91 },
+      { "id": "noes2", "name": "Freddy's Revenge", "date": "1985", "kind": "Film", "film": true, "runtime": 87 },
+      { "id": "noes3", "name": "Dream Warriors", "date": "1987", "kind": "Film", "film": true, "runtime": 96 },
+      { "id": "noes4", "name": "The Dream Master", "date": "1988", "kind": "Film", "film": true, "runtime": 93 },
+      { "id": "noes5", "name": "The Dream Child", "date": "1989", "kind": "Film", "film": true, "runtime": 89 },
+      { "id": "noes6", "name": "Freddy's Dead: The Final Nightmare", "date": "1991", "kind": "Film", "film": true, "runtime": 89 },
+      { "id": "noes7", "name": "Wes Craven's New Nightmare", "date": "1994", "kind": "Film", "film": true, "runtime": 112 },
+      { "id": "fvj", "name": "Freddy vs. Jason", "date": "2003", "kind": "Film", "film": true, "runtime": 97, "note": "Crossover with Friday the 13th." },
+      { "id": "noes2010", "name": "A Nightmare on Elm Street", "date": "2010 · remake", "kind": "Film", "film": true, "runtime": 95 }
+    ]}
+  ]
+}

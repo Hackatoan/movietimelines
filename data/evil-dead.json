@@ -1,0 +1,24 @@
+{
+  "id": "evil-dead",
+  "title": "Evil Dead",
+  "tagline": "The Necronomicon films + Ash vs Evil Dead",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#8a5a2b",
+  "accentInk": "#1a0d00",
+  "emoji": "📖",
+  "background": "embers",
+  "datesLabel": "Release order",
+  "eras": [
+    { "title": "The Films", "span": "1981 – 2023", "items": [
+      { "id": "ed1", "name": "The Evil Dead", "date": "1981", "kind": "Film", "film": true, "runtime": 85 },
+      { "id": "ed2", "name": "Evil Dead II", "date": "1987", "kind": "Film", "film": true, "runtime": 84 },
+      { "id": "aod", "name": "Army of Darkness", "date": "1992", "kind": "Film", "film": true, "runtime": 81 },
+      { "id": "ed2013", "name": "Evil Dead", "date": "2013 · remake", "kind": "Film", "film": true, "runtime": 91 },
+      { "id": "edrise", "name": "Evil Dead Rise", "date": "2023", "kind": "Film", "film": true, "runtime": 96 }
+    ]},
+    { "title": "Ash vs Evil Dead", "span": "2015 – 2018", "items": [
+      { "id": "ave", "name": "Ash vs Evil Dead", "date": "2015–18", "kind": "Series", "seasons": [10, 10, 10], "epAvg": 30 }
+    ]}
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "chucky",
+  "title": "Child's Play / Chucky",
+  "tagline": "The killer doll — films and the TV series",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#d4433a",
+  "accentInk": "#1c0300",
+  "emoji": "🪆",
+  "background": "drift",
+  "datesLabel": "Release order",
+  "eras": [
+    { "title": "The Films", "span": "1988 – 2019", "items": [
+      { "id": "cp1", "name": "Child's Play", "date": "1988", "kind": "Film", "film": true, "runtime": 87 },
+      { "id": "cp2", "name": "Child's Play 2", "date": "1990", "kind": "Film", "film": true, "runtime": 84 },
+      { "id": "cp3", "name": "Child's Play 3", "date": "1991", "kind": "Film", "film": true, "runtime": 90 },
+      { "id": "bride", "name": "Bride of Chucky", "date": "1998", "kind": "Film", "film": true, "runtime": 89 },
+      { "id": "seed", "name": "Seed of Chucky", "date": "2004", "kind": "Film", "film": true, "runtime": 87 },
+      { "id": "curse", "name": "Curse of Chucky", "date": "2013", "kind": "Film", "film": true, "runtime": 97 },
+      { "id": "cult", "name": "Cult of Chucky", "date": "2017", "kind": "Film", "film": true, "runtime": 91 },
+      { "id": "cp2019", "name": "Child's Play", "date": "2019 · remake", "kind": "Film", "film": true, "runtime": 90 }
+    ]},
+    { "title": "Chucky (TV Series)", "span": "2021 – 2024", "items": [
+      { "id": "chucky-tv", "name": "Chucky", "date": "2021–24", "kind": "Series", "seasons": [8, 8, 8], "epAvg": 43 }
+    ]}
+  ]
+}

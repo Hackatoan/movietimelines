@@ -1,0 +1,26 @@
+{
+  "id": "saw",
+  "title": "Saw",
+  "tagline": "Jigsaw's games, in release order",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#8b1a1a",
+  "accentInk": "#1c0000",
+  "emoji": "🧩",
+  "background": "drift",
+  "datesLabel": "Release order (Saw X slots between Saw I and II in-story)",
+  "eras": [
+    { "title": "The Games", "span": "2004 – 2023", "items": [
+      { "id": "saw1", "name": "Saw", "date": "2004", "kind": "Film", "film": true, "runtime": 103 },
+      { "id": "saw2", "name": "Saw II", "date": "2005", "kind": "Film", "film": true, "runtime": 93 },
+      { "id": "saw3", "name": "Saw III", "date": "2006", "kind": "Film", "film": true, "runtime": 108 },
+      { "id": "saw4", "name": "Saw IV", "date": "2007", "kind": "Film", "film": true, "runtime": 93 },
+      { "id": "saw5", "name": "Saw V", "date": "2008", "kind": "Film", "film": true, "runtime": 92 },
+      { "id": "saw6", "name": "Saw VI", "date": "2009", "kind": "Film", "film": true, "runtime": 90 },
+      { "id": "saw3d", "name": "Saw 3D: The Final Chapter", "date": "2010", "kind": "Film", "film": true, "runtime": 90 },
+      { "id": "jigsaw", "name": "Jigsaw", "date": "2017", "kind": "Film", "film": true, "runtime": 92 },
+      { "id": "spiral", "name": "Spiral", "date": "2021", "kind": "Film", "film": true, "runtime": 93 },
+      { "id": "sawx", "name": "Saw X", "date": "2023", "kind": "Film", "film": true, "runtime": 118 }
+    ]}
+  ]
+}
