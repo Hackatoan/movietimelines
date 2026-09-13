@@ -1,0 +1,22 @@
+{
+  "id": "scary-movie",
+  "title": "Scary Movie",
+  "tagline": "The horror-parody films, in order",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#9b59b6",
+  "accentInk": "#160a1c",
+  "emoji": "😱",
+  "background": "drift",
+  "datesLabel": "Release order",
+  "eras": [
+    { "title": "The Films", "span": "2000 – 2026", "items": [
+      { "id": "sm1", "name": "Scary Movie", "date": "2000", "kind": "Film", "film": true, "runtime": 88 },
+      { "id": "sm2", "name": "Scary Movie 2", "date": "2001", "kind": "Film", "film": true, "runtime": 83 },
+      { "id": "sm3", "name": "Scary Movie 3", "date": "2003", "kind": "Film", "film": true, "runtime": 84 },
+      { "id": "sm4", "name": "Scary Movie 4", "date": "2006", "kind": "Film", "film": true, "runtime": 84 },
+      { "id": "sm5", "name": "Scary Movie 5", "date": "2013", "kind": "Film", "film": true, "runtime": 86 },
+      { "id": "sm6", "name": "Scary Movie 6", "date": "2026", "kind": "Film", "film": true, "runtime": 95 }
+    ]}
+  ]
+}
