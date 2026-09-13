@@ -1,0 +1,30 @@
+{
+  "id": "american-pie",
+  "title": "American Pie",
+  "tagline": "The theatrical saga + the direct-to-video spin-offs",
+  "author": "Hackatoa",
+  "community": false,
+  "accent": "#d98a3c",
+  "accentInk": "#1c1000",
+  "emoji": "🥧",
+  "background": "drift",
+  "datesLabel": "Release order",
+  "tiers": [
+    { "id": "spinoffs", "label": "Spin-offs", "default": false, "note": "the \"American Pie Presents\" direct-to-video films" }
+  ],
+  "eras": [
+    { "title": "The Theatrical Saga", "span": "1999 – 2012", "items": [
+      { "id": "ap1", "name": "American Pie", "date": "1999", "kind": "Film", "film": true, "runtime": 95 },
+      { "id": "ap2", "name": "American Pie 2", "date": "2001", "kind": "Film", "film": true, "runtime": 108 },
+      { "id": "wedding", "name": "American Wedding", "date": "2003", "kind": "Film", "film": true, "runtime": 103 },
+      { "id": "reunion", "name": "American Reunion", "date": "2012", "kind": "Film", "film": true, "runtime": 113 }
+    ]},
+    { "title": "American Pie Presents", "span": "2005 – 2020", "tier": "spinoffs", "items": [
+      { "id": "band-camp", "name": "Band Camp", "date": "2005", "kind": "Film", "film": true, "runtime": 90 },
+      { "id": "naked-mile", "name": "The Naked Mile", "date": "2006", "kind": "Film", "film": true, "runtime": 97 },
+      { "id": "beta-house", "name": "Beta House", "date": "2007", "kind": "Film", "film": true, "runtime": 88 },
+      { "id": "book-of-love", "name": "The Book of Love", "date": "2009", "kind": "Film", "film": true, "runtime": 94 },
+      { "id": "girls-rules", "name": "Girls' Rules", "date": "2020", "kind": "Film", "film": true, "runtime": 96 }
+    ]}
+  ]
+}
