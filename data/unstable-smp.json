@@ -8,8 +8,8 @@
   "accentInk": "#120826",
   "emoji": "💥",
   "background": "drift",
-  "datesLabel": "Auto-updated from the \"in order\" playlist · 147 episodes",
-  "updated": "2026-09-13",
+  "datesLabel": "Auto-updated from the \"in order\" playlist · 148 episodes",
+  "updated": "2026-09-20",
   "eras": [
     {
       "title": "Unstable Universe",
@@ -22,7 +22,7 @@
           "date": "2024+",
           "kind": "Series",
           "seasons": [
-            147
+            148
           ],
           "epAvg": 62,
           "epTitles": [
@@ -173,7 +173,8 @@
               "I Exposed Minecraft's \"Strongest\" Player",
               "How I Destroyed an Entire Minecraft Civilization",
               "1000 Players Simulate Mining Prison in Minecraft",
-              "Searching for a Vault that Doesn't Exist"
+              "Searching for a Vault that Doesn't Exist",
+              "How I Saved the World's Largest Minecraft Server"
             ]
           ],
           "epLinks": [
@@ -324,7 +325,8 @@
               "https://www.youtube.com/watch?v=BkYekSPynVo&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL",
               "https://www.youtube.com/watch?v=Ytm8WiQLNZA&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL",
               "https://www.youtube.com/watch?v=we2dBzQxtgQ&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL",
-              "https://www.youtube.com/watch?v=h68WUZ8b0O0&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL"
+              "https://www.youtube.com/watch?v=h68WUZ8b0O0&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL",
+              "https://www.youtube.com/watch?v=5hG_nAYEC2g&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL"
             ]
           ]
         }
