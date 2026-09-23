@@ -8,8 +8,8 @@
   "accentInk": "#120826",
   "emoji": "💥",
   "background": "drift",
-  "datesLabel": "Auto-updated from the \"in order\" playlist · 149 episodes",
-  "updated": "2026-09-21",
+  "datesLabel": "Auto-updated from the \"in order\" playlist · 150 episodes",
+  "updated": "2026-09-23",
   "eras": [
     {
       "title": "Unstable Universe",
@@ -22,9 +22,9 @@
           "date": "2024+",
           "kind": "Series",
           "seasons": [
-            149
+            150
           ],
-          "epAvg": 62,
+          "epAvg": 63,
           "epTitles": [
             [
               "How to Destroy the Unstable SMP",
@@ -175,7 +175,8 @@
               "1000 Players Simulate Mining Prison in Minecraft",
               "Searching for a Vault that Doesn't Exist",
               "How I Saved the World's Largest Minecraft Server",
-              "I Created Minecraft's Greatest Empire"
+              "I Created Minecraft's Greatest Empire",
+              "Escaping the Minecraft Underworld"
             ]
           ],
           "epLinks": [
@@ -328,7 +329,8 @@
               "https://www.youtube.com/watch?v=we2dBzQxtgQ&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL",
               "https://www.youtube.com/watch?v=h68WUZ8b0O0&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL",
               "https://www.youtube.com/watch?v=5hG_nAYEC2g&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL",
-              "https://www.youtube.com/watch?v=IOS7FKtiyxE&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL"
+              "https://www.youtube.com/watch?v=IOS7FKtiyxE&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL",
+              "https://www.youtube.com/watch?v=BWmWZTDxFrk&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL"
             ]
           ]
         }
