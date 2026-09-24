@@ -81,7 +81,7 @@
       const ids = group.items.map((i) => i.id).join(',');
       sec.innerHTML = `<div class="era-head"><h2>${esc(group.title)}</h2><span class="rule"></span><span class="tally" data-tally="${ids}"></span></div>`
         + (group.span ? `<p class="era-span">${esc(group.span)}</p>` : '')
-        + (group.note ? `<p class="era-note">${group.note}</p>` : '');
+        + (group.note ? `<p class="era-note">${sanitizeNote(group.note)}</p>` : '');
 
       const ul = document.createElement('ul'); ul.className = 'rows';
       group.items.forEach((it) => ul.appendChild(buildRow(it)));
@@ -142,7 +142,7 @@
         + `<span class="rt">${rtLabel}</span>`
         + (it.approx ? '<span class="approx" title="placement / count is approximate">±</span>' : '')
         + `</span>`
-        + (it.note ? `<span class="subnote">${it.note}</span>` : '')
+        + (it.note ? `<span class="subnote">${sanitizeNote(it.note)}</span>` : '')
         + `</span>`
         + `<span class="date">${esc(it.date || '')}</span>`
         + `<button class="skipbtn" type="button" title="Not going to watch" aria-label="Mark ${esc(it.name)} as not watching">${XICON}</button>`
@@ -278,6 +278,36 @@
   }
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+  // `note` fields (era/item) are documented as allowing a *little* inline HTML for
+  // formatting (see CONTRIBUTING.md), but franchises are community-contributed JSON —
+  // a malicious "note" is easy to miss in review and would otherwise run as raw HTML
+  // for every visitor (incl. anything an inline event handler could do, e.g. reading
+  // localStorage/Firebase-synced progress). Strip everything to a small inline allowlist
+  // with no attributes at all before it reaches innerHTML.
+  const NOTE_SAFE_TAGS = new Set(['B', 'I', 'EM', 'STRONG', 'U', 'SMALL', 'CODE', 'BR', 'SPAN']);
+  const NOTE_STRIP_ENTIRELY = new Set(['SCRIPT', 'STYLE', 'IFRAME', 'OBJECT', 'EMBED', 'SVG', 'LINK', 'META', 'FORM']);
+  function sanitizeNote(html) {
+    const tpl = document.createElement('template');
+    tpl.innerHTML = String(html == null ? '' : html);
+    (function clean(node) {
+      Array.from(node.childNodes).forEach((child) => {
+        if (child.nodeType === 1) { // element
+          if (NOTE_STRIP_ENTIRELY.has(child.tagName)) { child.remove(); return; }
+          clean(child);
+          if (!NOTE_SAFE_TAGS.has(child.tagName)) {
+            while (child.firstChild) node.insertBefore(child.firstChild, child);
+            child.remove();
+          } else {
+            Array.from(child.attributes).forEach((a) => child.removeAttribute(a.name));
+          }
+        } else if (child.nodeType !== 3) {
+          child.remove(); // comments, etc.
+        }
+      });
+    })(tpl.content);
+    return tpl.innerHTML;
+  }
 
   // ---- per-franchise SEO (dynamic meta + JSON-LD; Googlebot renders JS) ----
   function setMeta(attr, key, val) {
