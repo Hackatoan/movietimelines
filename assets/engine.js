@@ -169,7 +169,7 @@
               const url = links[e - 1];
               const wrap = document.createElement('div'); wrap.className = 'eprow'; wrap.dataset.id = id;
               wrap.innerHTML =
-                `<button class="epbox" type="button" role="checkbox" aria-label="Mark episode ${e} watched">${CHECK}</button>`
+                `<button class="epbox" type="button" role="checkbox" aria-checked="false" aria-label="Mark episode ${e} watched">${CHECK}</button>`
                 + `<span class="epnum">${e}</span>`
                 + `<span class="eptitle">${esc(titles[e - 1] || ('Episode ' + e))}</span>`
                 + (url ? `<a class="epwatch" href="${esc(url)}" target="_blank" rel="noopener" aria-label="Watch episode ${e}">▶</a>` : '');
@@ -184,6 +184,7 @@
               const chip = document.createElement('button');
               chip.type = 'button'; chip.className = 'ep'; chip.dataset.id = id; chip.textContent = e;
               chip.setAttribute('aria-label', `${it.name} ${lab} episode ${e}`);
+              chip.setAttribute('aria-pressed', 'false');
               chip.addEventListener('click', () => toggleEp(id));
               grid.appendChild(chip);
             }
@@ -257,8 +258,13 @@
         row.classList.toggle('partial', !!partial);
         li.querySelector('.box').setAttribute('aria-checked', partial ? 'mixed' : full);
       });
-      document.querySelectorAll('.ep').forEach((c) => c.classList.toggle('done', done.has(c.dataset.id)));
-      document.querySelectorAll('.eprow').forEach((r) => r.classList.toggle('done', done.has(r.dataset.id)));
+      document.querySelectorAll('.ep').forEach((c) => { const on = done.has(c.dataset.id); c.classList.toggle('done', on); c.setAttribute('aria-pressed', on); });
+      document.querySelectorAll('.eprow').forEach((r) => {
+        const on = done.has(r.dataset.id);
+        r.classList.toggle('done', on);
+        const epbox = r.querySelector('.epbox');
+        if (epbox) epbox.setAttribute('aria-checked', on);
+      });
       document.querySelectorAll('[data-eps]').forEach((eLbl) => {
         const it = BY_ID[eLbl.dataset.eps];
         eLbl.textContent = `${MT.epDone(it, done)} / ${MT.epTotal(it)} eps`;
