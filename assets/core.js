@@ -33,9 +33,16 @@
   };
 
   MT.isSeries = (it) => Array.isArray(it.seasons);
+  // Episode ids never change for a given item within a page session, but this is
+  // rebuilt (string-templated, one entry per episode) on every render() tick via
+  // itemDone/epDone — for long-running shows (Pokémon ~1400 eps, One Piece ~1180,
+  // Naruto ~1010) that's real work repeated on every single checkbox click.
+  // Cache the result on the item itself, same pattern MT.flatten already uses for _tier/_era.
   MT.epIds = (it) => {
+    if (it.__epIds) return it.__epIds;
     const out = [];
     if (MT.isSeries(it)) it.seasons.forEach((n, si) => { for (let e = 1; e <= n; e++) out.push(`${it.id}-s${si + 1}e${e}`); });
+    it.__epIds = out;
     return out;
   };
   MT.epTotal = (it) => (MT.isSeries(it) ? it.seasons.reduce((a, b) => a + b, 0) : 0);
