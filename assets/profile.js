@@ -32,7 +32,7 @@
       : `<span>${st.doneItems}/${st.totItems}</span><span>&middot;</span><span>≈${MT.fmtH(st.leftMin)} left</span>`;
     a.innerHTML =
       `<div class="poster">${d.emoji || '\u{1F3AC}'}`
-      + `<button class="savebtn${saved ? ' on' : ''}" type="button" aria-label="Save to profile" aria-pressed="${saved}"><svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg></button></div>`
+      + `<button class="savebtn${saved ? ' on' : ''}" type="button" aria-label="Save to profile" aria-pressed="${saved}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg></button></div>`
       + `<div class="body">`
       + `<div class="title-row"><h3>${esc(d.title)}</h3><span class="tag ${d.community ? 'community' : 'mine'}">${esc(d.community ? 'Community' : (d.author || 'Mine'))}</span></div>`
       + `<p class="tagline">${esc(d.tagline || '')}</p>`

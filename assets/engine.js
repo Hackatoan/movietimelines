@@ -4,9 +4,9 @@
   const fid = (qs.get('f') || '').replace(/[^a-z0-9_-]/gi, '');
   const app = document.getElementById('app');
 
-  const CHECK = '<svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg>';
-  const CHEV = '<svg viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>';
-  const XICON = '<svg viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>';
+  const CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="4,12 10,18 20,6"/></svg>';
+  const CHEV = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="6,9 12,15 18,9"/></svg>';
+  const XICON = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>';
 
   if (!fid) { showError('No franchise selected.', 'Go back to the home page and pick one.'); return; }
 
@@ -44,7 +44,7 @@
     app.innerHTML = `
       <header class="f-hero">
         <div class="f-toprow"><a class="back" href="index.html">&larr; All franchises</a>
-          <span class="f-topright"><button id="savefranchise" class="savepage" type="button" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg><span class="lbl">Save</span></button><span id="authbox" class="authbox"></span></span></div>
+          <span class="f-topright"><button id="savefranchise" class="savepage" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg><span class="lbl">Save</span></button><span id="authbox" class="authbox"></span></span></div>
         <div class="f-title">
           <span class="emoji">${data.emoji || '\u{1F3AC}'}</span>
           <div>
