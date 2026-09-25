@@ -166,7 +166,7 @@
             const list = document.createElement('div'); list.className = 'eplist';
             for (let e = 1; e <= n; e++) {
               const id = `${it.id}-s${si + 1}e${e}`;
-              const url = links[e - 1];
+              const url = safeUrl(links[e - 1]);
               const wrap = document.createElement('div'); wrap.className = 'eprow'; wrap.dataset.id = id;
               wrap.innerHTML =
                 `<button class="epbox" type="button" role="checkbox" aria-checked="false" aria-label="Mark episode ${e} watched">${CHECK}</button>`
@@ -284,6 +284,17 @@
   }
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+  // `epLinks` (community JSON, see CONTRIBUTING.md) are meant to be plain http(s)
+  // watch links, but esc() only entity-encodes — it doesn't stop a `javascript:` or
+  // `data:` URL from landing in an href and running on click. Only allow http/https.
+  function safeUrl(url) {
+    if (!url) return null;
+    try {
+      const u = new URL(String(url), location.href);
+      return (u.protocol === 'http:' || u.protocol === 'https:') ? u.href : null;
+    } catch (e) { return null; }
+  }
 
   // `note` fields (era/item) are documented as allowing a *little* inline HTML for
   // formatting (see CONTRIBUTING.md), but franchises are community-contributed JSON —
