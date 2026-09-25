@@ -124,6 +124,19 @@
       sfb.addEventListener('click', () => { MT.toggleSaved(fid); upd(); });
     }
 
+    // render() re-walks these node sets on every checkbox click (toggleMaster/toggleEp/
+    // toggleSkip all call persist()+render()). The rows/chips/tallies are all built once
+    // above and never added or removed afterward, so query the DOM for them once here
+    // instead of re-running document.querySelectorAll('.ep') etc. on every single click —
+    // for long-running shows (Pokémon ~1400 eps, One Piece ~1180, Naruto ~1010) that
+    // querying was itself real repeated work on top of the per-node updates.
+    const itemEls = Array.from(document.querySelectorAll('.item'));
+    const epEls = Array.from(document.querySelectorAll('.ep'));
+    const epRowEls = Array.from(document.querySelectorAll('.eprow'));
+    const epsLabelEls = Array.from(document.querySelectorAll('[data-eps]'));
+    const tallyEls = Array.from(document.querySelectorAll('[data-tally]'));
+    const fchipEls = Array.from(fbar.querySelectorAll('.fchip'));
+
     function buildRow(it) {
       const li = document.createElement('li');
       li.className = 'item'; li.dataset.id = it.id;
@@ -246,7 +259,7 @@
       el('tleft').textContent = MT.fmtH(st.leftMin);
       el('ttot').textContent = MT.fmtH(st.totMin);
 
-      document.querySelectorAll('.item').forEach((li) => {
+      itemEls.forEach((li) => {
         const it = BY_ID[li.dataset.id];
         li.hidden = !MT.visible(it, filters);
         const row = li.querySelector('.row');
@@ -258,24 +271,24 @@
         row.classList.toggle('partial', !!partial);
         li.querySelector('.box').setAttribute('aria-checked', partial ? 'mixed' : full);
       });
-      document.querySelectorAll('.ep').forEach((c) => { const on = done.has(c.dataset.id); c.classList.toggle('done', on); c.setAttribute('aria-pressed', on); });
-      document.querySelectorAll('.eprow').forEach((r) => {
+      epEls.forEach((c) => { const on = done.has(c.dataset.id); c.classList.toggle('done', on); c.setAttribute('aria-pressed', on); });
+      epRowEls.forEach((r) => {
         const on = done.has(r.dataset.id);
         r.classList.toggle('done', on);
         const epbox = r.querySelector('.epbox');
         if (epbox) epbox.setAttribute('aria-checked', on);
       });
-      document.querySelectorAll('[data-eps]').forEach((eLbl) => {
+      epsLabelEls.forEach((eLbl) => {
         const it = BY_ID[eLbl.dataset.eps];
         eLbl.textContent = `${MT.epDone(it, done)} / ${MT.epTotal(it)} eps`;
       });
-      document.querySelectorAll('[data-tally]').forEach((t) => {
+      tallyEls.forEach((t) => {
         const its = t.dataset.tally.split(',').map((id) => BY_ID[id]).filter((it) => MT.visible(it, filters));
         const d = its.filter((it) => !skip.has(it.id) && MT.itemDone(it, done)).length;
         t.textContent = d + '/' + its.length;
         const sec = t.closest('section.era'); if (sec) sec.hidden = its.length === 0;
       });
-      document.querySelectorAll('.fchip').forEach((ch) => {
+      fchipEls.forEach((ch) => {
         const on = !!filters[ch.dataset.tier];
         ch.classList.toggle('on', on); ch.setAttribute('aria-pressed', on);
       });
