@@ -4,6 +4,13 @@
   const commWrap = document.getElementById('community');
   const search = document.getElementById('search');
   const registry = [];   // {meta, data, items(lowername[])}
+  // statsFor() re-parses localStorage + re-walks every era/item (and, for long-running
+  // shows, filters a 1000+ entry episode-id array) on every call. render() is wired to
+  // the search box's 'input' event, so without caching this full recompute ran for every
+  // visible franchise card on every keystroke. Progress data only changes via franchise.html
+  // (a separate page load) or a cloud-sync adoption (which calls window.MTSyncReload), so
+  // it's safe to cache per franchise id and only clear on sync.
+  const statsCache = new Map();
 
   fetch('data/franchises.json', { cache: 'no-cache' })
     .then((r) => r.json())
@@ -55,11 +62,14 @@
   }
 
   function statsFor(data) {
+    if (statsCache.has(data.id)) return statsCache.get(data.id);
     const K = MT.keys(data.id);
     const done = MT.loadSet(K.done);
     const skip = MT.loadSet(K.skip);
     const filters = MT.loadObj(K.filters, MT.defaultFilters(data));
-    return MT.stats(data, done, skip, filters);
+    const st = MT.stats(data, done, skip, filters);
+    statsCache.set(data.id, st);
+    return st;
   }
 
   function card(entry) {
@@ -133,8 +143,9 @@
     list.forEach((e) => wrap.appendChild(card(e)));
   }
 
-  // sync layer refreshes cards after cloud data is adopted
-  window.MTSyncReload = render;
+  // sync layer refreshes cards after cloud data is adopted — progress may have
+  // changed, so drop the cached stats before repainting.
+  window.MTSyncReload = () => { statsCache.clear(); render(); };
 
   search.addEventListener('input', render);
   // "/" focuses search
