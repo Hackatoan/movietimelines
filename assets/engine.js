@@ -79,7 +79,7 @@
       sec.className = 'era';
       sec.dataset.era = group.items.map((i) => i.id).join(',');
       const ids = group.items.map((i) => i.id).join(',');
-      sec.innerHTML = `<div class="era-head"><h2>${esc(group.title)}</h2><span class="rule"></span><span class="tally" data-tally="${ids}"></span></div>`
+      sec.innerHTML = `<div class="era-head"><h2>${esc(group.title)}</h2><span class="rule"></span><span class="tally" data-tally="${esc(ids)}"></span></div>`
         + (group.span ? `<p class="era-span">${esc(group.span)}</p>` : '')
         + (group.note ? `<p class="era-note">${sanitizeNote(group.note)}</p>` : '');
 
@@ -151,7 +151,7 @@
         + `<span class="meta"><span class="title-line">`
         + `<span class="name">${esc(it.name)}</span>`
         + `<span class="${kindCls}">${esc(it.kind || (series ? 'Series' : 'Film'))}</span>`
-        + (series ? `<span class="eps-count" data-eps="${it.id}"></span>` : '')
+        + (series ? `<span class="eps-count" data-eps="${esc(it.id)}"></span>` : '')
         + `<span class="rt">${rtLabel}</span>`
         + (it.approx ? '<span class="approx" title="placement / count is approximate">±</span>' : '')
         + `</span>`
