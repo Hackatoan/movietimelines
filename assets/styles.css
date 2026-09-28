@@ -101,7 +101,7 @@ a{color:inherit}
 .card .pctnum{font-variant-numeric:tabular-nums;color:var(--muted)}
 .card .author{font-size:11.5px}
 
-.empty{color:var(--muted-dim);font-size:14px;padding:24px 4px;text-align:center}
+.empty{color:var(--muted);font-size:14px;padding:24px 4px;text-align:center}
 
 /* save / bookmark button on cards */
 .card .poster{position:relative}
