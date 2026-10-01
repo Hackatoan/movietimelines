@@ -21,7 +21,7 @@
       { "id": "dom",  "name": "Jurassic World Dominion", "date": "2022", "kind": "Film", "film": true, "runtime": 147 }
     ]},
     { "title": "A New Era", "span": "2024 – ", "items": [
-      { "id": "chaos", "name": "Jurassic World: Chaos Theory", "date": "post-Dominion", "kind": "Series", "seasons": [10,10], "epAvg": 24, "approx": true },
+      { "id": "chaos", "name": "Jurassic World: Chaos Theory", "date": "post-Dominion", "kind": "Series", "seasons": [10,10,10,9], "epAvg": 24 },
       { "id": "rebirth", "name": "Jurassic World Rebirth", "date": "2025", "kind": "Film", "film": true, "runtime": 134 }
     ]}
   ]
