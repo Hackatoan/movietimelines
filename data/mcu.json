@@ -73,8 +73,10 @@
       { "id": "bnw",   "name": "Captain America: Brave New World", "date": "2027", "kind": "Film", "film": true, "runtime": 118, "approx": true },
       { "id": "thunder","name": "Thunderbolts*", "date": "2027", "kind": "Film", "film": true, "runtime": 126, "approx": true },
       { "id": "ironheart","name": "Ironheart", "date": "2027", "kind": "Series", "seasons": [6], "epAvg": 45, "approx": true },
-      { "id": "ddba",  "name": "Daredevil: Born Again", "date": "2027", "kind": "Series", "seasons": [9], "epAvg": 48, "approx": true },
-      { "id": "ff4",   "name": "The Fantastic Four: First Steps", "date": "alt. universe", "kind": "Film", "film": true, "runtime": 115, "approx": true }
+      { "id": "ddba",  "name": "Daredevil: Born Again", "date": "2027", "kind": "Series", "seasons": [9,8], "epAvg": 48, "approx": true },
+      { "id": "ff4",   "name": "The Fantastic Four: First Steps", "date": "alt. universe", "kind": "Film", "film": true, "runtime": 115, "approx": true },
+      { "id": "wonderman", "name": "Wonder Man", "date": "2028", "kind": "Series", "seasons": [8], "epAvg": 29, "approx": true },
+      { "id": "sbnd",  "name": "Spider-Man: Brand New Day", "date": "2028", "kind": "Film", "film": true, "runtime": 145, "approx": true }
     ]},
     { "title": "Marvel Television", "span": "1946 – 2020", "tier": "tv",
       "note": "The older “Marvel Television” slate (ABC / Netflix / Hulu / Freeform). Loosely connected; canon status is ambiguous and largely off the Sacred Timeline.", "items": [

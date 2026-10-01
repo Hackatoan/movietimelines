@@ -18,9 +18,11 @@
       { "id": "aotc", "name": "Episode II: Attack of the Clones", "date": "22 BBY", "kind": "Film", "film": true, "runtime": 142 },
       { "id": "cwf",  "name": "The Clone Wars", "date": "22 BBY", "kind": "Film", "film": true, "runtime": 98 },
       { "id": "cws",  "name": "The Clone Wars", "date": "22–19 BBY", "kind": "Series", "seasons": [22,22,22,22,20,13,12], "epAvg": 22 },
-      { "id": "totj", "name": "Tales of the Jedi", "date": "spans", "kind": "Series", "seasons": [6,6], "epAvg": 15 },
+      { "id": "totj", "name": "Tales of the Jedi", "date": "spans", "kind": "Series", "seasons": [6,6,6], "epAvg": 15,
+        "note": "Collects the <i>Tales of…</i> anthology shorts: Tales of the Jedi (2022), Tales of the Empire (2024), and Tales of the Underworld (2025)." },
       { "id": "rots", "name": "Episode III: Revenge of the Sith", "date": "19 BBY", "kind": "Film", "film": true, "runtime": 140 },
-      { "id": "tbb",  "name": "The Bad Batch", "date": "19 BBY+", "kind": "Series", "seasons": [16,16,15], "epAvg": 26 }
+      { "id": "tbb",  "name": "The Bad Batch", "date": "19 BBY+", "kind": "Series", "seasons": [16,16,15], "epAvg": 26 },
+      { "id": "maul-shadow-lord", "name": "Star Wars: Maul – Shadow Lord", "date": "~18 BBY", "kind": "Series", "seasons": [10], "epAvg": 27, "approx": true }
     ]},
     { "title": "Reign of the Empire", "span": "~15 BBY – 4 ABY", "items": [
       { "id": "solo", "name": "Solo: A Star Wars Story", "date": "~10 BBY", "kind": "Film", "film": true, "runtime": 135 },
@@ -40,6 +42,7 @@
     ]},
     { "title": "New Republic", "span": "9 – 35 ABY", "items": [
       { "id": "mando", "name": "The Mandalorian", "date": "9 ABY", "kind": "Series", "seasons": [8,8,8], "epAvg": 40 },
+      { "id": "mando-grogu", "name": "The Mandalorian and Grogu", "date": "9 ABY", "kind": "Film", "film": true, "runtime": 132 },
       { "id": "boba",  "name": "The Book of Boba Fett", "date": "9 ABY", "kind": "Series", "seasons": [7], "epAvg": 50 },
       { "id": "ahsoka", "name": "Ahsoka", "date": "9 ABY", "kind": "Series", "seasons": [8], "epAvg": 48 },
       { "id": "skel",  "name": "Skeleton Crew", "date": "9 ABY", "kind": "Series", "seasons": [8], "epAvg": 35 },
