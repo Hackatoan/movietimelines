@@ -29,8 +29,10 @@
       .then((data) => {
         if (!data) return null;
         data.id = data.id || id;
-        const names = MT.flatten(data).map((it) => it.name.toLowerCase());
-        return { data, names };
+        const items = MT.flatten(data);
+        const names = items.map((it) => it.name.toLowerCase());
+        const origNames = items.map((it) => it.name);
+        return { data, names, origNames };
       })
       .catch(() => null);
   }
@@ -116,9 +118,9 @@
         if ((d.title + ' ' + (d.tagline || '') + ' ' + (d.author || '')).toLowerCase().includes(q)) return true;
         const hit = e.names.find((n) => n.includes(q));
         if (hit) {
-          // show original-case hint
-          const orig = MT.flatten(d).map((i) => i.name).find((n) => n.toLowerCase() === hit);
-          e._matchHint = orig || '';
+          // show original-case hint (already cached, no re-flatten needed)
+          const idx = e.names.indexOf(hit);
+          e._matchHint = idx >= 0 ? e.origNames[idx] : '';
           return true;
         }
         return false;
