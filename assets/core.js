@@ -120,5 +120,25 @@
     return MT.loadSet(K.done).size > 0 || MT.loadSet(K.skip).size > 0;
   };
 
+  // The next `limit` things to watch, in franchise order: visible, not skipped, not finished.
+  // Films are one unit; a series yields its remaining episodes one at a time ("Name S2E5").
+  MT.watchQueue = (data, done, skip, filters, limit) => {
+    const out = [];
+    for (const it of MT.flatten(data)) {
+      if (out.length >= limit) break;
+      if (!MT.visible(it, filters) || skip.has(it.id) || MT.itemDone(it, done)) continue;
+      if (MT.isSeries(it)) {
+        const ids = MT.epIds(it);
+        let s = 0, n = 0; // season index, episode index within the season
+        for (let i = 0; i < ids.length && out.length < limit; i++) {
+          while (n >= it.seasons[s]) { n = 0; s++; }
+          if (!done.has(ids[i])) out.push({ id: ids[i], title: `${it.name} S${s + 1}E${n + 1}`, min: it.epAvg || 30 });
+          n++;
+        }
+      } else out.push({ id: it.id, title: it.name, min: it.runtime || 90 });
+    }
+    return out;
+  };
+
   global.MT = MT;
 })(window);

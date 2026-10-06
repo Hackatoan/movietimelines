@@ -40,6 +40,21 @@
     <div class="grid" id="watching"></div>
   </section>
 
+  <section id="planSection" hidden>
+    <div class="sec-head"><h2>Watch plan</h2><span class="rule"></span></div>
+    <div class="panel">
+      <p>Put what to watch next on your calendar. This builds an <b>.ics</b> file from your progress &mdash; the next episode or film of each franchise you pick, one slot per day. Import it into Google Calendar, Apple Calendar, Outlook or Nextcloud; importing an updated plan replaces the old events instead of duplicating them.</p>
+      <div id="planFranchises" class="planrow"></div>
+      <div class="planrow">
+        <label>Start <input type="date" id="planStart"></label>
+        <label>Time <input type="time" id="planTime" value="19:00"></label>
+        <label>Days <input type="number" id="planDays" min="1" max="60" value="14"></label>
+        <label>Per franchise / day <input type="number" id="planPer" min="1" max="4" value="1"></label>
+      </div>
+      <div class="btnrow"><button class="btn primary" type="button" id="planGo">&#128197; Download watch plan (.ics)</button><span class="planmsg" id="planMsg" role="status"></span></div>
+    </div>
+  </section>
+
   <section id="savedSection" hidden>
     <div class="sec-head"><h2>Saved</h2><span class="rule"></span><span class="n" id="savedCount">0</span></div>
     <div class="grid" id="saved"></div>
@@ -64,6 +79,7 @@
 </div>
 
 <script src="assets/core.js"></script>
+<script src="assets/ics.js"></script>
 <script src="assets/profile.js"></script>
 <script type="module" src="assets/auth.js"></script>
 </body>
