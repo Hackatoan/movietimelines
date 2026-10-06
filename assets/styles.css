@@ -311,3 +311,12 @@ li.item{list-style:none}
   .dock{border-radius:0 0 14px 14px;margin-top:0}
   .searchbar{margin-top:16px}
 }
+
+/* Profile: calendar watch plan */
+.planrow{display:flex;flex-wrap:wrap;gap:10px 18px;margin:12px 0;align-items:center}
+.planrow label{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.planrow input[type=date],.planrow input[type=time],.planrow input[type=number]{background:var(--bg-2,#14141c);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font:inherit;color-scheme:dark}
+.planrow input[type=number]{width:64px}
+.planchip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--ink);cursor:pointer}
+.planchip input{accent-color:var(--accent)}
+.planmsg{font-size:13px;color:var(--muted);align-self:center}

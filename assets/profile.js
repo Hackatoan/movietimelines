@@ -75,6 +75,7 @@
     ].join('');
 
     paint('watching', watching, 'watchingCount', 'watching');
+    renderPlan(watching);
     paint('saved', saved, 'savedCount', 'saved');
     paint('completed', completed, 'completedCount', 'completed');
 
@@ -84,6 +85,47 @@
   function tile(v, label) {
     return `<div class="stat-tile"><span class="stat-v">${esc(String(v))}</span><span class="stat-l">${esc(label)}</span></div>`;
   }
+
+  // ---- watch plan -> .ics ----
+  let planSel = null; // franchise ids ticked by the user (null = all, until they change something)
+  function renderPlan(watching) {
+    const sec = document.getElementById('planSection');
+    sec.hidden = watching.length === 0;
+    if (!watching.length) return;
+    const wrap = document.getElementById('planFranchises');
+    const ids = watching.map((e) => e.data.id);
+    if (!planSel) planSel = new Set(ids);
+    wrap.innerHTML = '';
+    watching.forEach((e) => {
+      const l = document.createElement('label'); l.className = 'planchip';
+      const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = planSel.has(e.data.id);
+      cb.addEventListener('change', () => { if (cb.checked) planSel.add(e.data.id); else planSel.delete(e.data.id); });
+      l.append(cb, document.createTextNode((e.data.emoji ? e.data.emoji + ' ' : '') + e.data.title));
+      wrap.appendChild(l);
+    });
+    const start = document.getElementById('planStart');
+    if (!start.value) { const t = new Date(); start.value = `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(t.getDate()).padStart(2, '0')}`; }
+  }
+
+  document.getElementById('planGo').addEventListener('click', () => {
+    const msg = document.getElementById('planMsg');
+    const chosen = registry.filter((e) => e._prog && e._st.pct < 100 && planSel && planSel.has(e.data.id));
+    if (!chosen.length) { msg.textContent = 'Tick at least one franchise.'; return; }
+    const [y, m, d] = document.getElementById('planStart').value.split('-').map(Number);
+    const [hh, mm] = (document.getElementById('planTime').value || '19:00').split(':').map(Number);
+    const days = Math.min(60, Math.max(1, +document.getElementById('planDays').value || 14));
+    const perDay = Math.min(4, Math.max(1, +document.getElementById('planPer').value || 1));
+    const entries = chosen.map((e) => {
+      const K = MT.keys(e.data.id);
+      return { data: e.data, done: MT.loadSet(K.done), skip: MT.loadSet(K.skip), filters: MT.loadObj(K.filters, MT.defaultFilters(e.data)) };
+    });
+    const events = MT.buildPlan(entries, { start: new Date(y, (m || 1) - 1, d || 1), hour: hh, minute: mm, days, perDay });
+    if (!events.length) { msg.textContent = 'Nothing left to schedule \u2014 you\u2019re all caught up!'; return; }
+    const blob = new Blob([MT.buildIcs(events, { calName: 'MovieTimelines watch plan' })], { type: 'text/calendar;charset=utf-8' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'movietimelines-watch-plan.ics';
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    msg.textContent = `${events.length} event${events.length === 1 ? '' : 's'} \u2014 open the downloaded file to add them.`;
+  });
 
   // let the sync layer refresh after cloud data is adopted
   window.MTSyncReload = render;
