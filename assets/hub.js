@@ -79,7 +79,7 @@
     const st = statsFor(d);
     const a = document.createElement('a');
     a.className = 'card';
-    a.href = `franchise.html?f=${encodeURIComponent(d.id)}`;
+    a.href = MT.href(`franchise.html?f=${encodeURIComponent(d.id)}`);
     a.style.setProperty('--card-accent', d.accent || 'var(--accent)');
     const tagCls = d.community ? 'community' : 'mine';
     const tagTxt = d.community ? 'Community' : (d.author || 'Mine');

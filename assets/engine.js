@@ -16,7 +16,7 @@
     .catch(() => showError('Couldn’t load this franchise.', `No data file for “${fid}”.`));
 
   function showError(title, msg) {
-    app.innerHTML = `<div class="errbox"><p><b>${title}</b></p><p>${msg}</p><p><a class="btn ghost" href="index.html">← All franchises</a></p></div>`;
+    app.innerHTML = `<div class="errbox"><p><b>${title}</b></p><p>${msg}</p><p><a class="btn ghost" href="${MT.href('index.html')}">← All franchises</a></p></div>`;
   }
 
   function boot(data) {
@@ -43,7 +43,7 @@
     // ---- shell ----
     app.innerHTML = `
       <header class="f-hero">
-        <div class="f-toprow"><a class="back" href="index.html">&larr; All franchises</a>
+        <div class="f-toprow"><a class="back" href="${MT.href('index.html')}">&larr; All franchises</a>
           <span class="f-topright"><button id="savefranchise" class="savepage" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg><span class="lbl">Save</span></button><span id="authbox" class="authbox"></span></span></div>
         <div class="f-title">
           <span class="emoji">${data.emoji || '\u{1F3AC}'}</span>
@@ -101,7 +101,7 @@
     document.getElementById('ffoot').innerHTML =
       `${data.datesLabel ? esc(data.datesLabel) + ' &middot; ' : ''}<b>Bold</b> = film &middot; the &#8856; button marks something you’re <b>not going to watch</b> (dropped from the count &amp; time-left).`
       + `<div style="margin-top:10px"><a class="suggest-link" href="${issueUrl}" target="_blank" rel="noopener">✎ Suggest an update for ${esc(data.title)}</a></div>`
-      + `<div style="margin-top:8px">Times are approximate. <a href="index.html">All franchises</a> &middot; <a href="https://buymeacoffee.com/hackatoa" target="_blank" rel="noopener">Buy me a coffee</a></div>`;
+      + `<div style="margin-top:8px">Times are approximate. <a href="${MT.href('index.html')}">All franchises</a> &middot; <a href="https://buymeacoffee.com/hackatoa" target="_blank" rel="noopener">Buy me a coffee</a></div>`;
 
     // ---- filter chips ----
     const fbar = document.getElementById('filters');
