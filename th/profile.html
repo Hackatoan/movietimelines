@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="th">
+<head>
+<base href="/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>โปรไฟล์ของคุณ — MovieTimelines</title>
+<meta name="description" content="โปรไฟล์ MovieTimelines ของคุณ — แฟรนไชส์ที่คุณกำลังติดตาม, สิ่งที่คุณดูจบแล้ว และรายการที่ต้องดูที่บันทึกไว้">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b0b0e">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+
+  <!-- i18n:hreflang:start -->
+  <link rel="alternate" hreflang="en" href="https://timelines.hackatoa.com/profile.html" />
+  <link rel="alternate" hreflang="es" href="https://timelines.hackatoa.com/es/profile.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://timelines.hackatoa.com/pt-br/profile.html" />
+  <link rel="alternate" hreflang="fr" href="https://timelines.hackatoa.com/fr/profile.html" />
+  <link rel="alternate" hreflang="de" href="https://timelines.hackatoa.com/de/profile.html" />
+  <link rel="alternate" hreflang="vi" href="https://timelines.hackatoa.com/vi/profile.html" />
+  <link rel="alternate" hreflang="th" href="https://timelines.hackatoa.com/th/profile.html" />
+  <link rel="alternate" hreflang="x-default" href="https://timelines.hackatoa.com/profile.html" />
+  <!-- i18n:hreflang:end -->
+</head>
+<body>
+<!-- i18n:switcher:start -->
+<div id="lang-switch" style="position:fixed;top:8px;right:10px;z-index:99999;font-family:system-ui,-apple-system,sans-serif"><button id="lang-btn" type="button" aria-label="Language" aria-haspopup="true" aria-expanded="false" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;background:rgba(6,10,6,.92);border:1px solid #1a3d1a;border-radius:999px;color:#8a8;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.5)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><ellipse cx="12" cy="12" rx="4" ry="9"/></svg></button><div id="lang-pop" role="menu" style="display:none;position:absolute;top:calc(100% + 8px);right:0;flex-direction:column;gap:8px;background:rgba(6,10,6,.95);border:1px solid #1a3d1a;border-radius:10px;padding:9px 12px;box-shadow:0 4px 16px rgba(0,0,0,.6);font-size:12px;white-space:nowrap">
+  <a href="/profile.html" hreflang="en" role="menuitem" style="color:#8a8;text-decoration:none;">EN</a>
+  <a href="/es/profile.html" hreflang="es" role="menuitem" style="color:#8a8;text-decoration:none;">ES</a>
+  <a href="/pt-br/profile.html" hreflang="pt-BR" role="menuitem" style="color:#8a8;text-decoration:none;">PT</a>
+  <a href="/fr/profile.html" hreflang="fr" role="menuitem" style="color:#8a8;text-decoration:none;">FR</a>
+  <a href="/de/profile.html" hreflang="de" role="menuitem" style="color:#8a8;text-decoration:none;">DE</a>
+  <a href="/vi/profile.html" hreflang="vi" role="menuitem" style="color:#8a8;text-decoration:none;">VI</a>
+  <a href="/th/profile.html" hreflang="th" role="menuitem" aria-current="true" style="color:#fff;font-weight:700;text-decoration:none;">TH</a>
+</div></div>
+<script src="/assets/lang-switcher.js" defer></script>
+<!-- i18n:switcher:end -->
+<div class="wrap">
+  <div class="topbar">
+    <a class="brand" href="/th/"><span class="logo"><span class="reel">▸</span> MovieTimelines</span></a>
+    <nav class="topnav">
+      <span id="authbox" class="authbox"></span>
+      <a class="tlink" href="/th/">แฟรนไชส์</a>
+      <a class="bmc" href="https://buymeacoffee.com/hackatoa" target="_blank" rel="noopener">☕ คอฟฟี่</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <p class="eyebrow">โปรไฟล์ของคุณ</p>
+    <h1>รายการที่ต้องดูของคุณ<br>&amp; ความคืบหน้า</h1>
+    <p class="lede">ทุกสิ่งที่คุณติดตามรวมอยู่ในที่เดียว ลงชื่อเข้าใช้เพื่อซิงค์ข้ามอุปกรณ์ — มิฉะนั้นข้อมูลจะบันทึกอยู่ในเบราว์เซอร์นี้เท่านั้น</p>
+  </header>
+
+  <div class="statstrip" id="statstrip"></div>
+
+  <section id="watchingSection" hidden>
+    <div class="sec-head"><h2>ดูต่อ</h2><span class="rule"></span><span class="n" id="watchingCount">0</span></div>
+    <div class="grid" id="watching"></div>
+  </section>
+
+  <section id="planSection" hidden>
+    <div class="sec-head"><h2>แผนการรับชม</h2><span class="rule"></span></div>
+    <div class="panel">
+      <p>วางแผนสิ่งที่จะดูต่อไปลงในปฏิทินของคุณ ระบบจะสร้างไฟล์ <b>.ics</b> จากความคืบหน้าของคุณ &mdash; ตอนหรือภาพยนตร์เรื่องถัดไปของแต่ละแฟรนไชส์ที่คุณเลือก วันละหนึ่งรายการ นำเข้าไปยัง Google Calendar, Apple Calendar, Outlook หรือ Nextcloud การนำเข้าแผนที่อัปเดตจะแทนที่เหตุการณ์เก่าแทนที่จะสร้างรายการซ้ำ</p>
+      <div id="planFranchises" class="planrow"></div>
+      <div class="planrow">
+        <label>เริ่ม <input type="date" id="planStart"></label>
+        <label>เวลา <input type="time" id="planTime" value="19:00"></label>
+        <label>วัน <input type="number" id="planDays" min="1" max="60" value="14"></label>
+        <label>ต่อแฟรนไชส์ / วัน <input type="number" id="planPer" min="1" max="4" value="1"></label>
+      </div>
+      <div class="btnrow"><button class="btn primary" type="button" id="planGo">&#128197; ดาวน์โหลดแผนการรับชม (.ics)</button><span class="planmsg" id="planMsg" role="status"></span></div>
+    </div>
+  </section>
+
+  <section id="savedSection" hidden>
+    <div class="sec-head"><h2>บันทึกแล้ว</h2><span class="rule"></span><span class="n" id="savedCount">0</span></div>
+    <div class="grid" id="saved"></div>
+  </section>
+
+  <section id="completedSection" hidden>
+    <div class="sec-head"><h2>ดูจบแล้ว</h2><span class="rule"></span><span class="n" id="completedCount">0</span></div>
+    <div class="grid" id="completed"></div>
+  </section>
+
+  <div id="emptyState" class="panel" hidden>
+    <h3>ยังไม่มีอะไรที่นี่</h3>
+    <p>เริ่มเช็คชื่อตอนในแฟรนไชส์ใดก็ได้ หรือกดปุ่ม <b>บุ๊กมาร์ก</b> บนการ์ดเพื่อบันทึกไว้ดูทีหลัง</p>
+    <div class="btnrow"><a class="btn primary" href="/th/">เรียกดูแฟรนไชส์</a></div>
+  </div>
+
+  <footer class="site">
+    <a href="/th/">แฟรนไชส์ทั้งหมด</a> &middot;
+    <a href="https://buymeacoffee.com/hackatoa" target="_blank" rel="noopener">Buy me a coffee</a><br>
+    ความคืบหน้าและข้อมูลที่บันทึกไว้จะถูกเก็บไว้ในเบราว์เซอร์ของคุณ (และซิงค์กับบัญชีของคุณเมื่อลงชื่อเข้าใช้)
+  </footer>
+</div>
+
+<script src="/assets/core.js"></script>
+<script src="/assets/ics.js"></script>
+<script src="/assets/profile.js"></script>
+<script type="module" src="/assets/auth.js"></script>
+</body>
+</html>

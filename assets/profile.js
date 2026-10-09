@@ -24,7 +24,7 @@
   function card(entry, opts) {
     const d = entry.data; const st = entry._st;
     const a = document.createElement('a');
-    a.className = 'card'; a.href = `franchise.html?f=${encodeURIComponent(d.id)}`;
+    a.className = 'card'; a.href = MT.href(`franchise.html?f=${encodeURIComponent(d.id)}`);
     a.style.setProperty('--card-accent', d.accent || 'var(--accent)');
     const saved = MT.isSaved(d.id);
     const rightMeta = opts.mode === 'saved'

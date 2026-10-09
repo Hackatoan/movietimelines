@@ -1,0 +1,15 @@
+{
+  "origin": "https://timelines.hackatoa.com",
+  "srcDir": ".",
+  "baseHref": true,
+  "sitemap": false,
+  "locales": ["en", "es", "pt-br", "fr", "de", "vi", "th"],
+  "rootFile": "index.html",
+  "pages": [
+    { "file": "index.html", "urlPath": "/" },
+    { "file": "franchise.html", "urlPath": "/franchise.html" },
+    { "file": "profile.html", "urlPath": "/profile.html" }
+  ],
+  "internalLinks": { "/index.html": "/", "/profile.html": "/profile.html", "/franchise.html?f=_demo": "/franchise.html?f=_demo" },
+  "keepTerms": ["MovieTimelines", "Hackatoa", "GitHub", "Star Wars", "MCU", "Jurassic Park", "John Wick", "Dune", "Power Rangers", "Mandalorian", "Buy me a coffee"]
+}

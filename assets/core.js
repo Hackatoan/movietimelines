@@ -2,6 +2,10 @@
 (function (global) {
   const MT = {};
 
+  // Locale-aware internal links: localized pages live under /<loc>/ (see i18n.config.json).
+  MT.loc = (typeof location !== 'undefined' && location.pathname.match(/^\/(es|pt-br|fr|de|vi|th)\//) || [])[1] || '';
+  MT.href = (p) => (MT.loc ? '/' + MT.loc + '/' : '') + p;
+
   MT.keys = (id) => ({
     done: `mt:${id}:done`,
     skip: `mt:${id}:skip`,

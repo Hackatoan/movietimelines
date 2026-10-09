@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
+<base href="/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MovieTimelines — Track Franchises in Timeline Order</title>
-<meta name="description" content="Track film & TV franchises in in-universe timeline order — Star Wars, MCU, Jurassic Park, John Wick, Dune, Power Rangers and more. Every film and series, episode by episode, with your watch time tallied. Free, no account needed.">
-<link rel="canonical" href="https://timelines.hackatoa.com/">
+<title>MovieTimelines — Franchises in Chronologischer Reihenfolge verfolgen</title>
+<meta name="description" content="Film- und Serien-Franchises in chronologischer Reihenfolge des Universums verfolgen — Star Wars, MCU, Jurassic Park, John Wick, Dune, Power Rangers und mehr. Jeder Film und jede Serie, Episode für Episode, mit zusammengezählter Sehzeit. Kostenlos, kein Konto erforderlich.">
+<link rel="canonical" href="https://timelines.hackatoa.com/de/">
 <meta name="theme-color" content="#0b0b0e">
 <meta name="robots" content="index,follow">
 <meta name="author" content="Hackatoa">
@@ -13,17 +14,17 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MovieTimelines">
-<meta property="og:title" content="MovieTimelines — Track Franchises in Timeline Order">
-<meta property="og:description" content="Every film and series across your favourite franchises, in in-universe order — episode by episode, with your watch time tallied. Free, no account needed.">
-<meta property="og:url" content="https://timelines.hackatoa.com/">
+<meta property="og:title" content="MovieTimelines — Franchises in Chronologischer Reihenfolge verfolgen">
+<meta property="og:description" content="Jeder Film und jede Serie deiner Lieblings-Franchises in der Chronologie des Universums — Episode für Episode, mit zusammengezählter Sehzeit. Kostenlos, kein Konto erforderlich.">
+<meta property="og:url" content="https://timelines.hackatoa.com/de/">
 <meta property="og:image" content="https://timelines.hackatoa.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="MovieTimelines — track franchises in timeline order">
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MovieTimelines — Track Franchises in Timeline Order">
-<meta name="twitter:description" content="Every film and series across your favourite franchises, in in-universe order — episode by episode, with your watch time tallied.">
+<meta name="twitter:title" content="MovieTimelines — Franchises in Chronologischer Reihenfolge verfolgen">
+<meta name="twitter:description" content="Jeder Film und jede Serie deiner Lieblings-Franchises in der Chronologie des Universums — Episode für Episode, mit zusammengezählter Sehzeit.">
 <meta name="twitter:image" content="https://timelines.hackatoa.com/assets/og.png">
 
 <!-- Icons / manifest -->
@@ -36,7 +37,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="/assets/styles.css">
 
 <script type="application/ld+json">
 {
@@ -83,11 +84,11 @@
 <body>
 <!-- i18n:switcher:start -->
 <div id="lang-switch" style="position:fixed;top:8px;right:10px;z-index:99999;font-family:system-ui,-apple-system,sans-serif"><button id="lang-btn" type="button" aria-label="Language" aria-haspopup="true" aria-expanded="false" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;background:rgba(6,10,6,.92);border:1px solid #1a3d1a;border-radius:999px;color:#8a8;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.5)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><ellipse cx="12" cy="12" rx="4" ry="9"/></svg></button><div id="lang-pop" role="menu" style="display:none;position:absolute;top:calc(100% + 8px);right:0;flex-direction:column;gap:8px;background:rgba(6,10,6,.95);border:1px solid #1a3d1a;border-radius:10px;padding:9px 12px;box-shadow:0 4px 16px rgba(0,0,0,.6);font-size:12px;white-space:nowrap">
-  <a href="/" hreflang="en" role="menuitem" aria-current="true" style="color:#fff;font-weight:700;text-decoration:none;">EN</a>
+  <a href="/" hreflang="en" role="menuitem" style="color:#8a8;text-decoration:none;">EN</a>
   <a href="/es/" hreflang="es" role="menuitem" style="color:#8a8;text-decoration:none;">ES</a>
   <a href="/pt-br/" hreflang="pt-BR" role="menuitem" style="color:#8a8;text-decoration:none;">PT</a>
   <a href="/fr/" hreflang="fr" role="menuitem" style="color:#8a8;text-decoration:none;">FR</a>
-  <a href="/de/" hreflang="de" role="menuitem" style="color:#8a8;text-decoration:none;">DE</a>
+  <a href="/de/" hreflang="de" role="menuitem" aria-current="true" style="color:#fff;font-weight:700;text-decoration:none;">DE</a>
   <a href="/vi/" hreflang="vi" role="menuitem" style="color:#8a8;text-decoration:none;">VI</a>
   <a href="/th/" hreflang="th" role="menuitem" style="color:#8a8;text-decoration:none;">TH</a>
 </div></div>
@@ -95,35 +96,35 @@
 <!-- i18n:switcher:end -->
 <div class="wrap">
   <div class="topbar">
-    <a class="brand" href="index.html">
+    <a class="brand" href="/de/">
       <span class="logo"><span class="reel">▸</span> MovieTimelines</span>
     </a>
     <nav class="topnav">
       <span id="authbox" class="authbox"></span>
-      <a class="tlink" href="profile.html">Profile</a>
-      <a class="tlink" href="#request">Request</a>
-      <a class="tlink" href="https://github.com/Hackatoan/movietimelines#readme" target="_blank" rel="noopener">Add your own</a>
-      <a class="bmc" href="https://buymeacoffee.com/hackatoa" target="_blank" rel="noopener">☕ Coffee</a>
+      <a class="tlink" href="/de/profile.html">Profil</a>
+      <a class="tlink" href="/de/#request">Anfrage</a>
+      <a class="tlink" href="https://github.com/Hackatoan/movietimelines#readme" target="_blank" rel="noopener">Eigenes hinzufügen</a>
+      <a class="bmc" href="https://buymeacoffee.com/hackatoa" target="_blank" rel="noopener">☕ Kaffee</a>
     </nav>
   </div>
 
   <header class="hero">
-    <p class="eyebrow">Watch it in order</p>
-    <h1>Franchise<br>Timelines</h1>
-    <p class="lede">Pick a saga and track it in in-universe order — every film and series, episode by episode, with your watch time tallied and progress saved right in this browser. No account needed.</p>
+    <p class="eyebrow">In der richtigen Reihenfolge ansehen</p>
+    <h1>Franchise<br>Zeitlinien</h1>
+    <p class="lede">Wähle eine Saga und verfolge sie in der Chronologie des Universums — jeden Film und jede Serie, Episode für Episode, mit berechneter Sehzeit und direkt in diesem Browser gespeicherten Fortschritt. Kein Konto erforderlich.</p>
   </header>
 
   <div class="searchbar">
     <div class="searchbox">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-      <input id="search" type="search" placeholder="Search franchises or titles — e.g. “Mandalorian”, “John Wick”…" aria-label="Search franchises and titles" autocomplete="off">
+      <input id="search" type="search" placeholder="Franchises oder Titel suchen — z. B. „Mandalorian“, „John Wick“…" aria-label="Franchises und Titel suchen" autocomplete="off">
       <kbd>/</kbd>
     </div>
   </div>
 
   <section>
     <div class="sec-head"><h2>Franchises</h2><span class="rule"></span><span class="n" id="mineCount">0</span></div>
-    <div class="grid" id="mine"><p class="empty">Loading…</p></div>
+    <div class="grid" id="mine"><p class="empty">Laden…</p></div>
   </section>
 
   <section id="commSection" hidden>
@@ -132,25 +133,25 @@
   </section>
 
   <section id="request" class="panel">
-    <h3>Request a franchise</h3>
-    <p>Want a saga that isn’t here yet? Open a request and I’ll add it — or build it yourself: every franchise is a single JSON file, and community submissions are welcome via pull request.</p>
+    <h3>Franchise anfragen</h3>
+    <p>Fehlt hier noch eine Saga? Stelle eine Anfrage und ich füge sie hinzu — oder baue sie selbst: Jedes Franchise ist eine einzelne JSON-Datei, und Community-Beiträge sind über Pull Request willkommen.</p>
     <div class="btnrow">
-      <a class="btn primary" href="https://github.com/Hackatoan/movietimelines/issues/new?labels=franchise-request&title=Franchise%20request%3A%20" target="_blank" rel="noopener">Request a franchise</a>
-      <a class="btn ghost" href="https://github.com/Hackatoan/movietimelines/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">How to add your own</a>
-      <a class="btn ghost" href="franchise.html?f=_demo">See the demo franchise</a>
+      <a class="btn primary" href="https://github.com/Hackatoan/movietimelines/issues/new?labels=franchise-request&title=Franchise%20request%3A%20" target="_blank" rel="noopener">Franchise anfragen</a>
+      <a class="btn ghost" href="https://github.com/Hackatoan/movietimelines/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">So fügst du dein eigenes hinzu</a>
+      <a class="btn ghost" href="/de/franchise.html?f=_demo">Demo-Franchise ansehen</a>
     </div>
   </section>
 
   <footer class="site">
-    Made by <a href="https://hackatoa.com" target="_blank" rel="noopener">Hackatoa</a> &middot;
-    <a href="https://github.com/Hackatoan/movietimelines" target="_blank" rel="noopener">Source on GitHub</a> &middot;
+    Erstellt von <a href="https://hackatoa.com" target="_blank" rel="noopener">Hackatoa</a> &middot;
+    <a href="https://github.com/Hackatoan/movietimelines" target="_blank" rel="noopener">Quellcode auf GitHub</a> &middot;
     <a href="https://buymeacoffee.com/hackatoa" target="_blank" rel="noopener">Buy me a coffee</a><br>
-    Progress is stored only in your browser. Times are approximate.
+    Der Fortschritt wird nur in deinem Browser gespeichert. Zeiten sind ungefähr.
   </footer>
 </div>
 
-<script src="assets/core.js"></script>
-<script src="assets/hub.js"></script>
-<script type="module" src="assets/auth.js"></script>
+<script src="/assets/core.js"></script>
+<script src="/assets/hub.js"></script>
+<script type="module" src="/assets/auth.js"></script>
 </body>
 </html>
