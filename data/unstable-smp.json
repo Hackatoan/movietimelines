@@ -8,8 +8,8 @@
   "accentInk": "#120826",
   "emoji": "💥",
   "background": "drift",
-  "datesLabel": "Auto-updated from the \"in order\" playlist · 150 episodes",
-  "updated": "2026-09-23",
+  "datesLabel": "Auto-updated from the \"in order\" playlist · 151 episodes",
+  "updated": "2026-10-16",
   "eras": [
     {
       "title": "Unstable Universe",
@@ -22,7 +22,7 @@
           "date": "2024+",
           "kind": "Series",
           "seasons": [
-            150
+            151
           ],
           "epAvg": 63,
           "epTitles": [
@@ -176,7 +176,8 @@
               "Searching for a Vault that Doesn't Exist",
               "How I Saved the World's Largest Minecraft Server",
               "I Created Minecraft's Greatest Empire",
-              "Escaping the Minecraft Underworld"
+              "Escaping the Minecraft Underworld",
+              "1000 Players Simulate End Prison in Minecraft"
             ]
           ],
           "epLinks": [
@@ -330,7 +331,8 @@
               "https://www.youtube.com/watch?v=h68WUZ8b0O0&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL",
               "https://www.youtube.com/watch?v=5hG_nAYEC2g&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL",
               "https://www.youtube.com/watch?v=IOS7FKtiyxE&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL",
-              "https://www.youtube.com/watch?v=BWmWZTDxFrk&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL"
+              "https://www.youtube.com/watch?v=BWmWZTDxFrk&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL",
+              "https://www.youtube.com/watch?v=9-j9GWjyWpY&list=PL6f5JSvoyXMbEoNHNxMEcYcJPw8V9dAbL"
             ]
           ]
         }
