@@ -100,15 +100,20 @@
   // ---- saved / watchlist (a set of franchise ids the viewer bookmarked) ----
   MT.SAVED_KEY = 'mt:saved';
   MT.SAVED_AT = 'mt:saved:updatedAt';
+  let _savedCache = null;
   MT.loadSaved = () => {
-    try { const r = localStorage.getItem(MT.SAVED_KEY); if (r) return new Set(JSON.parse(r)); } catch (e) {}
-    return new Set();
+    if (_savedCache !== null) return _savedCache;
+    try { const r = localStorage.getItem(MT.SAVED_KEY); if (r) { _savedCache = new Set(JSON.parse(r)); return _savedCache; } } catch (e) {}
+    _savedCache = new Set();
+    return _savedCache;
   };
+  MT._invalidateSavedCache = () => { _savedCache = null; };
   MT.saveSaved = (set) => {
     try {
       localStorage.setItem(MT.SAVED_KEY, JSON.stringify([...set]));
       localStorage.setItem(MT.SAVED_AT, String(Date.now()));
     } catch (e) {}
+    MT._invalidateSavedCache();
   };
   MT.isSaved = (id) => MT.loadSaved().has(id);
   MT.toggleSaved = (id) => {
