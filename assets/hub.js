@@ -145,9 +145,9 @@
     list.forEach((e) => wrap.appendChild(card(e)));
   }
 
-  // sync layer refreshes cards after cloud data is adopted — progress may have
-  // changed, so drop the cached stats before repainting.
-  window.MTSyncReload = () => { statsCache.clear(); render(); };
+  // sync layer refreshes cards after cloud data is adopted — progress & saved list
+  // may have changed, so drop the cached stats and saved set before repainting.
+  window.MTSyncReload = () => { statsCache.clear(); if (typeof MT._invalidateSavedCache === 'function') MT._invalidateSavedCache(); render(); };
 
   search.addEventListener('input', render);
   // "/" focuses search
