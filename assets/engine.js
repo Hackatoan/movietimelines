@@ -159,8 +159,8 @@
         + (it.note ? `<span class="subnote">${sanitizeNote(it.note)}</span>` : '')
         + `</span>`
         + `<span class="date">${esc(it.date || '')}</span>`
-        + `<button class="skipbtn" type="button" title="Not going to watch" aria-label="Mark ${esc(it.name)} as not watching">${XICON}</button>`
-        + (series ? `<button class="chevron" type="button" aria-expanded="false" aria-label="Show episodes">${CHEV}</button>` : '');
+        + `<button class="skipbtn" type="button" title="Not going to watch" aria-label="Mark ${esc(it.name)} as not watching" aria-pressed="false">${XICON}</button>`
+        + (series ? `<button class="chevron" type="button" aria-expanded="false" aria-controls="eps-${esc(it.id)}" aria-label="Show episodes of ${esc(it.name)}">${CHEV}</button>` : '');
       li.appendChild(row);
 
       row.querySelector('.box').addEventListener('click', (e) => { e.stopPropagation(); toggleMaster(it); });
@@ -168,7 +168,7 @@
       row.querySelector('.skipbtn').addEventListener('click', (e) => { e.stopPropagation(); toggleSkip(it); });
 
       if (series) {
-        const panel = document.createElement('div'); panel.className = 'eppanel';
+        const panel = document.createElement('div'); panel.className = 'eppanel'; panel.id = `eps-${it.id}`;
         const titled = Array.isArray(it.epTitles);   // rich rows (title + optional watch link) vs numbered chips
         it.seasons.forEach((n, si) => {
           const s = document.createElement('div'); s.className = 'season';
@@ -268,6 +268,7 @@
         const full = !skipped && MT.itemDone(it, done);
         const partial = !skipped && MT.isSeries(it) && !full && MT.epDone(it, done) > 0;
         row.classList.toggle('skip', skipped);
+        li.querySelector('.skipbtn').setAttribute('aria-pressed', skipped);
         row.classList.toggle('done', full);
         row.classList.toggle('partial', !!partial);
         li.querySelector('.box').setAttribute('aria-checked', partial ? 'mixed' : full);
