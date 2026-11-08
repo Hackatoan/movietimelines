@@ -135,6 +135,20 @@
     paint(commWrap, comm, 'commCount');
     document.getElementById('commSection').hidden = comm.length === 0 && !!q ? true : false;
     if (!q) document.getElementById('commSection').hidden = registry.filter((e) => e.data.community).length === 0;
+    announce(q, shown.length);
+  }
+
+  // Screen-reader-only live region: typing in the search box re-renders the grid
+  // silently, so announce the result count (debounced so it doesn't chatter per keystroke).
+  const status = document.createElement('p');
+  status.className = 'sr-only'; status.setAttribute('role', 'status');
+  search.closest('.searchbar').appendChild(status);
+  let announceTimer = 0;
+  function announce(q, n) {
+    clearTimeout(announceTimer);
+    announceTimer = setTimeout(() => {
+      status.textContent = q ? (n ? `${n} franchise${n === 1 ? '' : 's'} found` : 'No franchises found') : '';
+    }, 500);
   }
 
   function paint(wrap, list, countId) {
