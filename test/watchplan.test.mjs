@@ -19,6 +19,13 @@ const data = {
 }
 const filters = MT.defaultFilters(data)
 
+test('safeColor allows plain colours only', () => {
+  for (const ok of ['#f5b942', '#FFF', '#11223344', 'rgb(1, 2, 3)', 'hsl(200deg 50% 40% / .5)', 'teal'])
+    assert.strictEqual(MT.safeColor(ok), ok)
+  for (const bad of ['url(https://x.test/a)', 'var(--x)', 'red; color: blue', 'rgb(1,2,3) url(x)', '', null, 42])
+    assert.strictEqual(MT.safeColor(bad), null)
+})
+
 test('watchQueue: order, season/episode numbering, skips, done, hidden tiers', () => {
   const q = MT.watchQueue(data, new Set(['f1', 'show-s1e1']), new Set(['f2']), filters, 10)
   assert.deepStrictEqual(q.map((u) => u.title), ['The Show S1E2', 'The Show S2E1', 'The Show S2E2', 'The Show S2E3'])

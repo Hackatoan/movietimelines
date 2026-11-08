@@ -25,7 +25,7 @@
     const d = entry.data; const st = entry._st;
     const a = document.createElement('a');
     a.className = 'card'; a.href = MT.href(`franchise.html?f=${encodeURIComponent(d.id)}`);
-    a.style.setProperty('--card-accent', d.accent || 'var(--accent)');
+    a.style.setProperty('--card-accent', MT.safeColor(d.accent) || 'var(--accent)');
     const saved = MT.isSaved(d.id);
     const rightMeta = opts.mode === 'saved'
       ? `<span>${st.totItems} titles</span><span>&middot;</span><span>≈${MT.fmtH(st.totMin)}</span>`
