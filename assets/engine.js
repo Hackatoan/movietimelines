@@ -47,7 +47,7 @@
         <div class="f-toprow"><a class="back" href="${MT.href('index.html')}">&larr; All franchises</a>
           <span class="f-topright"><button id="savefranchise" class="savepage" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg><span class="lbl">Save</span></button><span id="authbox" class="authbox"></span></span></div>
         <div class="f-title">
-          <span class="emoji">${esc(data.emoji || '\u{1F3AC}')}</span>
+          <span class="emoji" aria-hidden="true">${esc(data.emoji || '\u{1F3AC}')}</span>
           <div>
             <h1>${esc(data.title)}${data.community ? '<span class="f-badge">Community</span>' : ''}</h1>
             <p class="sub">${esc(data.tagline || '')}${data.author ? ' &middot; by ' + esc(data.author) : ''}</p>
@@ -158,7 +158,7 @@
         + `<span class="${kindCls}">${esc(it.kind || (series ? 'Series' : 'Film'))}</span>`
         + (series ? `<span class="eps-count" data-eps="${esc(it.id)}"></span>` : '')
         + `<span class="rt">${rtLabel}</span>`
-        + (it.approx ? '<span class="approx" title="placement / count is approximate">±</span>' : '')
+        + (it.approx ? '<span class="approx" title="placement / count is approximate"><span aria-hidden="true">±</span><span class="sr-only">(approximate)</span></span>' : '')
         + `</span>`
         + (it.note ? `<span class="subnote">${sanitizeNote(it.note)}</span>` : '')
         + `</span>`
