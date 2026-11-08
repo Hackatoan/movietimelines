@@ -5,7 +5,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/fireba
 import { getAnalytics, isSupported as analyticsSupported } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc }
+import { getFirestore, doc, getDoc, setDoc, collection, getDocs }
   from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -60,15 +60,23 @@ async function pullCloud(id) {
   try { const s = await getDoc(await cloudRef(id)); return s.exists() ? s.data() : null; }
   catch (e) { return null; }
 }
+// One collection query for every franchise doc the user has, instead of one getDoc per
+// franchise id (~36 separate reads). Returns null on failure so callers fall back to pullCloud().
+async function pullAllCloud() {
+  try {
+    const qs = await getDocs(collection(db, 'users', user.uid, 'franchises'));
+    const m = new Map(); qs.forEach((d) => m.set(d.id, d.data())); return m;
+  } catch (e) { return null; }
+}
 async function pushCloud(id, snap) {
   try { await setDoc(await cloudRef(id), { done: snap.done || [], skip: snap.skip || [], filters: snap.filters || {}, updatedAt: snap.updatedAt || Date.now() }); return true; }
   catch (e) { console.warn('sync push failed', id, e && e.code); return false; }
 }
 
 // last-write-wins per franchise; empty local + empty cloud => nothing
-async function syncOne(id) {
+async function syncOne(id, cloudAll) {
   const local = localSnapshot(id);
-  const cloud = await pullCloud(id);
+  const cloud = cloudAll ? (cloudAll.get(id) || null) : await pullCloud(id);
   const localHas = local.done.length || local.skip.length || Object.keys(local.filters).length;
   if (!cloud) { if (localHas) await pushCloud(id, { ...local, updatedAt: local.updatedAt || Date.now() }); return false; }
   const cloudAt = Number(cloud.updatedAt) || 0;
@@ -99,11 +107,11 @@ window.MTSyncSaved = function () {
 };
 
 async function syncAll() {
-  const ids = await franchiseIds();
+  const [ids, cloudAll] = await Promise.all([franchiseIds(), pullAllCloud()]);
   // Each franchise syncs against its own Firestore doc + its own localStorage keys, so the
   // per-franchise round-trips are independent. Awaiting them one-by-one serialized ~37
   // getDoc calls (plus any pushes) on every sign-in/page load; run them concurrently instead.
-  const results = await Promise.all([...ids.map(syncOne), syncSaved()]);
+  const results = await Promise.all([...ids.map((id) => syncOne(id, cloudAll)), syncSaved()]);
   const changed = results.some(Boolean);
   if (changed && typeof window.MTSyncReload === 'function') window.MTSyncReload();
   renderBox();
