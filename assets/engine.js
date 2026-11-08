@@ -131,11 +131,15 @@
     // instead of re-running document.querySelectorAll('.ep') etc. on every single click —
     // for long-running shows (Pokémon ~1400 eps, One Piece ~1180, Naruto ~1010) that
     // querying was itself real repeated work on top of the per-node updates.
-    const itemEls = Array.from(document.querySelectorAll('.item'));
-    const epEls = Array.from(document.querySelectorAll('.ep'));
-    const epRowEls = Array.from(document.querySelectorAll('.eprow'));
-    const epsLabelEls = Array.from(document.querySelectorAll('[data-eps]'));
-    const tallyEls = Array.from(document.querySelectorAll('[data-tally]'));
+    // Per-node lookups (child queries, dataset reads, tally id parsing) are resolved once too.
+    // Episode nodes also remember the state last written to them: a single click changes one
+    // episode (or one series), so render() only touches the episode nodes whose state actually
+    // flipped instead of rewriting class + aria on every one of them (~1400 for Pokémon) per click.
+    const itemRefs = Array.from(document.querySelectorAll('.item'), (li) => ({ li, it: BY_ID[li.dataset.id], row: li.querySelector('.row'), box: li.querySelector('.box') }));
+    const epRefs = Array.from(document.querySelectorAll('.ep'), (el) => ({ el, id: el.dataset.id, on: null }));
+    const epRowRefs = Array.from(document.querySelectorAll('.eprow'), (el) => ({ el, id: el.dataset.id, box: el.querySelector('.epbox'), on: null }));
+    const epsLabelRefs = Array.from(document.querySelectorAll('[data-eps]'), (el) => ({ el, it: BY_ID[el.dataset.eps] }));
+    const tallyRefs = Array.from(document.querySelectorAll('[data-tally]'), (el) => ({ el, its: el.dataset.tally.split(',').map((id) => BY_ID[id]), sec: el.closest('section.era') }));
     const fchipEls = Array.from(fbar.querySelectorAll('.fchip'));
 
     function buildRow(it) {
@@ -260,10 +264,8 @@
       el('tleft').textContent = MT.fmtH(st.leftMin);
       el('ttot').textContent = MT.fmtH(st.totMin);
 
-      itemEls.forEach((li) => {
-        const it = BY_ID[li.dataset.id];
+      itemRefs.forEach(({ li, it, row, box }) => {
         li.hidden = !MT.visible(it, filters);
-        const row = li.querySelector('.row');
         const skipped = skip.has(it.id);
         const full = !skipped && MT.itemDone(it, done);
         const partial = !skipped && MT.isSeries(it) && !full && MT.epDone(it, done) > 0;
@@ -271,24 +273,27 @@
         li.querySelector('.skipbtn').setAttribute('aria-pressed', skipped);
         row.classList.toggle('done', full);
         row.classList.toggle('partial', !!partial);
-        li.querySelector('.box').setAttribute('aria-checked', partial ? 'mixed' : full);
+        box.setAttribute('aria-checked', partial ? 'mixed' : full);
       });
-      epEls.forEach((c) => { const on = done.has(c.dataset.id); c.classList.toggle('done', on); c.setAttribute('aria-pressed', on); });
-      epRowEls.forEach((r) => {
-        const on = done.has(r.dataset.id);
-        r.classList.toggle('done', on);
-        const epbox = r.querySelector('.epbox');
-        if (epbox) epbox.setAttribute('aria-checked', on);
+      epRefs.forEach((r) => {
+        const on = done.has(r.id);
+        if (on === r.on) return;
+        r.on = on; r.el.classList.toggle('done', on); r.el.setAttribute('aria-pressed', on);
       });
-      epsLabelEls.forEach((eLbl) => {
-        const it = BY_ID[eLbl.dataset.eps];
+      epRowRefs.forEach((r) => {
+        const on = done.has(r.id);
+        if (on === r.on) return;
+        r.on = on; r.el.classList.toggle('done', on);
+        if (r.box) r.box.setAttribute('aria-checked', on);
+      });
+      epsLabelRefs.forEach(({ el: eLbl, it }) => {
         eLbl.textContent = `${MT.epDone(it, done)} / ${MT.epTotal(it)} eps`;
       });
-      tallyEls.forEach((t) => {
-        const its = t.dataset.tally.split(',').map((id) => BY_ID[id]).filter((it) => MT.visible(it, filters));
+      tallyRefs.forEach(({ el: t, its: all, sec }) => {
+        const its = all.filter((it) => MT.visible(it, filters));
         const d = its.filter((it) => !skip.has(it.id) && MT.itemDone(it, done)).length;
         t.textContent = d + '/' + its.length;
-        const sec = t.closest('section.era'); if (sec) sec.hidden = its.length === 0;
+        if (sec) sec.hidden = its.length === 0;
       });
       fchipEls.forEach((ch) => {
         const on = !!filters[ch.dataset.tier];
