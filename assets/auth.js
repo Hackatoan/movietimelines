@@ -94,7 +94,12 @@ async function syncSaved() {
   try { const s = await getDoc(doc(db, 'users', user.uid, 'meta', 'saved')); cloud = s.exists() ? s.data() : null; } catch (e) {}
   if (!cloud) { if (local.length) { try { await setDoc(doc(db, 'users', user.uid, 'meta', 'saved'), { ids: local, updatedAt: localAt || Date.now() }); } catch (e) {} } return false; }
   const cloudAt = Number(cloud.updatedAt) || 0;
-  if (cloudAt > localAt) { writeRaw(SAVED_KEY, cloud.ids || []); writeRaw(SAVED_AT, String(cloudAt)); return true; }
+  if (cloudAt > localAt) {
+    writeRaw(SAVED_KEY, cloud.ids || []); writeRaw(SAVED_AT, String(cloudAt));
+    // core.js memoizes the saved set; drop it so every page (not just the hub's reload hook) re-reads the adopted list
+    if (window.MT && typeof window.MT._invalidateSavedCache === 'function') window.MT._invalidateSavedCache();
+    return true;
+  }
   if (localAt > cloudAt && local.length) { try { await setDoc(doc(db, 'users', user.uid, 'meta', 'saved'), { ids: local, updatedAt: localAt }); } catch (e) {} }
   return false;
 }
