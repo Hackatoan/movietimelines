@@ -99,9 +99,11 @@ window.MTSyncSaved = function () {
 
 async function syncAll() {
   const ids = await franchiseIds();
-  let changed = false;
-  for (const id of ids) { if (await syncOne(id)) changed = true; }
-  if (await syncSaved()) changed = true;
+  // Each franchise syncs against its own Firestore doc + its own localStorage keys, so the
+  // per-franchise round-trips are independent. Awaiting them one-by-one serialized ~37
+  // getDoc calls (plus any pushes) on every sign-in/page load; run them concurrently instead.
+  const results = await Promise.all([...ids.map(syncOne), syncSaved()]);
+  const changed = results.some(Boolean);
   if (changed && typeof window.MTSyncReload === 'function') window.MTSyncReload();
   renderBox();
 }
