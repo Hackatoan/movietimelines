@@ -22,13 +22,14 @@
   function boot(data) {
     // theme
     const root = document.documentElement.style;
-    if (data.accent) {
-      root.setProperty('--accent', data.accent);
-      root.setProperty('--accent-ink', data.accentInk || '#0b0b0e');
-      root.setProperty('--accent-soft', `color-mix(in srgb, ${data.accent} 14%, transparent)`);
-      root.setProperty('--accent-line', `color-mix(in srgb, ${data.accent} 45%, transparent)`);
+    const accent = MT.safeColor(data.accent);
+    if (accent) {
+      root.setProperty('--accent', accent);
+      root.setProperty('--accent-ink', MT.safeColor(data.accentInk) || '#0b0b0e');
+      root.setProperty('--accent-soft', `color-mix(in srgb, ${accent} 14%, transparent)`);
+      root.setProperty('--accent-line', `color-mix(in srgb, ${accent} 45%, transparent)`);
     }
-    if (data.background && window.MTBackgrounds) window.MTBackgrounds.apply(data.background, data.accent);
+    if (data.background && window.MTBackgrounds) window.MTBackgrounds.apply(data.background, accent);
 
     const K = MT.keys(fid);
     let done = MT.loadSet(K.done);

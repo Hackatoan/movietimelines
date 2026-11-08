@@ -36,6 +36,18 @@
     return items;
   };
 
+  // Franchise `accent`/`accentInk` are community JSON that land in CSS custom properties
+  // (and from there in background/color declarations). Only let plain colour values
+  // through — hex, rgb()/hsl() with numeric args, or a bare named colour — so a data
+  // file can't smuggle url()/var()/other CSS functions into the page's styles.
+  MT.safeColor = (v) => {
+    if (typeof v !== 'string') return null;
+    const s = v.trim();
+    return /^#(?:[0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})$/i.test(s)
+      || /^(?:rgba?|hsla?)\([0-9.,%\s/deg]+\)$/i.test(s)
+      || /^[a-z]{3,20}$/i.test(s) ? s : null;
+  };
+
   MT.isSeries = (it) => Array.isArray(it.seasons);
   // Episode ids never change for a given item within a page session, but this is
   // rebuilt (string-templated, one entry per episode) on every render() tick via

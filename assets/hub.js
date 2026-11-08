@@ -80,7 +80,7 @@
     const a = document.createElement('a');
     a.className = 'card';
     a.href = MT.href(`franchise.html?f=${encodeURIComponent(d.id)}`);
-    a.style.setProperty('--card-accent', d.accent || 'var(--accent)');
+    a.style.setProperty('--card-accent', MT.safeColor(d.accent) || 'var(--accent)');
     const tagCls = d.community ? 'community' : 'mine';
     const tagTxt = d.community ? 'Community' : (d.author || 'Mine');
     const saved = MT.isSaved(d.id);
