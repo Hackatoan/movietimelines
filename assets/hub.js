@@ -73,7 +73,27 @@
     return st;
   }
 
+  // render() runs on every search keystroke and used to rebuild every visible card from an
+  // innerHTML string (36 cards today). A card's content only depends on its franchise's
+  // stats + saved state, which are already cached until a cloud-sync reload, so build each
+  // card once and reuse the element; only the per-query "matches:" hint line changes.
   function card(entry) {
+    if (!entry._card) entry._card = buildCard(entry);
+    setHint(entry);
+    return entry._card;
+  }
+
+  function setHint(entry) {
+    const h = entry._matchHint || '';
+    if (h === (entry._hintShown || '')) return;
+    entry._hintShown = h;
+    if (!h) { if (entry._hintEl) entry._hintEl.remove(); return; }
+    if (!entry._hintEl) { entry._hintEl = document.createElement('div'); entry._hintEl.className = 'stats author'; }
+    entry._hintEl.textContent = 'matches: ' + h;
+    entry._card.querySelector('.body').appendChild(entry._hintEl);
+  }
+
+  function buildCard(entry) {
     const d = entry.data;
     const st = statsFor(d);
     const a = document.createElement('a');
@@ -95,7 +115,6 @@
       + `<span class="pctnum">${st.pct}%</span>`
       + `</div>`
       + `<div class="stats"><span>${st.doneItems}/${st.totItems} titles</span><span>&middot;</span><span>≈${MT.fmtH(st.leftMin)} left</span></div>`
-      + (entry._matchHint ? `<div class="stats author">matches: ${esc(entry._matchHint)}</div>` : '')
       + `</div>`;
     const sb = a.querySelector('.savebtn');
     sb.addEventListener('click', (e) => {
@@ -151,16 +170,15 @@
   }
 
   function paint(wrap, list, countId) {
-    wrap.innerHTML = '';
     const c = document.getElementById(countId);
     if (c) c.textContent = list.length;
     if (!list.length) { wrap.innerHTML = '<p class="empty">No matches.</p>'; return; }
-    list.forEach((e) => wrap.appendChild(card(e)));
+    wrap.replaceChildren(...list.map(card));
   }
 
   // sync layer refreshes cards after cloud data is adopted — progress & saved list
   // may have changed, so drop the cached stats and saved set before repainting.
-  window.MTSyncReload = () => { statsCache.clear(); if (typeof MT._invalidateSavedCache === 'function') MT._invalidateSavedCache(); render(); };
+  window.MTSyncReload = () => { statsCache.clear(); registry.forEach((e) => { e._card = e._hintEl = null; e._hintShown = ''; }); if (typeof MT._invalidateSavedCache === 'function') MT._invalidateSavedCache(); render(); };
 
   search.addEventListener('input', render);
   // "/" focuses search
