@@ -48,6 +48,11 @@
       || /^[a-z]{3,20}$/i.test(s) ? s : null;
   };
 
+  // data/franchises.json is needed by the page script (hub/profile) AND by auth.js's sync
+  // pass on the same page load. Share one in-flight request instead of fetching it twice.
+  let _registry = null;
+  MT.registry = () => _registry || (_registry = fetch('data/franchises.json', { cache: 'no-cache' }).then((r) => r.json()));
+
   MT.isSeries = (it) => Array.isArray(it.seasons);
   // Episode ids never change for a given item within a page session, but this is
   // rebuilt (string-templated, one entry per episode) on every render() tick via

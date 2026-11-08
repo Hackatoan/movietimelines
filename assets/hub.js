@@ -12,8 +12,7 @@
   // it's safe to cache per franchise id and only clear on sync.
   const statsCache = new Map();
 
-  fetch('data/franchises.json', { cache: 'no-cache' })
-    .then((r) => r.json())
+  MT.registry()
     .then((reg) => Promise.all((reg.order || []).map(loadOne)))
     .then((entries) => {
       entries.filter(Boolean).forEach((e) => registry.push(e));   // preserve registry order
