@@ -29,7 +29,7 @@ const restore = (html, blocks) => html.replace(/%%(\d+)%%/g, (m, i) => blocks[+i
 
 async function translateBatch(strings, langName, code) {
   if (!strings.length) return [];
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${KEY}`;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;   // key goes in a header, not the URL (keeps it out of proxy/access logs)
   const prompt = `Translate each string in this JSON array from English into ${langName} (locale "${code}").
 Return ONLY a JSON array of the same length and order — exactly one translation per input string.
 Rules:
@@ -41,7 +41,7 @@ Rules:
 Input:
 ${JSON.stringify(strings)}`;
   for (let a = 1; a <= 6; a++) {
-    const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+    const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': KEY },
       body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.2, responseMimeType: 'application/json' } }) });
     const data = await res.json().catch(() => ({}));
     const txt = data?.candidates?.[0]?.content?.parts?.[0]?.text;
