@@ -1,0 +1,32 @@
+rules_version = '2';
+// Deploy: firebase deploy --only firestore:rules --project movietimeline-35751
+// Each signed-in user can only touch their own docs, and only in the two shapes
+// assets/auth.js actually writes. Anything else under users/{uid} is denied.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    // users/{uid}/franchises/{fid}: { done, skip, filters, updatedAt }
+    match /users/{uid}/franchises/{fid} {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid)
+        && fid.matches('^[A-Za-z0-9_-]{1,64}$')
+        && request.resource.data.keys().hasOnly(['done', 'skip', 'filters', 'updatedAt'])
+        && request.resource.data.done is list && request.resource.data.done.size() <= 20000
+        && request.resource.data.skip is list && request.resource.data.skip.size() <= 5000
+        && request.resource.data.filters is map && request.resource.data.filters.size() <= 50
+        && request.resource.data.updatedAt is number;
+    }
+
+    // users/{uid}/meta/saved: { ids, updatedAt }
+    match /users/{uid}/meta/saved {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['ids', 'updatedAt'])
+        && request.resource.data.ids is list && request.resource.data.ids.size() <= 1000
+        && request.resource.data.updatedAt is number;
+    }
+  }
+}
