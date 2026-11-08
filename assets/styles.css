@@ -7,7 +7,7 @@
   --line:#282833;
   --ink:#f3f3f7;
   --muted:#9195a4;
-  --muted-dim:#5b5f6d;
+  --muted-dim:#838795;   /* was #5b5f6d (2.6–3.1:1); now ≥4.5:1 on --bg, --surface and --surface-hi (WCAG AA) */
   --done:#2f9e68;
   --skip:#6a6f7d;
   --danger:#e0555b;
