@@ -37,7 +37,7 @@
       ? `<span>${st.totItems} titles</span><span>&middot;</span><span>≈${MT.fmtH(st.totMin)}</span>`
       : `<span>${st.doneItems}/${st.totItems}</span><span>&middot;</span><span>≈${MT.fmtH(st.leftMin)} left</span>`;
     a.innerHTML =
-      `<div class="poster">${esc(d.emoji || '\u{1F3AC}')}</div>`
+      `<div class="poster" aria-hidden="true">${esc(d.emoji || '\u{1F3AC}')}</div>`
       + `<div class="body">`
       + `<div class="title-row"><h3>${esc(d.title)}</h3><span class="tag ${d.community ? 'community' : 'mine'}">${esc(d.community ? 'Community' : (d.author || 'Mine'))}</span></div>`
       + `<p class="tagline">${esc(d.tagline || '')}</p>`

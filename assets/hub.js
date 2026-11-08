@@ -108,7 +108,7 @@
     const tagTxt = d.community ? 'Community' : (d.author || 'Mine');
     const saved = MT.isSaved(d.id);
     a.innerHTML =
-      `<div class="poster">${esc(d.emoji || '\u{1F3AC}')}</div>`
+      `<div class="poster" aria-hidden="true">${esc(d.emoji || '\u{1F3AC}')}</div>`
       + `<div class="body">`
       + `<div class="title-row"><h3>${esc(d.title)}</h3><span class="tag ${tagCls}">${esc(tagTxt)}</span></div>`
       + `<p class="tagline">${esc(d.tagline || '')}</p>`
