@@ -118,7 +118,11 @@
       const l = document.createElement('label'); l.className = 'planchip';
       const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = planSel.has(e.data.id);
       cb.addEventListener('change', () => { if (cb.checked) planSel.add(e.data.id); else planSel.delete(e.data.id); });
-      l.append(cb, document.createTextNode((e.data.emoji ? e.data.emoji + ' ' : '') + e.data.title));
+      // one flex item (same layout as before), with the decorative emoji kept out of the checkbox's name
+      const txt = document.createElement('span');
+      if (e.data.emoji) { const em = document.createElement('span'); em.setAttribute('aria-hidden', 'true'); em.textContent = e.data.emoji + ' '; txt.append(em); }
+      txt.append(e.data.title);
+      l.append(cb, txt);
       wrap.appendChild(l);
     });
     const start = document.getElementById('planStart');
