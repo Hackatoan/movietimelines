@@ -17,18 +17,13 @@ Without this you'll get `auth/unauthorized-domain` on sign-in.
 Build → **Firestore Database** → Create database → **Production mode** → pick a region.
 
 ## 4. Security rules
-Firestore → **Rules** → paste, then Publish. Each user can only read/write their own progress:
+The rules live in [`firestore.rules`](firestore.rules) (each user can only read/write their own progress, and only in the shapes the app writes). Deploy with:
 
+```bash
+firebase deploy --only firestore:rules --project movietimeline-35751
 ```
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /users/{uid}/{document=**} {
-      allow read, write: if request.auth != null && request.auth.uid == uid;
-    }
-  }
-}
-```
+
+Or paste the file into Firestore → **Rules** → Publish.
 
 ## How sync works
 - Signed **out**: progress lives only in `localStorage` (per browser), exactly as before.
