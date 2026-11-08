@@ -125,7 +125,7 @@ function renderBox() {
   const el = box(); if (!el) return;
   if (user) {
     const name = user.displayName || user.email || 'Account';
-    const photo = user.photoURL ? `<img class="avatar" src="${user.photoURL}" alt="" referrerpolicy="no-referrer">` : '<span class="avatar avatar-fallback">👤</span>';
+    const photo = user.photoURL ? `<img class="avatar" src="${escapeHtml(user.photoURL)}" alt="" referrerpolicy="no-referrer">` : '<span class="avatar avatar-fallback">👤</span>';
     el.innerHTML = `<span class="authuser" title="Progress syncs to your Google account">${photo}<span class="authname">${escapeHtml(name.split(' ')[0])}</span><span class="synced">· synced</span></span><button class="authbtn ghost" id="signout" type="button">Sign out</button>`;
     el.querySelector('#signout').addEventListener('click', () => signOut(auth));
   } else {
