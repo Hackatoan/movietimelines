@@ -3,8 +3,7 @@
   const registry = [];
   const strip = document.getElementById('statstrip');
 
-  fetch('data/franchises.json', { cache: 'no-cache' })
-    .then((r) => r.json())
+  MT.registry()
     .then((reg) => Promise.all((reg.order || []).map(loadOne)))
     .then((entries) => { entries.filter(Boolean).forEach((e) => registry.push(e)); render(); })
     .catch(() => { strip.innerHTML = '<p class="empty">Couldn’t load your profile.</p>'; });

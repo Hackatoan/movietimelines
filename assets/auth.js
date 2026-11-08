@@ -36,8 +36,9 @@ const writeRaw = (k, v) => { try { localStorage.setItem(k, typeof v === 'string'
 
 async function franchiseIds() {
   try {
-    const r = await fetch('data/franchises.json', { cache: 'no-cache' });
-    const j = await r.json();
+    // reuse the page's registry request when core.js is present (classic scripts run before modules)
+    const j = (window.MT && MT.registry) ? await MT.registry()
+      : await (await fetch('data/franchises.json', { cache: 'no-cache' })).json();
     return j.order || [];
   } catch (e) { return []; }
 }
