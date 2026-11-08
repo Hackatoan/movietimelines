@@ -177,6 +177,7 @@
         it.seasons.forEach((n, si) => {
           const s = document.createElement('div'); s.className = 'season';
           const lab = it.seasons.length > 1 ? `Season ${si + 1}` : 'Episodes';
+          const ctx = it.seasons.length > 1 ? `${it.name} ${lab}` : it.name;   // accessible-name prefix for episode controls
           s.innerHTML = `<div class="season-label">${lab} <span class="season-n">${n} ep${n > 1 ? 's' : ''}</span></div>`;
           if (titled) {
             const titles = (it.epTitles && it.epTitles[si]) || [];
@@ -187,10 +188,10 @@
               const url = safeUrl(links[e - 1]);
               const wrap = document.createElement('div'); wrap.className = 'eprow'; wrap.dataset.id = id;
               wrap.innerHTML =
-                `<button class="epbox" type="button" role="checkbox" aria-checked="false" aria-label="Mark episode ${e} watched">${CHECK}</button>`
+                `<button class="epbox" type="button" role="checkbox" aria-checked="false" aria-label="Mark ${esc(ctx)} episode ${e}${titles[e - 1] ? ': ' + esc(titles[e - 1]) : ''} watched">${CHECK}</button>`
                 + `<span class="epnum">${e}</span>`
                 + `<span class="eptitle">${esc(titles[e - 1] || ('Episode ' + e))}</span>`
-                + (url ? `<a class="epwatch" href="${esc(url)}" target="_blank" rel="noopener" aria-label="Watch episode ${e}">▶</a>` : '');
+                + (url ? `<a class="epwatch" href="${esc(url)}" target="_blank" rel="noopener" aria-label="Watch ${esc(ctx)} episode ${e} (opens in new tab)">▶</a>` : '');
               wrap.querySelector('.epbox').addEventListener('click', () => toggleEp(id));
               list.appendChild(wrap);
             }
@@ -201,7 +202,7 @@
               const id = `${it.id}-s${si + 1}e${e}`;
               const chip = document.createElement('button');
               chip.type = 'button'; chip.className = 'ep'; chip.dataset.id = id; chip.textContent = e;
-              chip.setAttribute('aria-label', `${it.name} ${lab} episode ${e}`);
+              chip.setAttribute('aria-label', `${ctx} episode ${e}`);
               chip.setAttribute('aria-pressed', 'false');
               chip.addEventListener('click', () => toggleEp(id));
               grid.appendChild(chip);
