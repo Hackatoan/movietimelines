@@ -26,37 +26,43 @@
 
   function card(entry, opts) {
     const d = entry.data; const st = entry._st;
+    // save button is a sibling of the link (no <button> nested inside <a>)
+    const w = document.createElement('div');
+    w.className = 'card-wrap';
+    w.style.setProperty('--card-accent', MT.safeColor(d.accent) || 'var(--accent)');
     const a = document.createElement('a');
     a.className = 'card'; a.href = MT.href(`franchise.html?f=${encodeURIComponent(d.id)}`);
-    a.style.setProperty('--card-accent', MT.safeColor(d.accent) || 'var(--accent)');
     const saved = MT.isSaved(d.id);
     const rightMeta = opts.mode === 'saved'
       ? `<span>${st.totItems} titles</span><span>&middot;</span><span>≈${MT.fmtH(st.totMin)}</span>`
       : `<span>${st.doneItems}/${st.totItems}</span><span>&middot;</span><span>≈${MT.fmtH(st.leftMin)} left</span>`;
     a.innerHTML =
-      `<div class="poster">${esc(d.emoji || '\u{1F3AC}')}`
-      + `<button class="savebtn${saved ? ' on' : ''}" type="button" aria-label="Save ${esc(d.title)} to profile" aria-pressed="${saved}" title="Save to your profile"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg></button></div>`
+      `<div class="poster">${esc(d.emoji || '\u{1F3AC}')}</div>`
       + `<div class="body">`
       + `<div class="title-row"><h3>${esc(d.title)}</h3><span class="tag ${d.community ? 'community' : 'mine'}">${esc(d.community ? 'Community' : (d.author || 'Mine'))}</span></div>`
       + `<p class="tagline">${esc(d.tagline || '')}</p>`
       + (opts.mode !== 'saved' ? `<div class="stats"><span class="mini-bar"><i style="width:${st.pct}%"></i></span><span class="pctnum">${st.pct}%</span></div>` : '')
       + `<div class="stats">${rightMeta}</div>`
       + `</div>`;
-    const sb = a.querySelector('.savebtn');
+    const sb = document.createElement('button');
+    sb.type = 'button'; sb.className = 'savebtn' + (saved ? ' on' : '');
+    sb.setAttribute('aria-label', `Save ${d.title} to profile`);
+    sb.setAttribute('aria-pressed', saved); sb.title = 'Save to your profile';
+    sb.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>';
+    w.append(a, sb);
     sb.dataset.fid = d.id;
-    sb.addEventListener('click', (e) => {
-      e.preventDefault(); e.stopPropagation();
+    sb.addEventListener('click', () => {
       // render() rebuilds every card, which would drop keyboard focus to <body>.
       // Put focus back on this franchise's button, or (if un-saving removed the card)
       // on the nearest remaining card in the same grid.
-      const grid = a.parentElement; const idx = Array.prototype.indexOf.call(grid.children, a);
+      const grid = w.parentElement; const idx = Array.prototype.indexOf.call(grid.children, w);
       MT.toggleSaved(d.id); render();
       const same = Array.from(document.querySelectorAll('.savebtn')).find((b) => b.dataset.fid === d.id);
       const near = grid.children[Math.min(idx, grid.children.length - 1)];
       const target = same || (near && near.querySelector('.savebtn')) || document.querySelector('.savebtn') || document.querySelector('#emptyState:not([hidden]) a');
       if (target) target.focus();
     });
-    return a;
+    return w;
   }
 
   function paint(id, list, countId, mode) {

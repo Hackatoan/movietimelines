@@ -80,7 +80,9 @@ a{color:inherit}
 .card{display:flex;flex-direction:column;gap:0;text-decoration:none;color:inherit;
   background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
   transition:transform .14s,border-color .16s,background .16s;position:relative}
-.card:hover{transform:translateY(-2px);border-color:var(--card-accent,var(--accent-line));background:var(--surface-hi)}
+.card-wrap{position:relative;display:flex;flex-direction:column}
+.card-wrap > .card{flex:1}
+.card:hover,.card-wrap:hover > .card{transform:translateY(-2px);border-color:var(--card-accent,var(--accent-line));background:var(--surface-hi)}
 .card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .card .poster{height:96px;display:flex;align-items:center;justify-content:center;font-size:46px;line-height:1;
   background:
@@ -113,6 +115,9 @@ a{color:inherit}
 .savebtn.on{color:var(--card-accent,var(--accent));border-color:var(--card-accent,var(--accent-line))}
 .savebtn.on svg{fill:currentColor}
 .savebtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* button sits on the wrapper (not inside the link's 1px border), so offset by 1px more; lift with the card */
+.card-wrap > .savebtn{top:9px;right:9px}
+.card-wrap:hover > .savebtn{transform:translateY(-2px)}
 
 /* profile stat strip */
 .statstrip{display:flex;flex-wrap:wrap;gap:12px;margin:6px 0 10px}
