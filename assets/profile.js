@@ -43,9 +43,18 @@
       + `<div class="stats">${rightMeta}</div>`
       + `</div>`;
     const sb = a.querySelector('.savebtn');
+    sb.dataset.fid = d.id;
     sb.addEventListener('click', (e) => {
       e.preventDefault(); e.stopPropagation();
+      // render() rebuilds every card, which would drop keyboard focus to <body>.
+      // Put focus back on this franchise's button, or (if un-saving removed the card)
+      // on the nearest remaining card in the same grid.
+      const grid = a.parentElement; const idx = Array.prototype.indexOf.call(grid.children, a);
       MT.toggleSaved(d.id); render();
+      const same = Array.from(document.querySelectorAll('.savebtn')).find((b) => b.dataset.fid === d.id);
+      const near = grid.children[Math.min(idx, grid.children.length - 1)];
+      const target = same || (near && near.querySelector('.savebtn')) || document.querySelector('.savebtn') || document.querySelector('#emptyState:not([hidden]) a');
+      if (target) target.focus();
     });
     return a;
   }
