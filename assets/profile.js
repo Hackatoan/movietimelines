@@ -16,9 +16,13 @@
       .catch(() => null);
   }
 
+  // Parse each franchise's done/skip sets once per render and derive "has progress" from
+  // them, instead of having MT.hasProgress() re-read + re-JSON.parse the same two
+  // localStorage keys right after (render runs on load, every save toggle, and cloud sync).
   function statsFor(d) {
     const K = MT.keys(d.id);
-    return MT.stats(d, MT.loadSet(K.done), MT.loadSet(K.skip), MT.loadObj(K.filters, MT.defaultFilters(d)));
+    const done = MT.loadSet(K.done), skip = MT.loadSet(K.skip);
+    return { st: MT.stats(d, done, skip, MT.loadObj(K.filters, MT.defaultFilters(d))), prog: done.size > 0 || skip.size > 0 };
   }
 
   function card(entry, opts) {
@@ -57,7 +61,7 @@
   }
 
   function render() {
-    registry.forEach((e) => { e._st = statsFor(e.data); e._prog = MT.hasProgress(e.data); });
+    registry.forEach((e) => { const r = statsFor(e.data); e._st = r.st; e._prog = r.prog; });
 
     const watching = registry.filter((e) => e._prog && e._st.pct < 100);
     const completed = registry.filter((e) => e._prog && e._st.totItems > 0 && e._st.pct === 100);
