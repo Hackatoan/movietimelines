@@ -328,3 +328,13 @@ li.item{list-style:none}
 .planchip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--ink);cursor:pointer}
 .planchip input{accent-color:var(--accent)}
 .planmsg{font-size:13px;color:var(--muted);align-self:center}
+
+/* Pre-rendered franchise pages: static watch order (replaced by the tracker on boot) + FAQ */
+.seo-static{padding:32px 0;color:var(--muted)}
+.seo-static h1{margin:0 0 10px}
+.seo-static ol{padding-left:22px}
+.seo-about{max-width:72ch;margin:56px auto 0;padding-top:28px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;line-height:1.6}
+.seo-about h2{font-size:18px;color:inherit;margin:0 0 12px}
+.seo-about h3{font-size:14px;margin:18px 0 4px;color:var(--text,#e8e8ee)}
+.seo-about p{margin:0}
+.seo-about a{color:var(--accent)}

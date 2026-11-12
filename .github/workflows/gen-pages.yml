@@ -1,0 +1,26 @@
+name: Regenerate franchise pages
+# Keeps the pre-rendered /<id>/ pages and sitemap.xml in sync with data/*.json,
+# so data-only PRs (incl. the monthly auto-update) don't leave stale static HTML.
+on:
+  push:
+    branches: [main]
+    paths: ['data/**', 'franchise.html', 'assets/core.js', 'scripts/gen-franchise-pages.mjs']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  gen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/gen-franchise-pages.mjs && node scripts/gen-sitemap.mjs
+      - name: Commit if changed
+        run: |
+          # sitemap lastmod changes daily; only commit when a page actually changed
+          git add -A -- '*/index.html'
+          if git diff --cached --quiet; then echo "pages up to date"; exit 0; fi
+          git add sitemap.xml
+          git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -m "Regenerate franchise pages"
+          git push

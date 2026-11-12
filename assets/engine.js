@@ -1,8 +1,9 @@
 /* MovieTimelines — tracker engine (franchise.html). Requires core.js (MT). */
 (function () {
   const qs = new URLSearchParams(location.search);
-  const fid = (qs.get('f') || '').replace(/[^a-z0-9_-]/gi, '');
   const app = document.getElementById('app');
+  // Pre-rendered /<id>/ pages carry the id on #app; franchise.html takes it from ?f=.
+  const fid = (app.dataset.fid || qs.get('f') || '').replace(/[^a-z0-9_-]/gi, '');
 
   const CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="4,12 10,18 20,6"/></svg>';
   const CHEV = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="6,9 12,15 18,9"/></svg>';
@@ -10,7 +11,7 @@
 
   if (!fid) { showError('No franchise selected.', 'Go back to the home page and pick one.'); return; }
 
-  fetch(`data/${fid}.json`, { cache: 'no-cache' })
+  fetch(`/data/${fid}.json`, { cache: 'no-cache' })
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then((data) => boot(data))
     .catch(() => showError('Couldn’t load this franchise.', `No data file for “${fid}”.`));
@@ -97,7 +98,7 @@
     const issueTitle = encodeURIComponent(`Update: ${data.title}`);
     const issueBody = encodeURIComponent(
       `Franchise: ${data.title} (\`${fidEsc}\`)\n`
-      + `Page: https://timelines.hackatoa.com/franchise.html?f=${fidEsc}\n\n`
+      + `Page: ${MT.furl(fidEsc)}\n\n`
       + `**What needs updating?** (new episodes/films, wrong count or runtime, wrong order, missing entry, etc.)\n\n`
       + `_Please include a source if you can._\n`);
     const issueUrl = `https://github.com/Hackatoan/movietimelines/issues/new?labels=franchise-update&title=${issueTitle}&body=${issueBody}`;
@@ -363,21 +364,18 @@
   function applySEO(data, items) {
     const base = 'https://timelines.hackatoa.com';
     const id = data.id || fid;
-    const url = `${base}/franchise.html?f=${id}`;
-    const films = items.filter((i) => !MT.isSeries(i)).length;
-    const series = items.filter((i) => MT.isSeries(i)).length;
-    const hrs = Math.round(items.reduce((a, i) => a + MT.itemTotalMin(i), 0) / 60);
-    const title = `${data.title} — Watch Order & Timeline | MovieTimelines`;
-    const tag = data.tagline ? data.tagline.replace(/\s*\.?\s*$/, '. ') : '';
-    const desc = `Watch ${data.title} in order: ${films} films and ${series} series (~${hrs}h). ${tag}Track it episode by episode with your watch time tallied — free, no account.`.replace(/\s+/g, ' ').trim();
+    const url = id.startsWith('_') ? `${base}/franchise.html?f=${id}` : MT.furl(id);
+    const { desc, title, ogTitle } = MT.seoInfo(data, items);
     document.title = title;
     setMeta('name', 'description', desc);
     setLink('canonical', url);
-    setMeta('property', 'og:title', `${data.title} — Watch Order & Timeline`);
+    setMeta('property', 'og:title', ogTitle);
     setMeta('property', 'og:description', desc);
     setMeta('property', 'og:url', url);
-    setMeta('name', 'twitter:title', `${data.title} — Watch Order`);
+    setMeta('name', 'twitter:title', ogTitle);
     setMeta('name', 'twitter:description', desc);
+    // Pre-rendered /<id>/ pages ship a fuller graph (incl. FAQPage) — keep it.
+    if (app.dataset.fid && document.getElementById('ld-franchise')) return;
     const ld = {
       '@context': 'https://schema.org',
       '@graph': [

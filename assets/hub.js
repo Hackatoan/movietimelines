@@ -53,7 +53,7 @@
       numberOfItems: list.length,
       itemListElement: list.map((e, i) => ({
         '@type': 'ListItem', position: i + 1, name: e.data.title,
-        url: `${base}/franchise.html?f=${e.data.id}`,
+        url: MT.furl(e.data.id),
       })),
     };
     const s = document.createElement('script');
@@ -103,7 +103,7 @@
     w.style.setProperty('--card-accent', MT.safeColor(d.accent) || 'var(--accent)');
     const a = document.createElement('a');
     a.className = 'card';
-    a.href = MT.href(`franchise.html?f=${encodeURIComponent(d.id)}`);
+    a.href = MT.fhref(d.id);
     const tagCls = d.community ? 'community' : 'mine';
     const tagTxt = d.community ? 'Community' : (d.author || 'Mine');
     const saved = MT.isSaved(d.id);
