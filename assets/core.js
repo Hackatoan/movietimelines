@@ -5,6 +5,23 @@
   // Locale-aware internal links: localized pages live under /<loc>/ (see i18n.config.json).
   MT.loc = (typeof location !== 'undefined' && location.pathname.match(/^\/(es|pt-br|fr|de|vi|th)\//) || [])[1] || '';
   MT.href = (p) => (MT.loc ? '/' + MT.loc + '/' : '') + p;
+  // English franchise pages are pre-rendered at /<id>/ (scripts/gen-franchise-pages.mjs);
+  // localized trackers and underscore ids (demo/template) stay on franchise.html?f=.
+  MT.fhref = (id) => (MT.loc || String(id).startsWith('_') ? MT.href(`franchise.html?f=${encodeURIComponent(id)}`) : `/${encodeURIComponent(id)}/`);
+  MT.furl = (id) => `https://timelines.hackatoa.com/${encodeURIComponent(id)}/`;
+
+  // Per-franchise title/description, shared by engine.js (runtime) and the page generator
+  // so the pre-rendered HTML and the hydrated page never disagree.
+  MT.seoInfo = (data, items) => {
+    const films = items.filter((i) => !MT.isSeries(i)).length;
+    const series = items.filter((i) => MT.isSeries(i)).length;
+    const hrs = Math.round(items.reduce((a, i) => a + MT.itemTotalMin(i), 0) / 60);
+    const noun = series === 0 ? 'Movies' : films === 0 ? 'Series' : 'Movies & Shows';
+    const h1 = `${data.title} ${noun} in Order`;
+    const tag = data.tagline ? data.tagline.replace(/\s*\.?\s*$/, '. ') : '';
+    const desc = `Watch ${data.title} in order: ${films} films and ${series} series (~${hrs}h). ${tag}Track it episode by episode with your watch time tallied — free, no account.`.replace(/\s+/g, ' ').trim();
+    return { films, series, hrs, h1, desc, title: `${h1} — Timeline & Watch Order | MovieTimelines`, ogTitle: `${h1} — Timeline & Watch Order` };
+  };
 
   MT.keys = (id) => ({
     done: `mt:${id}:done`,

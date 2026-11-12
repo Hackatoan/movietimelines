@@ -49,7 +49,7 @@
           events.push({
             uid: `${en.data.id}-${u.id}`, start: new Date(cursor), minutes: u.min,
             summary: `\u{1F3AC} ${u.title}${u.title.startsWith(en.data.title) ? '' : ' \u2014 ' + en.data.title}`,
-            description: `Next up in ${en.data.title}.`, url: `https://timelines.hackatoa.com/franchise.html?f=${encodeURIComponent(en.data.id)}`,
+            description: `Next up in ${en.data.title}.`, url: MT.furl(en.data.id),
           });
           cursor.setMinutes(cursor.getMinutes() + u.min + o.gapMin);
         });

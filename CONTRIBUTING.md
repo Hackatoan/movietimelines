@@ -97,3 +97,8 @@ python3 -m http.server 8080
 - Use a `tier` for anything non-canon or optional so people can filter it out.
 
 Thanks for contributing! ☕ https://buymeacoffee.com/hackatoa
+
+
+## Generated pages
+
+Each franchise has a pre-rendered page at `/<id>/index.html` (crawlable title, watch-order list and FAQ). After adding or editing `data/*.json`, run `node scripts/gen-franchise-pages.mjs && node scripts/gen-sitemap.mjs` — or let the *Regenerate franchise pages* workflow do it on merge to `main`.

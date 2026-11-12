@@ -14,7 +14,7 @@ const ids = (reg.order || []).filter((id) => !id.startsWith('_')); // skip demo/
 
 const urls = [
   { loc: `${BASE}/`, priority: '1.0', changefreq: 'weekly' },
-  ...ids.map((id) => ({ loc: `${BASE}/franchise.html?f=${id}`, priority: '0.8', changefreq: 'weekly' })),
+  ...ids.map((id) => ({ loc: `${BASE}/${id}/`, priority: '0.8', changefreq: 'weekly' })),
 ];
 
 const xml =

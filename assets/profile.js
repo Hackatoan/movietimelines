@@ -31,7 +31,7 @@
     w.className = 'card-wrap';
     w.style.setProperty('--card-accent', MT.safeColor(d.accent) || 'var(--accent)');
     const a = document.createElement('a');
-    a.className = 'card'; a.href = MT.href(`franchise.html?f=${encodeURIComponent(d.id)}`);
+    a.className = 'card'; a.href = MT.fhref(d.id);
     const saved = MT.isSaved(d.id);
     const rightMeta = opts.mode === 'saved'
       ? `<span>${st.totItems} titles</span><span>&middot;</span><span>≈${MT.fmtH(st.totMin)}</span>`
