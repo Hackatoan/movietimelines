@@ -12,6 +12,7 @@ Pick a franchise (Star Wars, MCU, Dune, John Wick, and more) and follow it in in
 
 - In-universe watch-order for many franchises
 - Per-episode progress + watch-time tally
+- "Jump to next" button (or press `N`) scrolls straight to your next unwatched film/episode
 - Data-driven JSON franchises (easy to contribute)
 - Optional Google sign-in sync
 

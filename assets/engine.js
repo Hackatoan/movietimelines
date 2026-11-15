@@ -69,7 +69,7 @@
         </div>
         <div class="dock-actions">
           <div class="filters" id="filters">${(data.tiers && data.tiers.length) ? '<span class="flabel">Include</span>' : ''}</div>
-          <button class="reset" id="reset" type="button">Reset progress</button>
+          <span class="dock-btns"><button class="reset nextup" id="nextup" type="button" aria-keyshortcuts="n">Jump to next <span aria-hidden="true">&darr;</span><kbd aria-hidden="true">N</kbd></button><button class="reset" id="reset" type="button">Reset progress</button></span>
         </div>
       </div>
       <div id="list"></div>
@@ -257,6 +257,34 @@
       done = new Set(); skip = new Set(); persist(); render();
     });
 
+    // "Jump to next": scroll to the first unwatched, unskipped, visible film/episode
+    // (same order as the .ics watch plan), expanding its series panel and focusing it.
+    const nextBtn = document.getElementById('nextup');
+    function jumpNext() {
+      const q = MT.watchQueue(data, done, skip, filters, 1)[0];
+      if (!q) return;
+      const li = list.querySelector(`.item[data-id="${CSS.escape(BY_ID[q.id] ? q.id : q.id.replace(/-s\d+e\d+$/, ''))}"]`);
+      if (!li) return;
+      let target = li.querySelector('.box');
+      if (!BY_ID[q.id]) {
+        if (!li.classList.contains('open')) li.querySelector('.chevron').click();
+        const ep = li.querySelector(`[data-id="${CSS.escape(q.id)}"]`);
+        if (ep) target = ep.querySelector('.epbox') || ep;
+      }
+      target.scrollIntoView({ block: 'center' });   // html{scroll-behavior:smooth}, off under reduced motion
+      target.focus({ preventScroll: true });
+      const flash = target.closest('.eprow, .ep') || li.querySelector('.row');
+      flash.classList.remove('nextflash'); void flash.offsetWidth; flash.classList.add('nextflash');
+    }
+    nextBtn.addEventListener('click', jumpNext);
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'n' && e.key !== 'N') return;
+      if (e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;
+      const t = e.target;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      e.preventDefault(); jumpNext();
+    });
+
     const el = (id) => document.getElementById(id);
     function render() {
       const st = MT.stats(data, done, skip, filters);
@@ -267,6 +295,9 @@
       el('twat').textContent = MT.fmtH(st.watMin);
       el('tleft').textContent = MT.fmtH(st.leftMin);
       el('ttot').textContent = MT.fmtH(st.totMin);
+      const nq = MT.watchQueue(data, done, skip, filters, 1)[0];
+      nextBtn.disabled = !nq;
+      nextBtn.title = nq ? `Next up: ${nq.title}` : 'All caught up';
 
       itemRefs.forEach(({ li, it, row, box }) => {
         li.hidden = !MT.visible(it, filters);
