@@ -323,7 +323,10 @@ li.item{list-style:none}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}}
 @media (max-width:520px){
-  .date{width:100%;order:4}
+  /* row wraps so the date drops to its own line under the title instead of squeezing .meta (box 22px + gap 13px indent) */
+  .row{flex-wrap:wrap;row-gap:4px}
+  .date{flex-basis:100%;order:4;padding-left:35px}
+  .date:empty{display:none}
   .dock{border-radius:0 0 14px 14px;margin-top:0}
   .searchbar{margin-top:16px}
 }
