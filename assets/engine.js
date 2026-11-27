@@ -17,7 +17,7 @@
     .catch(() => showError('Couldn’t load this franchise.', `No data file for “${fid}”.`));
 
   function showError(title, msg) {
-    app.innerHTML = `<div class="errbox"><p><b>${title}</b></p><p>${msg}</p><p><a class="btn ghost" href="${MT.href('index.html')}">← All franchises</a></p></div>`;
+    app.innerHTML = `<div class="errbox"><p><b>${esc(title)}</b></p><p>${esc(msg)}</p><p><a class="btn ghost" href="${MT.href('index.html')}">← All franchises</a></p></div>`;
   }
 
   function boot(data) {
